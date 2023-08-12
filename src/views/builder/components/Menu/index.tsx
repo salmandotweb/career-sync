@@ -1,3 +1,4 @@
+import { PrintResume } from "@/components/PrintResume";
 import {
 	Menubar,
 	MenubarCheckboxItem,
@@ -193,6 +194,7 @@ export function Menu() {
 					<MenubarItem inset>Add Account...</MenubarItem>
 				</MenubarContent>
 			</MenubarMenu>
+			<PrintResume />
 		</Menubar>
 	);
 }

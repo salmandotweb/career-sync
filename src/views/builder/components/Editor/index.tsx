@@ -1,9 +1,11 @@
+import EditBasicInfo from "./components/BasicInfo";
+
 export const headers: {
 	[key: string]: { title: string; component: () => JSX.Element };
 } = {
 	"basic-details": {
 		title: "Basic details",
-		component: () => <div>Skills and expertise</div>,
+		component: EditBasicInfo,
 	},
 	"skills-and-expertise": {
 		title: "Skills and expertise",

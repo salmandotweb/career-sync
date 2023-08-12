@@ -21,7 +21,7 @@ export function Sidebar({ className }: SidebarProps) {
 	);
 
 	return (
-		<div className={cn("pb-0 min-h-screen", className)}>
+		<div className={cn("pb-0", className)}>
 			<div className="space-y-4 py-4">
 				<div className="px-3 py-2">
 					<div className="py-5 flex items-center mb-4 rounded-sm bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
