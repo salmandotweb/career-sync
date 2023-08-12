@@ -1,35 +1,24 @@
-import { useAppSelector } from "@/stores/hooks";
-import {
-	selectBasicInfo,
-	updateBasicInfo,
-} from "@/stores/slices/basic/basicInfoSlice";
-import { ChangeEvent, FC } from "react";
-import { useDispatch } from "react-redux";
+import { Menu } from "@/views/builder/components/Menu";
+import { FC } from "react";
+import { Sidebar } from "./components/Sidebar";
 
 interface indexProps {}
 
 const Builder: FC<indexProps> = ({}) => {
-	const basicInfo = useAppSelector(selectBasicInfo);
-	const dispatch = useDispatch();
-
 	return (
-		<div>
-			<input
-				style={{
-					border: "1px solid #000",
-					color: "#000",
-				}}
-				value={basicInfo.name}
-				onChange={(event: ChangeEvent<HTMLInputElement>) => {
-					dispatch(
-						updateBasicInfo({
-							...basicInfo,
-							name: event.target.value,
-						})
-					);
-				}}
-			/>
-		</div>
+		<>
+			<div className="hidden md:block">
+				<Menu />
+				<div className="border-t">
+					<div className="bg-background">
+						<div className="grid lg:grid-cols-5">
+							<Sidebar className="hidden lg:block" />
+							<div className="col-span-3 lg:col-span-4 lg:border-l"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
 	);
 };
 
