@@ -22,23 +22,21 @@ const Prisma: FC<indexProps> = ({}) => {
 		<div
 			className="bg-[#0F172A] h-[100%] w-[100%] text-white overflow-hidden"
 			id="resume">
-			<div className="flex items-center justify-center flex-col h-[200px] w-full relative z-[100]">
+			<div className="flex items-center justify-center flex-col h-[140px] w-full relative z-[100]">
 				<Gradient />
-				<h1 className="text-[36px] text-white font-bold">{basicInfo.name}</h1>
-				<p className="text-[14px] text-[#CBD5E1]">{basicInfo.label}</p>
-				<div className="flex items-center gap-5 mt-3 mb-5">
-					<div className="flex items-center gap-2">
+				<h1 className="text-[28px] text-white font-bold">{basicInfo.name}</h1>
+				<p className="text-[12px] text-[#CBD5E1]">{basicInfo.label}</p>
+				<div className="flex items-center gap-3 mt-2 mb-3">
+					<div className="flex items-center gap-1 text-[11px]">
 						<FiMapPin />
-						<p className="text-[12px] text-[#E2E8F0]">
-							{basicInfo.location.city}
-						</p>
+						<p className="text-[#E2E8F0]">{basicInfo.location.city}</p>
 					</div>
-					<div className="flex items-center gap-2">
+					<div className="flex items-center gap-1 text-[11px]">
 						<HiOutlineMail />
-						<p className="text-[12px] text-[#E2E8F0]">salmandotweb@gmail.com</p>
+						<p className="text-[#E2E8F0]">salmandotweb@gmail.com</p>
 					</div>
 				</div>
-				<div className="flex items-center justify-center gap-4 text-[14px]">
+				<div className="flex items-center justify-center gap-4 text-[11px]">
 					<div className="bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#7C3AED]">
 						<HiOutlineGlobeAlt />
 						salmandotweb.me
@@ -54,26 +52,26 @@ const Prisma: FC<indexProps> = ({}) => {
 				</div>
 			</div>
 			<Separator className="bg-[#334155]" />
-			<div className="flex flex-col items-start justify-start w-[800px] mx-auto py-[20px] gap-4">
-				<div className="grid grid-cols-[1fr,3fr,1fr] gap-3 items-start">
-					<h1 className="text-[#E2E8F0] text-[16px] font-medium">Education</h1>
-					<h1 className="text-[#E2E8F0] text-[16px] font-medium">
+			<div className="flex flex-col items-start justify-start w-[90%] mx-auto py-[20px] gap-4">
+				<div className="grid grid-cols-[1fr,3.5fr,1fr] gap-2 items-start w-[100%]">
+					<h1 className="text-[#E2E8F0] text-[12px] font-medium">Education</h1>
+					<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 						Software Engineering <span className="text-[#CBD5E1]"> - </span>
 						<span className="text-[#E2E8F0] font-light">
 							Virtual University Pakistan
 						</span>
 					</h1>
-					<div className="flex items-center gap-2 text-[12px]">
+					<div className="flex items-center gap-2 text-[8px] ml-auto">
 						<BsCalendar2Minus />
-						<h3 className="text-[#E2E8F0] text-[14px] font-medium">
+						<h3 className="text-[#E2E8F0] text-[10px] font-medium">
 							Nov 2022 - present
 						</h3>
 					</div>
 				</div>
 				<Separator className="bg-[#334155]" />
-				<div className="grid grid-cols-[1fr,4.5fr] gap-3 items-start w-full">
-					<h1 className="text-[#E2E8F0] text-[16px] font-medium">Experience</h1>
-					<div className="flex flex-col gap-6">
+				<div className="grid grid-cols-[1fr,4.7fr] gap-2 items-start w-[100%]">
+					<h1 className="text-[#E2E8F0] text-[12px] font-medium">Experience</h1>
+					<div className="flex flex-col gap-3">
 						<Experience />
 						<Separator className="bg-[#334155]" />
 						<Experience />
@@ -83,12 +81,12 @@ const Prisma: FC<indexProps> = ({}) => {
 				</div>
 				<Separator className="bg-[#334155]" />
 				<div className="grid grid-cols-[1fr,4.5fr] gap-3 items-start w-full">
-					<h1 className="text-[#E2E8F0] text-[16px] font-medium">
+					<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 						Featured Project
 					</h1>
 					<div className="flex flex-col gap-2">
 						<div className="grid grid-cols-[2fr,1fr] gap-3 items-start">
-							<h1 className="text-[#E2E8F0] text-[16px] font-medium">
+							<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 								Nexcare.io
 							</h1>
 						</div>
@@ -106,12 +104,12 @@ const Prisma: FC<indexProps> = ({}) => {
 								link="https://nexcare.io/"
 							/>
 
-							<div className="flex items-center gap-2 mt-2">
+							<div className="flex items-center gap-1 mt-1 text-[10px]">
 								<BsStars />{" "}
-								<p className="text-[#CBD5E1] text-[14px] font-light">
+								<p className="text-[#CBD5E1] font-light">
 									See all of my projects on my portfolio:{" "}
 								</p>
-								<span className="underline inline-flex items-center gap-1 text-[#CBD5E1] text-[14px] font-light">
+								<span className="underline inline-flex items-center gap-1 text-[#CBD5E1] font-light">
 									<BsLink45Deg /> https://salmandotweb.me/projects
 								</span>
 							</div>
@@ -119,11 +117,11 @@ const Prisma: FC<indexProps> = ({}) => {
 					</div>
 				</div>
 				<Separator className="bg-[#334155]" />
-				<div className="grid grid-cols-[1fr,4.5fr] gap-3 items-start w-full">
-					<h1 className="text-[#E2E8F0] text-[16px] font-medium">
+				<div className="grid grid-cols-[1fr,4.5fr] gap-2 items-start w-full">
+					<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 						Skills and Tools
 					</h1>
-					<div className="flex flex-col gap-3">
+					<div className="flex flex-col gap-2">
 						<Skills />
 						<Separator className="bg-[#334155]" />
 						<Skills />
@@ -140,18 +138,18 @@ export default Prisma;
 
 const Experience = () => {
 	return (
-		<div className="flex flex-col gap-2">
-			<div className="grid grid-cols-[2fr,1fr] gap-3 items-start">
-				<h1 className="text-[#E2E8F0] text-[16px] font-medium">
+		<div className="flex flex-col gap-2 w-[100%]">
+			<div className="grid grid-cols-[2fr,1fr] gap-3 items-start w-[100%]">
+				<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 					Rising Technologies <span className="text-[#CBD5E1]"> - </span>
 					<span className="text-[#E2E8F0] font-light">
 						Frontend Software Engineer
 					</span>
 				</h1>
-				<div className="flex items-center gap-2 text-[12px]">
+				<div className="flex items-center gap-2 text-[8px] ml-auto">
 					<BsCalendar2Minus />
-					<h3 className="text-[#E2E8F0] text-[14px] font-medium">
-						Sep 2022 - present
+					<h3 className="text-[#E2E8F0] text-[10px] font-medium">
+						Nov 2022 - present
 					</h3>
 				</div>
 			</div>
@@ -170,10 +168,10 @@ const Experience = () => {
 
 const Skills = () => {
 	return (
-		<div className="flex items-start gap-3 flex-col">
-			<h1 className="text-[#E2E8F0] text-[16px] font-medium">Languages</h1>
-			<div className="flex items-center gap-5">
-				<p className="text-[#64748B] text-[14px]">Frontend related</p>
+		<div className="flex items-start gap-1.5 flex-col">
+			<h1 className="text-[#E2E8F0] text-[12px] font-medium">Languages</h1>
+			<div className="flex items-center gap-3">
+				<p className="text-[#64748B] text-[12px]">Frontend related</p>
 				<div className="flex items-center gap-2">
 					<CustomBadge label="Javascript" />
 					<CustomBadge label="React.Js" />
@@ -182,7 +180,7 @@ const Skills = () => {
 				</div>
 			</div>
 			<div className="flex items-center gap-5">
-				<p className="text-[#64748B] text-[14px]">Backend related</p>
+				<p className="text-[#64748B] text-[12px]">Backend related</p>
 				<div className="flex items-center gap-2">
 					<CustomBadge label="Node.Js" />
 					<CustomBadge label="TRPC" />
@@ -197,7 +195,7 @@ const CustomBadge = ({ label }: { label: string }) => {
 	return (
 		<Badge
 			variant="secondary"
-			className="text-[#CBD5E1] bg-[#334155] font-medium hover:bg-[#334155]">
+			className="text-[#CBD5E1] bg-[#334155] font-light hover:bg-[#334155] text-[10px]">
 			{label}
 		</Badge>
 	);
@@ -206,8 +204,8 @@ const CustomBadge = ({ label }: { label: string }) => {
 const Summary = ({ summary, link }: { summary: string; link?: string }) => {
 	return (
 		<div className="flex items-start gap-2 justify-start">
-			<div className="h-[10px] w-[12px] bg-[#CBD5E1] rounded-[3px] mt-[4px]" />
-			<p className="text-[#CBD5E1] text-[14px] font-light">
+			<div className="h-[6px] w-[6px] bg-[#CBD5E1] rounded-[3px] mt-[4px]" />
+			<p className="text-[#CBD5E1] text-[12px] font-light">
 				{summary}{" "}
 				{link && (
 					<span className="underline inline-flex items-center gap-1">

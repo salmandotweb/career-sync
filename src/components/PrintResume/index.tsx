@@ -5,11 +5,11 @@ import { useEffect } from "react";
 const PrintResume = () => {
 	useEffect(() => {
 		globalThis?.addEventListener("beforeprint", () => {
-			globalThis.document.title = `Resume_Builder_${Date.now()}`;
+			globalThis.document.title = `CareerSync_${Date.now()}`;
 		});
 
 		globalThis?.addEventListener("afterprint", () => {
-			globalThis.document.title = "Single Page Resume Builder";
+			globalThis.document.title = "CareerSync";
 		});
 	}, []);
 	return (

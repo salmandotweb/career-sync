@@ -4,7 +4,7 @@ interface indexProps {}
 
 const Gradient: FC<indexProps> = ({}) => {
 	return (
-		<div className="absolute top-0 left-0 z-[-1] w-full h-[200px]">
+		<div className="absolute top-0 left-0 z-[-1] w-full h-[140px]">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="100%"
@@ -55,7 +55,7 @@ const Gradient: FC<indexProps> = ({}) => {
 				</defs>
 			</svg>
 
-			<div className="absolute bottom-0 left-0 w-full h-[230px] bg-gradient-to-t from-[#0F172A] to-transparent"></div>
+			<div className="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-t from-[#0F172A] to-transparent"></div>
 		</div>
 	);
 };

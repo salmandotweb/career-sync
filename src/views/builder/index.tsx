@@ -10,25 +10,23 @@ const Builder: FC = () => {
 	const Template = AVAILABLE_TEMPLATES[templateId].component;
 
 	return (
-		<>
-			<div className="flex flex-col h-screen">
-				<Menu />
-				<main className="flex flex-1 max-h-[calc(100vh_-_3.5rem)] print:max-h-fit">
-					<aside className="w-[25vw] min-w-[20rem] print:hidden border-r-2">
-						<Sidebar />
-					</aside>
-					<div className="flex flex-col flex-1 justify-center bg-custom-grey100 print:bg-white">
-						<div className="overflow-auto no-scrollbar">
-							<div className="mx-5 print:mx-0 mb-2 print:mb-0">
-								<div className="w-[210mm] h-[296mm] bg-white my-0 mx-auto">
-									{Template && <Template />}
-								</div>
+		<div className="flex flex-col h-screen">
+			<Menu />
+			<main className="flex flex-1 max-h-[calc(100vh_-_3.5rem)] print:max-h-fit">
+				<aside className="w-[25vw] min-w-[20rem] print:hidden border-r-2">
+					<Sidebar />
+				</aside>
+				<div className="flex flex-col flex-1 justify-center">
+					<div className="overflow-auto no-scrollbar">
+						<div className="mx-5 print:mx-0 print:mb-0">
+							<div className="w-[210mm] h-[297mm] my-0 mx-auto">
+								{Template && <Template />}
 							</div>
 						</div>
 					</div>
-				</main>
-			</div>
-		</>
+				</div>
+			</main>
+		</div>
 	);
 };
 
