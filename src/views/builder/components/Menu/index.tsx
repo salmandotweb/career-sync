@@ -18,7 +18,7 @@ import {
 
 export function Menu() {
 	return (
-		<Menubar className="rounded-none border-b border-none px-2 lg:px-4">
+		<Menubar className="hidden lg:flex rounded-none border-b border-none px-2 lg:px-4">
 			<MenubarMenu>
 				<MenubarTrigger className="font-bold">Music</MenubarTrigger>
 				<MenubarContent>

@@ -20,7 +20,7 @@ const Prisma: FC<indexProps> = ({}) => {
 
 	return (
 		<div
-			className="bg-[#0F172A] w-[230mm] min-h-[296mm] text-white overflow-hidden mb-[50px] pb-10"
+			className="bg-[#0F172A] h-[100%] w-[100%] text-white overflow-hidden"
 			id="resume">
 			<div className="flex items-center justify-center flex-col h-[200px] w-full relative z-[100]">
 				<Gradient />

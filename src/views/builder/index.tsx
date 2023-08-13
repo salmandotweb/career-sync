@@ -1,18 +1,32 @@
 import { Menu } from "@/views/builder/components/Menu";
 import { FC } from "react";
 import { Sidebar } from "./components/Sidebar";
+import { useAppSelector } from "@/stores/hooks";
+import { AVAILABLE_TEMPLATES } from "@/lib/availableTemplates";
+import { selectTemplate } from "@/stores/slices/templates/templateSlice";
 
 const Builder: FC = () => {
+	const templateId = useAppSelector(selectTemplate).id;
+	const Template = AVAILABLE_TEMPLATES[templateId].component;
+
 	return (
 		<>
-			<div className="hidden md:block max-h-screen overflow-hidden">
+			<div className="flex flex-col h-screen">
 				<Menu />
-				<div className="border-t">
-					<div className="grid lg:grid-cols-5">
-						<Sidebar className="hidden lg:block" />
-						<div className="col-span-3 lg:col-span-4 lg:border-l flex items-start justify-center p-6 w-full max-h-screen overflow-y-scroll"></div>
+				<main className="flex flex-1 max-h-[calc(100vh_-_3.5rem)] print:max-h-fit">
+					<aside className="w-[25vw] min-w-[20rem] print:hidden border-r-2">
+						<Sidebar />
+					</aside>
+					<div className="flex flex-col flex-1 justify-center bg-custom-grey100 print:bg-white">
+						<div className="overflow-auto no-scrollbar">
+							<div className="mx-5 print:mx-0 mb-2 print:mb-0">
+								<div className="w-[210mm] h-[296mm] bg-white my-0 mx-auto">
+									{Template && <Template />}
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
+				</main>
 			</div>
 		</>
 	);
