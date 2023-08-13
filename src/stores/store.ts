@@ -10,6 +10,7 @@ import {
     REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import templateSlice from './slices/templates/templateSlice'
 
 const persistConfig = {
     key: 'root',
@@ -18,7 +19,9 @@ const persistConfig = {
 
 const rootReducers = combineReducers({
     basicInfoReducer: basicInfoSlice,
+    template: templateSlice,
 })
+
 
 const persistedReducer = persistReducer(persistConfig, rootReducers)
 

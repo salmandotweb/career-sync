@@ -1,4 +1,4 @@
-import { PrintResume } from "@/components/PrintResume";
+import PrintResume from "@/components/PrintResume";
 import {
 	Menubar,
 	MenubarCheckboxItem,

@@ -17,8 +17,11 @@ interface indexProps {}
 
 const Prisma: FC<indexProps> = ({}) => {
 	const basicInfo = useAppSelector(selectBasicInfo);
+
 	return (
-		<div className="bg-[#0F172A] w-[230mm] min-h-[296mm] text-white overflow-hidden mb-[50px] pb-10">
+		<div
+			className="bg-[#0F172A] w-[230mm] min-h-[296mm] text-white overflow-hidden mb-[50px] pb-10"
+			id="resume">
 			<div className="flex items-center justify-center flex-col h-[200px] w-full relative z-[100]">
 				<Gradient />
 				<h1 className="text-[36px] text-white font-bold">{basicInfo.name}</h1>
