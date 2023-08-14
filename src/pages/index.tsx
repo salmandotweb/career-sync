@@ -7,7 +7,7 @@ export default function Home() {
 			<Head>
 				<title>Career Sync</title>
 				<meta name="description" content="Single Page Resume Builder" />
-				<link rel="icon" type="image/png" href="/icons/resume-icon.png" />
+				<link rel="icon" type="image/png" href="favicon.png" />
 			</Head>
 
 			<Builder />

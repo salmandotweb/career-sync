@@ -1,9 +1,9 @@
-import { Menu } from "@/views/builder/components/Menu";
 import { FC } from "react";
 import { Sidebar } from "./components/Sidebar";
 import { useAppSelector } from "@/stores/hooks";
 import { AVAILABLE_TEMPLATES } from "@/lib/availableTemplates";
 import { selectTemplate } from "@/stores/slices/templates/templateSlice";
+import { Menu } from "./components/Menu";
 
 const Builder: FC = () => {
 	const templateId = useAppSelector(selectTemplate).id;
@@ -14,7 +14,7 @@ const Builder: FC = () => {
 			<Menu />
 			<main className="flex flex-1 max-h-[calc(100vh_-_3.5rem)] print:max-h-fit">
 				<aside className="w-[20vw] print:hidden border-r-2">
-					<Sidebar />
+					<Sidebar selectedTemplate={templateId} />
 				</aside>
 				<div className="flex flex-col flex-1 justify-center">
 					<div className="overflow-auto no-scrollbar">

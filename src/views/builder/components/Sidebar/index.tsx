@@ -4,9 +4,11 @@ import { headers } from "../Editor";
 import EditSection from "../Editor/EditSection";
 import EditHeaders from "../Editor/EditHeaders";
 
-interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
+	selectedTemplate: string;
+}
 
-export function Sidebar({ className }: SidebarProps) {
+export function Sidebar({ className, selectedTemplate }: SidebarProps) {
 	const [link, setLink] = useState("");
 	const section = headers[link];
 
@@ -17,9 +19,11 @@ export function Sidebar({ className }: SidebarProps) {
 	const displayElement = link ? (
 		<EditSection section={section} onLinkClick={linkClickHandler} />
 	) : (
-		<EditHeaders onLinkClick={linkClickHandler} />
+		<EditHeaders
+			onLinkClick={linkClickHandler}
+			selectedTemplate={selectedTemplate}
+		/>
 	);
-
 	return (
 		<div className={cn("pb-0", className)}>
 			<div className="space-y-4 py-4">
