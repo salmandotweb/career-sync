@@ -98,13 +98,13 @@ const Prisma: FC<indexProps> = ({}) => {
 							<CustomBadge label="Laravel" />
 							<CustomBadge label="MySql" />
 						</div>
-						<div className="flex flex-col gap-3 justify-start items-start mt-2">
+						<div className="flex flex-col gap-1 justify-start items-start mt-2">
 							<Summary
 								summary="NexCare is an integrated solution for single and multi-specialty practices that optimizes care delivery and empowers doctors to focus on the patient. More details at"
 								link="https://nexcare.io/"
 							/>
 
-							<div className="flex items-center gap-1 mt-1 text-[10px]">
+							<div className="flex items-center gap-1 mt-1 text-[11px]">
 								<BsStars />{" "}
 								<p className="text-[#CBD5E1] font-light">
 									See all of my projects on my portfolio:{" "}
@@ -204,7 +204,9 @@ const CustomBadge = ({ label }: { label: string }) => {
 const Summary = ({ summary, link }: { summary: string; link?: string }) => {
 	return (
 		<div className="flex items-start gap-2 justify-start">
-			<div className="h-[6px] w-[6px] bg-[#CBD5E1] rounded-[3px] mt-[4px]" />
+			<div>
+				<div className="h-[6px] w-[6px] bg-[#CBD5E1] rounded-[5px] mt-[4px]" />
+			</div>
 			<p className="text-[#CBD5E1] text-[12px] font-light">
 				{summary}{" "}
 				{link && (
