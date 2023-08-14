@@ -4,17 +4,17 @@ import dynamic from 'next/dynamic';
 export const AVAILABLE_TEMPLATES: ITemplate = {
     prisma: {
         id: 'prisma',
-        name: 'Prisma Resume',
+        name: 'Prisma',
         thumbnail: '/templates/prisma.jpg',
         component: dynamic(() => import("../templates/Prisma"), {
             ssr: false,
         }),
     },
-    salmandotweb: {
-        id: 'salmandotweb',
-        name: 'Salmandotweb Resume',
-        thumbnail: '/templates/salmandotweb.jpg',
-        component: dynamic(() => import("../templates/Prisma"), {
+    spectrum: {
+        id: 'spectrum',
+        name: 'Spectrum',
+        thumbnail: '/templates/spectrum.jpg',
+        component: dynamic(() => import("../templates/Spectrum"), {
             ssr: false,
         }),
     },
