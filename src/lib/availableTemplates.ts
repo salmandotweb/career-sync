@@ -5,7 +5,15 @@ export const AVAILABLE_TEMPLATES: ITemplate = {
     prisma: {
         id: 'prisma',
         name: 'Prisma Resume',
-        thumbnail: '/templates/modern.png',
+        thumbnail: '/templates/prisma.jpg',
+        component: dynamic(() => import("../templates/Prisma"), {
+            ssr: false,
+        }),
+    },
+    salmandotweb: {
+        id: 'salmandotweb',
+        name: 'Salmandotweb Resume',
+        thumbnail: '/templates/salmandotweb.jpg',
         component: dynamic(() => import("../templates/Prisma"), {
             ssr: false,
         }),

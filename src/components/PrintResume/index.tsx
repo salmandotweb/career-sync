@@ -13,7 +13,11 @@ const PrintResume = () => {
 		});
 	}, []);
 	return (
-		<Button onClick={globalThis?.print} variant="default" size="sm">
+		<Button
+			onClick={globalThis?.print}
+			variant="default"
+			size="sm"
+			className="text-[13px]">
 			Download as PDF
 		</Button>
 	);
