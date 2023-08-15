@@ -13,7 +13,7 @@ const EditBasicInfo = () => {
 	return (
 		<>
 			<Tabs defaultValue="about" className="w-[100%]">
-				<TabsList className="w-full mb-3">
+				<TabsList className="w-full mb-5">
 					<TabsTrigger value="about" className="w-full">
 						About
 					</TabsTrigger>
@@ -142,7 +142,7 @@ const EditBasicInfo = () => {
 									<Input
 										type="url"
 										id={profile.network}
-										placeholder=""
+										placeholder="Url"
 										value={profile.url}
 										onChange={(e) => {
 											const newProfiles = basicInfo.profiles.map((item, i) => {
