@@ -33,11 +33,19 @@ const Prisma: FC<indexProps> = ({}) => {
 					</div>
 					<div className="flex items-center gap-1 text-[11px]">
 						<HiOutlineMail />
-						<p className="text-[#E2E8F0]">salmandotweb@gmail.com</p>
+						<p className="text-[#E2E8F0]">{basicInfo.email}</p>
 					</div>
 				</div>
 				<div className="flex items-center justify-center gap-4 text-[11px]">
-					<div className="bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#7C3AED]">
+					{basicInfo.profiles.map((profile) => {
+						return (
+							<div className="bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#7C3AED]">
+								<HiOutlineGlobeAlt />
+								{profile.username}
+							</div>
+						);
+					})}
+					{/* <div className="bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#7C3AED]">
 						<HiOutlineGlobeAlt />
 						salmandotweb.me
 					</div>
@@ -48,7 +56,7 @@ const Prisma: FC<indexProps> = ({}) => {
 					<div className="bg-[#F2F2F2] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#222]">
 						<AiFillGithub />
 						salmandotweb
-					</div>
+					</div> */}
 				</div>
 			</div>
 			<Separator className="bg-[#334155]" />

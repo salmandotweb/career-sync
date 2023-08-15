@@ -12,25 +12,25 @@ const EditBasicInfo = () => {
 	const dispatch = useAppDispatch();
 	return (
 		<>
-			<Tabs defaultValue="contacts" className="w-[100%]">
+			<Tabs defaultValue="about" className="w-[100%]">
 				<TabsList className="w-full mb-3">
-					<TabsTrigger value="contacts" className="w-full">
-						Contacts
+					<TabsTrigger value="about" className="w-full">
+						About
+					</TabsTrigger>
+					<TabsTrigger value="contact" className="w-full">
+						Contact
 					</TabsTrigger>
 					<TabsTrigger value="links" className="w-full">
 						Links
 					</TabsTrigger>
-					<TabsTrigger value="about" className="w-full">
-						About
-					</TabsTrigger>
 				</TabsList>
 				<TabsContent
-					value="contacts"
+					value="about"
 					className="w-full flex items-start flex-col gap-5">
 					<div className="grid w-full max-w-sm items-center gap-2">
 						<Label htmlFor="name">Name</Label>
 						<Input
-							type="name"
+							type="text"
 							id="name"
 							placeholder="Name"
 							value={basicInfo.name}
@@ -47,7 +47,7 @@ const EditBasicInfo = () => {
 					<div className="grid w-full max-w-sm items-center gap-2">
 						<Label htmlFor="designation">Designation</Label>
 						<Input
-							type="name"
+							type="text"
 							id="designation"
 							placeholder="Designation"
 							value={basicInfo.label}
@@ -62,11 +62,108 @@ const EditBasicInfo = () => {
 						/>
 					</div>
 				</TabsContent>
-				<TabsContent value="links" className="w-full">
-					Change your password here.
+				<TabsContent
+					value="contact"
+					className="w-full flex items-start flex-col gap-5">
+					<div className="grid w-full max-w-sm items-center gap-2">
+						<Label htmlFor="location">Location</Label>
+						<Input
+							type="text"
+							id="location"
+							placeholder="Enter your location"
+							value={basicInfo.location.city}
+							onChange={(e) => {
+								dispatch(
+									updateBasicInfo({
+										...basicInfo,
+										location: {
+											...basicInfo.location,
+											city: e.target.value,
+										},
+									})
+								);
+							}}
+						/>
+					</div>
+					<div className="grid w-full max-w-sm items-center gap-2">
+						<Label htmlFor="email">Email</Label>
+						<Input
+							type="email"
+							id="email"
+							placeholder="Enter your email address"
+							value={basicInfo.email}
+							onChange={(e) => {
+								dispatch(
+									updateBasicInfo({
+										...basicInfo,
+										email: e.target.value,
+									})
+								);
+							}}
+						/>
+					</div>
 				</TabsContent>
-				<TabsContent value="about" className="w-full">
-					Change your password here.
+				<TabsContent
+					value="links"
+					className="w-full flex items-start flex-col gap-5">
+					{basicInfo.profiles.map((profile, index) => {
+						return (
+							<div className="grid w-full max-w-sm items-center gap-2">
+								<Label htmlFor={profile.network}>
+									{profile.network.charAt(0).toUpperCase() +
+										profile.network.slice(1)}
+								</Label>
+								<div className="flex items-center gap-3 flex-col">
+									<Input
+										type="text"
+										id={profile.username}
+										placeholder="Username"
+										value={profile.username}
+										onChange={(e) => {
+											const newProfiles = basicInfo.profiles.map((item, i) => {
+												if (index === i) {
+													return {
+														...item,
+														username: e.target.value,
+													};
+												}
+												return item;
+											});
+											dispatch(
+												updateBasicInfo({
+													...basicInfo,
+													profiles: newProfiles,
+												})
+											);
+										}}
+									/>
+									<Input
+										type="url"
+										id={profile.network}
+										placeholder=""
+										value={profile.url}
+										onChange={(e) => {
+											const newProfiles = basicInfo.profiles.map((item, i) => {
+												if (index === i) {
+													return {
+														...item,
+														url: e.target.value,
+													};
+												}
+												return item;
+											});
+											dispatch(
+												updateBasicInfo({
+													...basicInfo,
+													profiles: newProfiles,
+												})
+											);
+										}}
+									/>
+								</div>
+							</div>
+						);
+					})}
 				</TabsContent>
 			</Tabs>
 		</>

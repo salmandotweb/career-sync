@@ -2,11 +2,11 @@
 	"basics": {
 		"name": "Salman Nisar",
 		"label": "Frontend Software Engineer",
-		"image": "https://randomuser.me/api/portraits/men/18.jpg",
+		"image": "https://avatars.githubusercontent.com/u/74504762?v=4",
 		"email": "janedoe@email.com",
-		"phone": "+91 9876543210",
-		"url": "www.e-resume.vercel.app",
-		"summary": "I am a web developer having expertise in frontend development and exposure to back- end development. I design and develop web applications using the latest technologies to deliver the product with quality code.",
+		"phone": "+92 309 8675247",
+		"url": "https://www.salmandotweb.me/",
+		"summary": "I craft and develop web apps.",
 		"location": {
 			"address": "",
 			"postalCode": "",
@@ -14,44 +14,22 @@
 			"countryCode": "",
 			"region": ""
 		},
-		"relExp": "4 years",
-		"totalExp": "6 Years",
-		"objective": "Eager to expand my skill set through external trainings to help boost all major front desk KPIs. Hoping to leverage organizational skills to help ABC Corp introduce time-saving schemes for all executives.",
+		"relExp": "3",
 		"profiles": [
 			{
-				"network": "linkedin",
-				"username": "sadanandpai",
-				"url": "https://www.linkedin.com/in/sadanandpai/"
+				"network": "website",
+				"username": "salmandotweb.me",
+				"url": "https://www.salmandotweb.me/"
 			},
 			{
-				"network": "twitter",
-				"username": "sadanandpai",
-				"url": "https://www.twitter.com/sadanandpai/"
+				"network": "linkedin",
+				"username": "salmandotweb",
+				"url": "https://www.linkedin.com/in/salmandotweb/"
 			},
 			{
 				"network": "github",
-				"username": "sadanandpai",
-				"url": "https://github.com/sadanandpai/"
-			},
-			{
-				"network": "hackerrank",
-				"username": "paicube",
-				"url": "https://www.hackerrank.com/paicube/"
-			},
-			{
-				"network": "hackerearth",
-				"username": "sadanandpai",
-				"url": "https://www.hackerearth.com/sadanandpai/"
-			},
-			{
-				"network": "codechef",
-				"username": "sadanandpai",
-				"url": "https://www.codechef.com/sadanandpai/"
-			},
-			{
-				"network": "leetcode",
-				"username": "paicube",
-				"url": "https://leetcode.com/paicube/"
+				"username": "salmandotweb",
+				"url": "https://github.com/salmandotweb"
 			}
 		]
 	},

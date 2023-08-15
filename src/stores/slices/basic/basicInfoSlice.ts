@@ -2,7 +2,7 @@ import { RootState } from '@/stores/store'
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { BasicInfo } from './interfaces'
-import resumeData from '../../resume-data.json'
+import resumeData from '../../../stores/initialData/resume-data.json'
 
 
 const initialState: BasicInfo = resumeData.basics

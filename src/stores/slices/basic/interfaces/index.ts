@@ -22,8 +22,6 @@ export interface BasicInfo {
     summary: string;
     location: ILocation;
     relExp: string;
-    totalExp: string;
-    objective: string;
     profiles: IProfiles[];
 }
 
