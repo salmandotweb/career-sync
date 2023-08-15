@@ -108,7 +108,9 @@ const EditBasicInfo = () => {
 					className="w-full flex items-start flex-col gap-5">
 					{basicInfo.profiles.map((profile, index) => {
 						return (
-							<div className="grid w-full max-w-sm items-center gap-2">
+							<div
+								className="grid w-full max-w-sm items-center gap-2"
+								key={index}>
 								<Label htmlFor={profile.network}>
 									{profile.network.charAt(0).toUpperCase() +
 										profile.network.slice(1)}

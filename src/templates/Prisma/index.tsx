@@ -39,7 +39,9 @@ const Prisma: FC<indexProps> = ({}) => {
 				<div className="flex items-center justify-center gap-4 text-[11px]">
 					{basicInfo.profiles.map((profile) => {
 						return (
-							<div className="bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#7C3AED]">
+							<div
+								className="bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#7C3AED]"
+								key={profile.network}>
 								<HiOutlineGlobeAlt />
 								{profile.username}
 							</div>
