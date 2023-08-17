@@ -13,7 +13,7 @@ const Builder: FC = () => {
 		<div className="flex flex-col h-screen">
 			<Menu />
 			<main className="flex flex-1 max-h-[calc(100vh_-_3.5rem)] print:max-h-fit">
-				<aside className="w-[20vw] print:hidden border-r-2">
+				<aside className="w-[22.5vw] print:hidden border-r-2">
 					<Sidebar selectedTemplate={templateId} />
 				</aside>
 				<div className="flex flex-col flex-1 justify-center">

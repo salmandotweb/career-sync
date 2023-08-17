@@ -38,10 +38,10 @@ const EditExperience = () => {
 						Experience 3
 					</TabsTrigger>
 				</TabsList>
-				<TabsContent
-					value="experience1"
-					className="w-full flex items-start flex-col gap-5">
-					<ScrollArea className="h-[68vh] w-full border-none">
+				<ScrollArea className="h-[65vh] w-[100%]">
+					<TabsContent
+						value="experience1"
+						className="w-[100%] flex items-start flex-col gap-5">
 						<div className="grid w-full max-w-sm items-center gap-4">
 							<FormInput label="Company Name" name="companyName">
 								<Input
@@ -106,8 +106,8 @@ const EditExperience = () => {
 								/>
 							</FormInput>
 						</div>
-					</ScrollArea>
-				</TabsContent>
+					</TabsContent>
+				</ScrollArea>
 			</Tabs>
 		</>
 	);
