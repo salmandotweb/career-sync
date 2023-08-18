@@ -5,6 +5,11 @@ export interface IExperienceItem {
     joiningDate: string;
     endDate: string;
     currentlyWorkHere: boolean
-    skills: string[];
+    skills: ISkillsItem[];
     responsibilities: string[];
+}
+
+export interface ISkillsItem {
+    id: string;
+    name: string;
 }

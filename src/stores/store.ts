@@ -12,6 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage'
 import templateSlice from './slices/templates/templateSlice'
 import { experienceSlice } from './slices/experiences/experienceSlice'
+import featuredProjectSlice from './slices/featuredProject/featuredProjectSlice'
 
 const persistConfig = {
     key: 'root',
@@ -22,6 +23,7 @@ const rootReducers = combineReducers({
     template: templateSlice,
     basicInfoReducer: basicInfoSlice,
     experienceReducer: experienceSlice.reducer,
+    featuredProjectReducer: featuredProjectSlice
 })
 
 

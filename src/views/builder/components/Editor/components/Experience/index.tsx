@@ -11,16 +11,16 @@ import {
 	selectExperience,
 	updateExperience,
 } from "@/stores/slices/experiences/experienceSlice";
+import { ISkillsItem } from "@/stores/slices/experiences/interfaces";
 import { useState } from "react";
 
 const EditExperience = () => {
 	const experience = useAppSelector(selectExperience);
 	const dispatch = useAppDispatch();
 
-	const [selected, setSelected] = useState<{
-		id: number;
-		name: string;
-	} | null>(null);
+	const [selectedSkills, setSelectedSkills] = useState<
+		ISkillsItem[] | null | any
+	>([]);
 
 	const [joiningDate, setJoiningDate] = useState<Date | undefined>(undefined);
 	const [endingDate, setEndingDate] = useState<Date | undefined>(undefined);
@@ -97,7 +97,10 @@ const EditExperience = () => {
 								/>
 							</div>
 							<FormInput label="Skills" name="skills">
-								<MultiSelect selected={selected} setSelected={setSelected} />
+								<MultiSelect
+									selected={selectedSkills}
+									setSelected={setSelectedSkills}
+								/>
 							</FormInput>
 							<FormInput label="Responsibilities" name="experience">
 								<Textarea

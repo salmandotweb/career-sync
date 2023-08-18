@@ -40,5 +40,13 @@
 			"skills": [],
 			"responsibilities": []
 		}
-	]
+	],
+
+	"featuredProject": {
+		"projectName": "Nexcare.io",
+		"skills": [],
+		"description": "Nexcare.io is a platform that connects patients with doctors and provides them with a secure and easy way to communicate with each other. It also provides a platform for doctors to manage their patients and appointments.",
+		"projectLink": "https://www.nexcare.io/",
+		"portfolioLink": "https://www.salmandotweb.me/portfolio/nexcare"
+	}
 }

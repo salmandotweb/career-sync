@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { ISkillsItem } from "@/stores/slices/experiences/interfaces";
 
 const skills = [
 	{ id: 1, name: "JavaScript" },
@@ -28,15 +29,9 @@ export default function MultiSelect({
 	selected,
 	setSelected,
 }: {
-	selected: {
-		id: number;
-		name: string;
-	} | null;
+	selected: ISkillsItem[] | null;
 	setSelected: React.Dispatch<
-		React.SetStateAction<{
-			id: number;
-			name: string;
-		} | null>
+		React.SetStateAction<ISkillsItem[] | null | undefined>
 	>;
 }) {
 	const [selectSkills, setSelectSkills] = useState<

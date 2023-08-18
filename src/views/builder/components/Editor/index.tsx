@@ -1,5 +1,6 @@
 import EditBasicInfo from "./components/BasicInfo";
 import EditExperience from "./components/Experience";
+import FeaturedProject from "./components/FeaturedProject";
 
 export const headers: {
 	[key: string]: {
@@ -17,5 +18,10 @@ export const headers: {
 		title: "Experience",
 		templates: ["prisma"],
 		component: EditExperience,
+	},
+	featuredProject: {
+		title: "Featured project",
+		templates: ["prisma"],
+		component: FeaturedProject,
 	},
 };
