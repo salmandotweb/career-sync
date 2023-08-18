@@ -17,12 +17,15 @@ const EditExperience = () => {
 	const experience = useAppSelector(selectExperience);
 	const dispatch = useAppDispatch();
 
+	const [selected, setSelected] = useState<{
+		id: number;
+		name: string;
+	} | null>(null);
+
 	const [joiningDate, setJoiningDate] = useState<Date | undefined>(undefined);
 	const [endingDate, setEndingDate] = useState<Date | undefined>(undefined);
 
 	const experience1 = experience[0];
-	const experience2 = experience[1];
-	const experience3 = experience[2];
 
 	return (
 		<>
@@ -38,7 +41,7 @@ const EditExperience = () => {
 						Experience 3
 					</TabsTrigger>
 				</TabsList>
-				<ScrollArea className="h-[65vh] w-[100%]">
+				<ScrollArea className="h-[67vh] w-[100%]">
 					<TabsContent
 						value="experience1"
 						className="w-[100%] flex items-start flex-col gap-5">
@@ -94,7 +97,7 @@ const EditExperience = () => {
 								/>
 							</div>
 							<FormInput label="Skills" name="skills">
-								<MultiSelect />
+								<MultiSelect selected={selected} setSelected={setSelected} />
 							</FormInput>
 							<FormInput label="Responsibilities" name="experience">
 								<Textarea

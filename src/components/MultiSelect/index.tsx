@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
 const skills = [
 	{ id: 1, name: "JavaScript" },
@@ -24,31 +24,67 @@ const skills = [
 	{ id: 19, name: "React Hook Form" },
 ];
 
-export default function Example() {
-	const [selected, setSelected] = useState(skills[0]);
+export default function MultiSelect({
+	selected,
+	setSelected,
+}: {
+	selected: {
+		id: number;
+		name: string;
+	} | null;
+	setSelected: React.Dispatch<
+		React.SetStateAction<{
+			id: number;
+			name: string;
+		} | null>
+	>;
+}) {
+	const [selectSkills, setSelectSkills] = useState<
+		{
+			id: number;
+			name: string;
+		}[]
+	>([]);
 	const [query, setQuery] = useState("");
 
 	const filteredSkills =
 		query === ""
-			? skills
-			: skills.filter((skill) =>
-					skill.name
-						.toLowerCase()
-						.replace(/\s+/g, "")
-						.includes(query.toLowerCase().replace(/\s+/g, ""))
-			  );
+			? skills.filter((skill) => !selectSkills.includes(skill))
+			: skills
+					.filter((skill) =>
+						skill.name
+							.toLowerCase()
+							.replace(/\s+/g, "")
+							.includes(query.toLowerCase().replace(/\s+/g, ""))
+					)
+					.filter((skill) => !selectSkills.includes(skill));
 
 	return (
 		<div className="w-full">
-			<Combobox value={selected} onChange={setSelected}>
+			<Combobox
+				value={selected}
+				onChange={setSelected}
+				disabled={selectSkills?.length === 3}>
 				<div className="relative mt-1">
 					<div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
 						<Combobox.Input
 							className="flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-							displayValue={(person: { id: number; name: string }) =>
-								person.name
+							placeholder="Select Top 3 Skills used in this company"
+							displayValue={(skill: { id: number; name: string }) =>
+								skill?.name
 							}
-							onChange={(event) => setQuery(event.target.value)}
+							onChange={(e) => {
+								setQuery(e.target.value);
+							}}
+							onKeyDown={(e) => {
+								if (e.key === "Enter") {
+									if (filteredSkills.length > 0) {
+										if (!selectSkills.includes(filteredSkills[0])) {
+											setSelectSkills([...selectSkills, filteredSkills[0]]);
+										}
+									}
+								}
+							}}
 						/>
 						<Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
 							<ChevronUpDownIcon
@@ -77,7 +113,12 @@ export default function Example() {
 												active ? "bg-gray-300 text-black" : "text-gray-600"
 											}`
 										}
-										value={skill}>
+										value={""}
+										onClick={() => {
+											if (!selectSkills.includes(skill)) {
+												setSelectSkills([...selectSkills, skill]);
+											}
+										}}>
 										{({ selected }) => (
 											<>
 												<span
@@ -95,6 +136,40 @@ export default function Example() {
 					</Transition>
 				</div>
 			</Combobox>
+
+			<div className="flex flex-wrap gap-2 mt-2">
+				{selectSkills.map((skill) => (
+					<div
+						key={skill.id}
+						className="flex items-center justify-center px-2 py-1 bg-accent rounded-md text-accent-foreground text-sm">
+						{skill.name}
+
+						<button
+							className="ml-2"
+							onClick={() => {
+								setSelectSkills(
+									selectSkills.filter((selectedSkill) => {
+										return selectedSkill.id !== skill.id;
+									})
+								);
+							}}>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								className="h-4 w-4"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor">
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						</button>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 }

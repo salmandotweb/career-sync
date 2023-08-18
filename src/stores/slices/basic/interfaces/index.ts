@@ -5,11 +5,7 @@ export type IProfiles = {
 };
 
 type ILocation = {
-    address: string;
-    postalCode: string;
     city: string;
-    countryCode: string;
-    region: string;
 };
 
 export interface BasicInfo {
@@ -21,7 +17,6 @@ export interface BasicInfo {
     url: string;
     summary: string;
     location: ILocation;
-    relExp: string;
     profiles: IProfiles[];
 }
 

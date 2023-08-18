@@ -5,7 +5,7 @@ import { IExperienceItem } from './interfaces'
 import resumeData from '../../initialData/resume-data.json'
 
 
-const initialState: IExperienceItem[] = resumeData.work
+const initialState: IExperienceItem[] = resumeData.experience
 
 export const experienceSlice = createSlice({
     name: 'experience',
