@@ -1,4 +1,5 @@
 import EditBasicInfo from "./components/BasicInfo";
+import Education from "./components/Education";
 import EditExperience from "./components/Experience";
 import FeaturedProject from "./components/FeaturedProject";
 import SkillsTools from "./components/SkillsTools";
@@ -14,6 +15,11 @@ export const headers: {
 		title: "Basic details",
 		templates: ["prisma"],
 		component: EditBasicInfo,
+	},
+	education: {
+		title: "Education",
+		templates: ["prisma"],
+		component: Education,
 	},
 	experience: {
 		title: "Experience",

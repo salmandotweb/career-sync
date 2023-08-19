@@ -14,13 +14,15 @@ import {
 export function CustomCalendar({
 	date,
 	setDate,
+	disabled,
 }: {
 	date: Date | undefined;
 	setDate: React.Dispatch<React.SetStateAction<Date | undefined>>;
+	disabled?: boolean;
 }) {
 	return (
 		<Popover>
-			<PopoverTrigger asChild>
+			<PopoverTrigger asChild disabled={disabled}>
 				<Button
 					variant={"outline"}
 					className={cn(
@@ -34,9 +36,11 @@ export function CustomCalendar({
 			<PopoverContent className="w-[100%] p-0">
 				<Calendar
 					mode="single"
+					captionLayout="dropdown-buttons"
 					selected={date}
 					onSelect={setDate}
-					initialFocus
+					fromYear={1960}
+					toYear={2030}
 				/>
 			</PopoverContent>
 		</Popover>

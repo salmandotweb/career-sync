@@ -79,3 +79,7 @@
 		font-family: "Plus Jakarta Sans", sans-serif;
 	}
 }
+
+.rdp-vhidden {
+	@apply hidden;
+}

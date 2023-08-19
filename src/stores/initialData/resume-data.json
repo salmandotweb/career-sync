@@ -10,6 +10,7 @@
 		"location": {
 			"city": "Lahore"
 		},
+
 		"profiles": [
 			{
 				"network": "website",
@@ -32,12 +33,20 @@
 		]
 	},
 
+	"education": {
+		"degree": "BS Computer Science",
+		"institution": "University of Central Punjab",
+		"startDate": "2016-09-01",
+		"endDate": "2020-06-01",
+		"currentlyEnrolled": true
+	},
+
 	"experience": [
 		{
 			"id": "1",
 			"name": "Rising Technologies",
 			"position": "Frontend Software Engineer",
-			"joiningDate": "2019-10-01",
+			"joiningDate": "2020-10-01",
 			"endDate": "2020-10-01",
 			"currentlyWorkHere": true,
 			"skills": [],

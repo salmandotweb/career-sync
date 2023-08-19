@@ -12,11 +12,14 @@ import { BsCalendar2Minus } from "react-icons/bs";
 import { Badge } from "@/components/ui/badge";
 import { BsLink45Deg } from "react-icons/bs";
 import { BsStars } from "react-icons/bs";
+import { selectEducation } from "@/stores/slices/education/educationSlice";
+import { formatDate, formatDateAsDate } from "@/lib/utils";
 
 interface indexProps {}
 
 const Prisma: FC<indexProps> = ({}) => {
 	const basicInfo = useAppSelector(selectBasicInfo);
+	const education = useAppSelector(selectEducation);
 
 	return (
 		<div
@@ -68,15 +71,18 @@ const Prisma: FC<indexProps> = ({}) => {
 				<div className="grid grid-cols-[1fr,3.5fr,1fr] gap-2 items-start w-[100%]">
 					<h1 className="text-[#E2E8F0] text-[12px] font-medium">Education</h1>
 					<h1 className="text-[#E2E8F0] text-[12px] font-medium">
-						Software Engineering <span className="text-[#CBD5E1]"> - </span>
+						{education.degree} <span className="text-[#CBD5E1]"> - </span>
 						<span className="text-[#E2E8F0] font-light">
-							Virtual University Pakistan
+							{education.institution}
 						</span>
 					</h1>
 					<div className="flex items-center gap-2 text-[8px] ml-auto">
 						<BsCalendar2Minus />
-						<h3 className="text-[#E2E8F0] text-[10px] font-medium">
-							Nov 2022 - present
+						<h3 className="text-[#E2E8F0] text-[10px] font-medium whitespace-nowrap">
+							{formatDate(new Date(education.startDate))} -{" "}
+							{education.currentlyEnrolled
+								? "Present"
+								: formatDate(new Date(education.endDate))}
 						</h3>
 					</div>
 				</div>
