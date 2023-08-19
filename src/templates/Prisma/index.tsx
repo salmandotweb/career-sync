@@ -123,7 +123,7 @@ const Prisma: FC<indexProps> = ({}) => {
 						</div>
 						<div className="flex items-center justify-start gap-3">
 							{featuredProject.skills?.map((skill) => {
-								return <CustomBadge label={skill.name} />;
+								return <CustomBadge label={skill.name} key={skill.id} />;
 							})}
 						</div>
 						<div className="flex flex-col gap-1 justify-start items-start mt-2">
