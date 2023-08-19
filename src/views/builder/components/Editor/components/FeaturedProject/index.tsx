@@ -29,8 +29,8 @@ const FeaturedProject = () => {
 				label="Skills you used in this project"
 				name="featuredProjectSkills">
 				<MultiSelect
-					selected={selectedSkills}
-					setSelected={setSelectedSkills}
+					selectSkills={selectedSkills}
+					setSelectSkills={setSelectedSkills}
 				/>
 			</FormInput>
 			<FormInput label="About your project" name="aboutProject">

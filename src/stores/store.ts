@@ -18,6 +18,7 @@ import educationSlice from './slices/education/educationSlice'
 const persistConfig = {
     key: 'root',
     storage: storage,
+    version: 1,
 }
 
 const rootReducers = combineReducers({

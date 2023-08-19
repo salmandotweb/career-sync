@@ -49,8 +49,59 @@
 			"joiningDate": "2020-10-01",
 			"endDate": "2020-10-01",
 			"currentlyWorkHere": true,
+			"skills": [
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 2, "name": "TypeScript" },
+				{ "id": 3, "name": "React" }
+			],
+			"responsibilities": [
+				{
+					"id": "1",
+					"responsibility": "Developed and maintained web applications using React.js and Redux."
+				},
+				{
+					"id": "2",
+					"responsibility": "Developed and maintained web applications using React.js and Redux."
+				}
+			]
+		},
+		{
+			"id": "2",
+			"name": "Rising Technologies",
+			"position": "Frontend Software Engineer",
+			"joiningDate": "2020-10-01",
+			"endDate": "2020-10-01",
+			"currentlyWorkHere": true,
 			"skills": [],
-			"responsibilities": []
+			"responsibilities": [
+				{
+					"id": "1",
+					"responsibility": "Developed and maintained web applications using React.js and Redux."
+				},
+				{
+					"id": "2",
+					"responsibility": "Developed and maintained web applications using React.js and Redux."
+				}
+			]
+		},
+		{
+			"id": "3",
+			"name": "Rising Technologies",
+			"position": "Frontend Software Engineer",
+			"joiningDate": "2020-10-01",
+			"endDate": "2020-10-01",
+			"currentlyWorkHere": true,
+			"skills": [],
+			"responsibilities": [
+				{
+					"id": "1",
+					"responsibility": "Developed and maintained web applications using React.js and Redux."
+				},
+				{
+					"id": "2",
+					"responsibility": "Developed and maintained web applications using React.js and Redux."
+				}
+			]
 		}
 	],
 

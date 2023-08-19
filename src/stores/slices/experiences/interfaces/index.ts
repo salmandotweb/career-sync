@@ -6,10 +6,15 @@ export interface IExperienceItem {
     endDate: string;
     currentlyWorkHere: boolean
     skills: ISkillsItem[];
-    responsibilities: string[];
+    responsibilities: Responsibility[];
 }
 
 export interface ISkillsItem {
-    id: string;
+    id: string | number;
     name: string;
+}
+
+export interface Responsibility {
+    id: string;
+    responsibility: string;
 }

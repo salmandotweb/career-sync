@@ -27,14 +27,14 @@ const SkillsTools = () => {
 					className="w-full flex items-start flex-col gap-5">
 					<FormInput label="Frontend Related" name="frontendRelated">
 						<MultiSelect
-							selected={selectedSkills}
-							setSelected={setSelectedSkills}
+							selectSkills={selectedSkills}
+							setSelectSkills={setSelectedSkills}
 						/>
 					</FormInput>
 					<FormInput label="Backend Related" name="backendRelated">
 						<MultiSelect
-							selected={selectedSkills}
-							setSelected={setSelectedSkills}
+							selectSkills={selectedSkills}
+							setSelectSkills={setSelectedSkills}
 						/>
 					</FormInput>
 				</TabsContent>
@@ -43,20 +43,20 @@ const SkillsTools = () => {
 					className="w-full flex items-start flex-col gap-5">
 					<FormInput label="UI Related" name="UIRelated">
 						<MultiSelect
-							selected={selectedSkills}
-							setSelected={setSelectedSkills}
+							selectSkills={selectedSkills}
+							setSelectSkills={setSelectedSkills}
 						/>
 					</FormInput>
 					<FormInput label="Frontend Related" name="frontendRelated">
 						<MultiSelect
-							selected={selectedSkills}
-							setSelected={setSelectedSkills}
+							selectSkills={selectedSkills}
+							setSelectSkills={setSelectedSkills}
 						/>
 					</FormInput>
 					<FormInput label="Backend Related" name="backendRelated">
 						<MultiSelect
-							selected={selectedSkills}
-							setSelected={setSelectedSkills}
+							selectSkills={selectedSkills}
+							setSelectSkills={setSelectedSkills}
 						/>
 					</FormInput>
 				</TabsContent>
@@ -65,14 +65,14 @@ const SkillsTools = () => {
 					className="w-full flex items-start flex-col gap-5">
 					<FormInput label="Coder Related" name="codeRelated">
 						<MultiSelect
-							selected={selectedSkills}
-							setSelected={setSelectedSkills}
+							selectSkills={selectedSkills}
+							setSelectSkills={setSelectedSkills}
 						/>
 					</FormInput>
 					<FormInput label="Designer Related" name="designerRelated">
 						<MultiSelect
-							selected={selectedSkills}
-							setSelected={setSelectedSkills}
+							selectSkills={selectedSkills}
+							setSelectSkills={setSelectedSkills}
 						/>
 					</FormInput>
 				</TabsContent>

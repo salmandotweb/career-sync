@@ -26,20 +26,14 @@ const skills = [
 ];
 
 export default function MultiSelect({
-	selected,
-	setSelected,
+	selectSkills,
+	setSelectSkills,
+	maxSkills = 3,
 }: {
-	selected: ISkillsItem[] | null;
-	setSelected: React.Dispatch<
-		React.SetStateAction<ISkillsItem[] | null | undefined>
-	>;
+	selectSkills: ISkillsItem[];
+	setSelectSkills: (skills: ISkillsItem[]) => void;
+	maxSkills?: number;
 }) {
-	const [selectSkills, setSelectSkills] = useState<
-		{
-			id: number;
-			name: string;
-		}[]
-	>([]);
 	const [query, setQuery] = useState("");
 
 	const filteredSkills =
@@ -56,15 +50,12 @@ export default function MultiSelect({
 
 	return (
 		<div className="w-full">
-			<Combobox
-				value={selected}
-				onChange={setSelected}
-				disabled={selectSkills?.length === 3}>
+			<Combobox disabled={selectSkills?.length === maxSkills}>
 				<div className="relative mt-1">
 					<div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
 						<Combobox.Input
 							className="flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-							placeholder="Select Top 3 Skills used in this company"
+							placeholder={`Select Top ${maxSkills} Skills used in this company`}
 							displayValue={(skill: { id: number; name: string }) =>
 								skill?.name
 							}

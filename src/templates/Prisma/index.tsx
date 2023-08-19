@@ -13,13 +13,16 @@ import { Badge } from "@/components/ui/badge";
 import { BsLink45Deg } from "react-icons/bs";
 import { BsStars } from "react-icons/bs";
 import { selectEducation } from "@/stores/slices/education/educationSlice";
-import { formatDate, formatDateAsDate } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
+import { selectExperience } from "@/stores/slices/experiences/experienceSlice";
+import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
 
 interface indexProps {}
 
 const Prisma: FC<indexProps> = ({}) => {
 	const basicInfo = useAppSelector(selectBasicInfo);
 	const education = useAppSelector(selectEducation);
+	const experiences = useAppSelector(selectExperience);
 
 	return (
 		<div
@@ -90,11 +93,16 @@ const Prisma: FC<indexProps> = ({}) => {
 				<div className="grid grid-cols-[1fr,4.7fr] gap-2 items-start w-[100%]">
 					<h1 className="text-[#E2E8F0] text-[12px] font-medium">Experience</h1>
 					<div className="flex flex-col gap-3">
-						<Experience />
-						<Separator className="bg-[#334155]" />
-						<Experience />
-						<Separator className="bg-[#334155]" />
-						<Experience />
+						{experiences?.map((experience) => {
+							return (
+								<>
+									<Experience {...experience} key={experience.id} />
+									{experience.id !== experiences[experiences.length - 1].id && (
+										<Separator className="bg-[#334155]" />
+									)}
+								</>
+							);
+						})}
 					</div>
 				</div>
 				<Separator className="bg-[#334155]" />
@@ -154,31 +162,44 @@ const Prisma: FC<indexProps> = ({}) => {
 
 export default Prisma;
 
-const Experience = () => {
+const Experience = ({
+	name,
+	position,
+	joiningDate,
+	endDate,
+	currentlyWorkHere,
+	skills,
+	responsibilities,
+}: IExperienceItem) => {
 	return (
 		<div className="flex flex-col gap-2 w-[100%]">
 			<div className="grid grid-cols-[2fr,1fr] gap-3 items-start w-[100%]">
 				<h1 className="text-[#E2E8F0] text-[12px] font-medium">
-					Rising Technologies <span className="text-[#CBD5E1]"> - </span>
-					<span className="text-[#E2E8F0] font-light">
-						Frontend Software Engineer
-					</span>
+					{name} <span className="text-[#CBD5E1]"> - </span>
+					<span className="text-[#E2E8F0] font-light">{position}</span>
 				</h1>
 				<div className="flex items-center gap-2 text-[8px] ml-auto">
 					<BsCalendar2Minus />
-					<h3 className="text-[#E2E8F0] text-[10px] font-medium">
-						Nov 2022 - present
+					<h3 className="text-[#E2E8F0] text-[10px] font-medium whitespace-nowrap">
+						{formatDate(new Date(joiningDate))} -{" "}
+						{currentlyWorkHere ? "Present" : formatDate(new Date(endDate))}
 					</h3>
 				</div>
 			</div>
 			<div className="flex items-center justify-start gap-3">
-				<CustomBadge label="Next.Js" />
-				<CustomBadge label="Typescript" />
-				<CustomBadge label="Material UI" />
+				{skills?.map((skill) => {
+					return <CustomBadge label={skill.name} key={skill.id} />;
+				})}
 			</div>
 			<div className="flex flex-col gap-3 justify-start items-start mt-2">
-				<Summary summary="Spearheaded the development and design of exceptional layouts and interfaces, resulting in seamless user experiences." />
-				<Summary summary="Collaborated with cross-functional teams on the creation of innovative and user-friendly solutions." />
+				{responsibilities?.map((responsibility) => {
+					return (
+						<Summary
+							summary={responsibility.responsibility}
+							key={responsibility.id}
+						/>
+					);
+				})}
 			</div>
 		</div>
 	);

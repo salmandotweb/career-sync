@@ -2,19 +2,16 @@ import { CustomCalendar } from "@/components/Calendar";
 import { CheckboxWithText } from "@/components/Checkbox";
 import FormInput from "@/components/FormInput";
 import { Input } from "@/components/ui/input";
-import { formatDate, formatDateAsDate } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import {
 	selectEducation,
 	updateEducation,
 } from "@/stores/slices/education/educationSlice";
-import { useState } from "react";
 
 const Education = () => {
 	const education = useAppSelector(selectEducation);
 	const dispatch = useAppDispatch();
-	const [joiningDate, setJoiningDate] = useState<Date | undefined>(undefined);
-	const [endingDate, setEndingDate] = useState<Date | undefined>(undefined);
 
 	return (
 		<div className="w-full flex items-start flex-col gap-5">

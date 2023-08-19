@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import { formatDate } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import {
 	selectExperience,
@@ -18,12 +19,7 @@ const EditExperience = () => {
 	const experience = useAppSelector(selectExperience);
 	const dispatch = useAppDispatch();
 
-	const [selectedSkills, setSelectedSkills] = useState<
-		ISkillsItem[] | null | any
-	>([]);
-
-	const [joiningDate, setJoiningDate] = useState<Date | undefined>(undefined);
-	const [endingDate, setEndingDate] = useState<Date | undefined>(undefined);
+	const [selectedSkills, setSelectedSkills] = useState<ISkillsItem[]>([]);
 
 	const experience1 = experience[0];
 
@@ -85,30 +81,117 @@ const EditExperience = () => {
 								/>
 							</FormInput>
 							<FormInput label="Joining Date" name="joiningDate">
-								<CustomCalendar date={joiningDate} setDate={setJoiningDate} />
+								<CustomCalendar
+									date={new Date(experience1.joiningDate)}
+									setDate={(date) => {
+										dispatch(
+											updateExperience({
+												index: 0,
+												updatedInfo: {
+													...experience1,
+													joiningDate: formatDate(date as Date),
+												},
+											})
+										);
+									}}
+								/>
 							</FormInput>
-							<FormInput label="Ending Date" name="endingDate">
-								<CustomCalendar date={endingDate} setDate={setEndingDate} />
+							<FormInput label="Leaving Date" name="leavingDate">
+								<CustomCalendar
+									date={new Date(experience1.endDate)}
+									disabled={experience1.currentlyWorkHere}
+									setDate={(date) => {
+										dispatch(
+											updateExperience({
+												index: 0,
+												updatedInfo: {
+													...experience1,
+													endDate: formatDate(date as Date),
+												},
+											})
+										);
+									}}
+								/>
 							</FormInput>
 							<div className="flex items-center justify-end">
 								<CheckboxWithText
 									id="currentlyWorkHere"
 									label="I currently work here"
+									value={experience1.currentlyWorkHere}
+									onChange={(value) => {
+										dispatch(
+											updateExperience({
+												index: 0,
+												updatedInfo: {
+													...experience1,
+													currentlyWorkHere: value,
+												},
+											})
+										);
+									}}
 								/>
 							</div>
 							<FormInput label="Skills" name="skills">
 								<MultiSelect
-									selected={selectedSkills}
-									setSelected={setSelectedSkills}
+									maxSkills={3}
+									selectSkills={experience1.skills}
+									setSelectSkills={(skills) => {
+										dispatch(
+											updateExperience({
+												index: 0,
+												updatedInfo: {
+													...experience1,
+													skills,
+												},
+											})
+										);
+									}}
 								/>
 							</FormInput>
 							<FormInput label="Responsibilities" name="experience">
 								<Textarea
 									className="resize-none"
-									placeholder="
-								Tell us about your responsibilities in this position
-							"
-									rows={8}
+									placeholder="1."
+									rows={2}
+									value={experience1.responsibilities[0].responsibility ?? ""}
+									onChange={(e) => {
+										dispatch(
+											updateExperience({
+												index: 0,
+												updatedInfo: {
+													...experience1,
+													responsibilities: [
+														{
+															...experience1.responsibilities[0],
+															responsibility: e.target.value,
+														},
+													],
+												},
+											})
+										);
+									}}
+								/>
+								<Textarea
+									className="resize-none"
+									placeholder="2."
+									rows={2}
+									value={experience1.responsibilities[1].responsibility ?? ""}
+									onChange={(e) => {
+										dispatch(
+											updateExperience({
+												index: 0,
+												updatedInfo: {
+													...experience1,
+													responsibilities: [
+														{
+															...experience1.responsibilities[1],
+															responsibility: e.target.value,
+														},
+													],
+												},
+											})
+										);
+									}}
 								/>
 							</FormInput>
 						</div>
