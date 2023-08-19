@@ -29,33 +29,40 @@ export default function MultiSelect({
 	selectSkills,
 	setSelectSkills,
 	maxSkills = 3,
+	placeholder = `Select Top ${maxSkills} Skills used in this company`,
+	unlimited = false,
 }: {
 	selectSkills: ISkillsItem[];
 	setSelectSkills: (skills: ISkillsItem[]) => void;
 	maxSkills?: number;
+	placeholder?: string;
+	unlimited?: boolean;
 }) {
 	const [query, setQuery] = useState("");
 
 	const filteredSkills =
 		query === ""
-			? skills.filter((skill) => !selectSkills.includes(skill))
-			: skills
-					.filter((skill) =>
-						skill.name
-							.toLowerCase()
-							.replace(/\s+/g, "")
-							.includes(query.toLowerCase().replace(/\s+/g, ""))
-					)
-					.filter((skill) => !selectSkills.includes(skill));
+			? skills.filter((skill) => {
+					return !selectSkills.some(
+						(selectedSkill) => selectedSkill.id === skill.id
+					);
+			  })
+			: skills.filter((skill) => {
+					return (
+						skill.name.toLowerCase().includes(query.toLowerCase()) &&
+						!selectSkills.some((selectedSkill) => selectedSkill.id === skill.id)
+					);
+			  });
 
 	return (
 		<div className="w-full">
-			<Combobox disabled={selectSkills?.length === maxSkills}>
+			<Combobox
+				disabled={unlimited ? false : selectSkills?.length === maxSkills}>
 				<div className="relative mt-1">
 					<div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
 						<Combobox.Input
 							className="flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-							placeholder={`Select Top ${maxSkills} Skills used in this company`}
+							placeholder={placeholder}
 							displayValue={(skill: { id: number; name: string }) =>
 								skill?.name
 							}

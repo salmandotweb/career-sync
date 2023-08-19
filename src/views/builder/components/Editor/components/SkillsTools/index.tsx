@@ -37,6 +37,8 @@ const SkillsTools = () => {
 							{skill.frontendRelated && (
 								<FormInput label="Frontend Related" name="frontendRelated">
 									<MultiSelect
+										placeholder="Select frontend languages you know"
+										unlimited
 										selectSkills={skill.frontendRelated}
 										setSelectSkills={(skills) => {
 											dispatch(
@@ -56,6 +58,8 @@ const SkillsTools = () => {
 							{skill.uiRelated && (
 								<FormInput label="UI Related" name="UIRelated">
 									<MultiSelect
+										placeholder="Select UI languages you know"
+										unlimited
 										selectSkills={skill.uiRelated}
 										setSelectSkills={(skills) => {
 											dispatch(
@@ -75,6 +79,8 @@ const SkillsTools = () => {
 							{skill.backendRelated && (
 								<FormInput label="Backend Related" name="backendRelated">
 									<MultiSelect
+										placeholder="Select backend languages you know"
+										unlimited
 										selectSkills={skill.backendRelated}
 										setSelectSkills={(skills) => {
 											dispatch(
@@ -94,6 +100,8 @@ const SkillsTools = () => {
 							{skill.coderRelated && (
 								<FormInput label="Coder Related" name="coderRelated">
 									<MultiSelect
+										placeholder="Select code related tools you use"
+										unlimited
 										selectSkills={skill.coderRelated}
 										setSelectSkills={(skills) => {
 											dispatch(
@@ -113,6 +121,8 @@ const SkillsTools = () => {
 							{skill.designerRelated && (
 								<FormInput label="Designer Related" name="designerRelated">
 									<MultiSelect
+										placeholder="Select design related tools you use"
+										unlimited
 										selectSkills={skill.designerRelated}
 										setSelectSkills={(skills) => {
 											dispatch(

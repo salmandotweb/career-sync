@@ -17,6 +17,8 @@ import { formatDate } from "@/lib/utils";
 import { selectExperience } from "@/stores/slices/experiences/experienceSlice";
 import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
 import { selectFeaturedProject } from "@/stores/slices/featuredProject/featuredProjectSlice";
+import { selectSkills } from "@/stores/slices/skills/educationSlice";
+import { SkillsTools } from "@/stores/slices/skills/interfaces";
 
 interface indexProps {}
 
@@ -25,7 +27,7 @@ const Prisma: FC<indexProps> = ({}) => {
 	const education = useAppSelector(selectEducation);
 	const experiences = useAppSelector(selectExperience);
 	const featuredProject = useAppSelector(selectFeaturedProject);
-	const skills = useAppSelector(selectFeaturedProject);
+	const skills = useAppSelector(selectSkills);
 
 	return (
 		<div
@@ -148,11 +150,17 @@ const Prisma: FC<indexProps> = ({}) => {
 						Skills and Tools
 					</h1>
 					<div className="flex flex-col gap-2">
-						<Skills />
-						<Separator className="bg-[#334155]" />
-						<Skills />
-						<Separator className="bg-[#334155]" />
-						<Skills />
+						{skills?.map((skill, index) => {
+							return (
+								<>
+									<Skills {...skill} />
+
+									{index !== skills.length - 1 && (
+										<Separator className="bg-[#334155]" />
+									)}
+								</>
+							);
+						})}
 					</div>
 				</div>
 			</div>
@@ -205,27 +213,71 @@ const Experience = ({
 	);
 };
 
-const Skills = () => {
+const Skills = (skill: SkillsTools) => {
 	return (
 		<div className="flex items-start gap-1.5 flex-col">
-			<h1 className="text-[#E2E8F0] text-[12px] font-medium">Languages</h1>
-			<div className="flex items-center gap-3">
-				<p className="text-[#64748B] text-[12px]">Frontend related</p>
-				<div className="flex items-center gap-2">
-					<CustomBadge label="Javascript" />
-					<CustomBadge label="React.Js" />
-					<CustomBadge label="Next.Js" />
-					<CustomBadge label="Typescript" />
+			<h1 className="text-[#E2E8F0] text-[12px] font-medium">{skill.title}</h1>
+
+			{skill.frontendRelated && (
+				<div className="flex items-start gap-3">
+					<p className="text-[#64748B] text-[12px] whitespace-nowrap min-w-[100px]">
+						Frontend related
+					</p>
+					<div className="flex items-center gap-2 flex-wrap">
+						{skill.frontendRelated?.map((skill) => {
+							return <CustomBadge label={skill.name} key={skill.id} />;
+						})}
+					</div>
 				</div>
-			</div>
-			<div className="flex items-center gap-5">
-				<p className="text-[#64748B] text-[12px]">Backend related</p>
-				<div className="flex items-center gap-2">
-					<CustomBadge label="Node.Js" />
-					<CustomBadge label="TRPC" />
-					<CustomBadge label="Postgresql" />
+			)}
+			{skill.uiRelated && (
+				<div className="flex items-start gap-3">
+					<p className="text-[#64748B] text-[12px] whitespace-nowrap min-w-[100px]">
+						UI related
+					</p>
+					<div className="flex items-center gap-2 flex-wrap">
+						{skill.uiRelated?.map((skill) => {
+							return <CustomBadge label={skill.name} key={skill.id} />;
+						})}
+					</div>
 				</div>
-			</div>
+			)}
+			{skill.backendRelated && (
+				<div className="flex items-start gap-3">
+					<p className="text-[#64748B] text-[12px] whitespace-nowrap min-w-[100px]">
+						Backend related
+					</p>
+					<div className="flex items-center gap-2 flex-wrap">
+						{skill.backendRelated?.map((skill) => {
+							return <CustomBadge label={skill.name} key={skill.id} />;
+						})}
+					</div>
+				</div>
+			)}
+			{skill.coderRelated && (
+				<div className="flex items-start gap-3">
+					<p className="text-[#64748B] text-[12px] whitespace-nowrap min-w-[100px]">
+						Coder related
+					</p>
+					<div className="flex items-center gap-2 flex-wrap">
+						{skill.coderRelated?.map((skill) => {
+							return <CustomBadge label={skill.name} key={skill.id} />;
+						})}
+					</div>
+				</div>
+			)}
+			{skill.designerRelated && (
+				<div className="flex items-start gap-3">
+					<p className="text-[#64748B] text-[12px] whitespace-nowrap min-w-[100px]">
+						Designer related
+					</p>
+					<div className="flex items-center gap-2 flex-wrap">
+						{skill.designerRelated?.map((skill) => {
+							return <CustomBadge label={skill.name} key={skill.id} />;
+						})}
+					</div>
+				</div>
+			)}
 		</div>
 	);
 };
