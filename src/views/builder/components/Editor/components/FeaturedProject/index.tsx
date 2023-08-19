@@ -41,6 +41,7 @@ const FeaturedProject = () => {
 				label="Skills you used in this project"
 				name="featuredProjectSkills">
 				<MultiSelect
+					maxSkills={6}
 					selectSkills={featuredProject.skills}
 					setSelectSkills={(skills) => {
 						dispatch(
