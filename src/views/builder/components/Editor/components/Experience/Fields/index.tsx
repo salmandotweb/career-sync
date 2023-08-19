@@ -17,8 +17,6 @@ interface indexProps {
 const Fields: FC<indexProps> = ({ experience }) => {
 	const dispatch = useAppDispatch();
 
-	console.log(experience.responsibilities[1].responsibility);
-
 	return (
 		<div className="grid w-full max-w-sm items-center gap-4">
 			<FormInput label="Company Name" name="companyName">

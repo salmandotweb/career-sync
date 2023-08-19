@@ -2,13 +2,18 @@ import FormInput from "@/components/FormInput";
 import MultiSelect from "@/components/MultiSelect";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useAppSelector } from "@/stores/hooks";
+import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { ISkillsItem } from "@/stores/slices/experiences/interfaces";
-import { selectFeaturedProject } from "@/stores/slices/featuredProject/featuredProjectSlice";
+import {
+	selectFeaturedProject,
+	updateFeaturedProject,
+} from "@/stores/slices/featuredProject/featuredProjectSlice";
 import { useState } from "react";
 
 const FeaturedProject = () => {
 	const featuredProject = useAppSelector(selectFeaturedProject);
+
+	const dispatch = useAppDispatch();
 
 	const [selectedSkills, setSelectedSkills] = useState<
 		ISkillsItem[] | null | any
@@ -22,25 +27,45 @@ const FeaturedProject = () => {
 					id="projectName"
 					placeholder="Enter the project name"
 					value={featuredProject.projectName}
-					onChange={(e) => {}}
+					onChange={(e) => {
+						dispatch(
+							updateFeaturedProject({
+								...featuredProject,
+								projectName: e.target.value,
+							})
+						);
+					}}
 				/>
 			</FormInput>
 			<FormInput
 				label="Skills you used in this project"
 				name="featuredProjectSkills">
 				<MultiSelect
-					selectSkills={selectedSkills}
-					setSelectSkills={setSelectedSkills}
+					selectSkills={featuredProject.skills}
+					setSelectSkills={(skills) => {
+						dispatch(
+							updateFeaturedProject({
+								...featuredProject,
+								skills: skills,
+							})
+						);
+					}}
 				/>
 			</FormInput>
 			<FormInput label="About your project" name="aboutProject">
 				<Textarea
 					className="resize-none"
 					value={featuredProject.description}
-					placeholder="
-        Tell us about your project
-							"
+					placeholder="Tell us about your project"
 					rows={6}
+					onChange={(e) => {
+						dispatch(
+							updateFeaturedProject({
+								...featuredProject,
+								description: e.target.value,
+							})
+						);
+					}}
 				/>
 			</FormInput>
 			<FormInput label="Project Link" name="projectLink">
@@ -49,7 +74,14 @@ const FeaturedProject = () => {
 					id="projectLink"
 					placeholder="Enter the project link"
 					value={featuredProject.projectLink}
-					onChange={(e) => {}}
+					onChange={(e) => {
+						dispatch(
+							updateFeaturedProject({
+								...featuredProject,
+								projectLink: e.target.value,
+							})
+						);
+					}}
 				/>
 			</FormInput>
 			<FormInput label="Portfolio Link" name="portfolioLink">
@@ -58,7 +90,14 @@ const FeaturedProject = () => {
 					id="portfolioLink"
 					placeholder="Enter the portfolio link"
 					value={featuredProject.portfolioLink}
-					onChange={(e) => {}}
+					onChange={(e) => {
+						dispatch(
+							updateFeaturedProject({
+								...featuredProject,
+								portfolioLink: e.target.value,
+							})
+						);
+					}}
 				/>
 			</FormInput>
 		</div>

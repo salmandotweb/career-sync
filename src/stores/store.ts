@@ -14,6 +14,7 @@ import templateSlice from './slices/templates/templateSlice'
 import { experienceSlice } from './slices/experiences/experienceSlice'
 import featuredProjectSlice from './slices/featuredProject/featuredProjectSlice'
 import educationSlice from './slices/education/educationSlice'
+import { skillSlice } from './slices/skills/educationSlice'
 
 const persistConfig = {
     key: 'root',
@@ -26,7 +27,8 @@ const rootReducers = combineReducers({
     basicInfoReducer: basicInfoSlice,
     educationReducer: educationSlice,
     experienceReducer: experienceSlice.reducer,
-    featuredProjectReducer: featuredProjectSlice
+    featuredProjectReducer: featuredProjectSlice,
+    skillsReducer: skillSlice.reducer,
 })
 
 

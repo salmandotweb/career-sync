@@ -107,9 +107,60 @@
 
 	"featuredProject": {
 		"projectName": "Nexcare.io",
-		"skills": [],
+		"skills": [
+			{ "id": 1, "name": "JavaScript" },
+			{ "id": 2, "name": "TypeScript" },
+			{ "id": 3, "name": "React" }
+		],
 		"description": "Nexcare.io is a platform that connects patients with doctors and provides them with a secure and easy way to communicate with each other. It also provides a platform for doctors to manage their patients and appointments.",
 		"projectLink": "https://www.nexcare.io/",
 		"portfolioLink": "https://www.salmandotweb.me/portfolio/nexcare"
-	}
+	},
+
+	"skillsTools": [
+		{
+			"title": "Languages",
+			"frontendRelated": [
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 2, "name": "TypeScript" },
+				{ "id": 3, "name": "React" }
+			],
+			"backendRelated": [
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 2, "name": "TypeScript" },
+				{ "id": 3, "name": "React" }
+			]
+		},
+		{
+			"title": "Technologies",
+			"uiRelated": [
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 2, "name": "TypeScript" },
+				{ "id": 3, "name": "React" }
+			],
+			"frontendRelated": [
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 2, "name": "TypeScript" },
+				{ "id": 3, "name": "React" }
+			],
+			"backendRelated": [
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 2, "name": "TypeScript" },
+				{ "id": 3, "name": "React" }
+			]
+		},
+		{
+			"title": "Tools & Softwares",
+			"coderRelated": [
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 2, "name": "TypeScript" },
+				{ "id": 3, "name": "React" }
+			],
+			"designerRelated": [
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 2, "name": "TypeScript" },
+				{ "id": 3, "name": "React" }
+			]
+		}
+	]
 }

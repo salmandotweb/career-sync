@@ -16,6 +16,7 @@ import { selectEducation } from "@/stores/slices/education/educationSlice";
 import { formatDate } from "@/lib/utils";
 import { selectExperience } from "@/stores/slices/experiences/experienceSlice";
 import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
+import { selectFeaturedProject } from "@/stores/slices/featuredProject/featuredProjectSlice";
 
 interface indexProps {}
 
@@ -23,6 +24,8 @@ const Prisma: FC<indexProps> = ({}) => {
 	const basicInfo = useAppSelector(selectBasicInfo);
 	const education = useAppSelector(selectEducation);
 	const experiences = useAppSelector(selectExperience);
+	const featuredProject = useAppSelector(selectFeaturedProject);
+	const skills = useAppSelector(selectFeaturedProject);
 
 	return (
 		<div
@@ -113,21 +116,18 @@ const Prisma: FC<indexProps> = ({}) => {
 					<div className="flex flex-col gap-2">
 						<div className="grid grid-cols-[2fr,1fr] gap-3 items-start">
 							<h1 className="text-[#E2E8F0] text-[12px] font-medium">
-								Nexcare.io
+								{featuredProject.projectName}
 							</h1>
 						</div>
 						<div className="flex items-center justify-start gap-3">
-							<CustomBadge label="Next.Js" />
-							<CustomBadge label="Typescript" />
-							<CustomBadge label="Material UI" />
-							<CustomBadge label="PHP" />
-							<CustomBadge label="Laravel" />
-							<CustomBadge label="MySql" />
+							{featuredProject.skills?.map((skill) => {
+								return <CustomBadge label={skill.name} />;
+							})}
 						</div>
 						<div className="flex flex-col gap-1 justify-start items-start mt-2">
 							<Summary
-								summary="NexCare is an integrated solution for single and multi-specialty practices that optimizes care delivery and empowers doctors to focus on the patient. More details at"
-								link="https://nexcare.io/"
+								summary={featuredProject.description}
+								link={featuredProject.projectLink}
 							/>
 
 							<div className="flex items-center gap-1 mt-1 text-[11px]">
@@ -136,7 +136,7 @@ const Prisma: FC<indexProps> = ({}) => {
 									See all of my projects on my portfolio:{" "}
 								</p>
 								<span className="underline inline-flex items-center gap-1 text-[#CBD5E1] font-light">
-									<BsLink45Deg /> https://salmandotweb.me/projects
+									<BsLink45Deg /> {featuredProject.portfolioLink}
 								</span>
 							</div>
 						</div>
