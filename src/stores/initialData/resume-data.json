@@ -14,17 +14,20 @@
 			{
 				"network": "website",
 				"username": "salmandotweb.me",
-				"url": "https://www.salmandotweb.me/"
+				"url": "https://www.salmandotweb.me/",
+				"color": "#7C3AED"
 			},
 			{
 				"network": "linkedin",
 				"username": "salmandotweb",
-				"url": "https://www.linkedin.com/in/salmandotweb/"
+				"url": "https://www.linkedin.com/in/salmandotweb/",
+				"color": "#0A66C2"
 			},
 			{
 				"network": "github",
 				"username": "salmandotweb",
-				"url": "https://github.com/salmandotweb"
+				"url": "https://github.com/salmandotweb",
+				"color": "#222"
 			}
 		]
 	},
