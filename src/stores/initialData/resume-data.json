@@ -6,9 +6,8 @@
 		"email": "salmandotweb@gmail.com",
 		"phone": "+92 309 8675247",
 		"url": "https://www.salmandotweb.me/",
-		"summary": "I craft and develop web apps.",
 		"location": {
-			"city": "Lahore"
+			"city": "Lahore, Pakistan"
 		},
 
 		"profiles": [
@@ -34,10 +33,10 @@
 	},
 
 	"education": {
-		"degree": "BS Computer Science",
-		"institution": "University of Central Punjab",
-		"startDate": "2016-09-01",
-		"endDate": "2020-06-01",
+		"degree": "Software Engineering",
+		"institution": "Virtual University Pakistan",
+		"startDate": "2020-11-1",
+		"endDate": null,
 		"currentlyEnrolled": true
 	},
 
@@ -46,60 +45,70 @@
 			"id": "1",
 			"name": "Rising Technologies",
 			"position": "Frontend Software Engineer",
-			"joiningDate": "2020-10-01",
-			"endDate": "2020-10-01",
+			"joiningDate": "2022-09-01",
+			"endDate": null,
 			"currentlyWorkHere": true,
 			"skills": [
-				{ "id": 1, "name": "JavaScript" },
+				{ "id": 4, "name": "Next.js" },
 				{ "id": 2, "name": "TypeScript" },
-				{ "id": 3, "name": "React" }
+				{ "id": 15, "name": "Material UI" }
 			],
 			"responsibilities": [
 				{
 					"id": "1",
-					"responsibility": "Developed and maintained web applications using React.js and Redux."
+					"responsibility": "Spearheaded the development and design of exceptional layouts and interfaces, resulting in seamless user experiences."
 				},
 				{
 					"id": "2",
-					"responsibility": "Developed and maintained web applications using React.js and Redux."
+					"responsibility": "Successfully contributed to high-profile projects, including the Nexcare web app for health clinic and patient management."
 				}
 			]
 		},
 		{
 			"id": "2",
-			"name": "Rising Technologies",
-			"position": "Frontend Software Engineer",
-			"joiningDate": "2020-10-01",
-			"endDate": "2020-10-01",
+			"name": "Web Buds",
+			"position": "Lead Frontend Develope",
+			"joiningDate": "2021-05-01",
+			"endDate": "2022-09-01",
 			"currentlyWorkHere": false,
-			"skills": [],
+			"skills": [
+				{ "id": 3, "name": "React" },
+				{ "id": 2, "name": "TypeScript" },
+				{ "id": 20, "name": "Styled Components" }
+			],
 			"responsibilities": [
 				{
 					"id": "1",
-					"responsibility": "Developed and maintained web applications using React.js and Redux."
+					"responsibility": "Led the design and implementation of company websites and API-integrated projects, ensuring cutting-edge user experiences."
 				},
 				{
 					"id": "2",
-					"responsibility": "Developed and maintained web applications using React.js and Redux."
+					"responsibility": "Conducted rigorous testing and optimization of websites, code, and assets for superior speed and scalability."
 				}
 			]
 		},
 		{
 			"id": "3",
-			"name": "Rising Technologies",
-			"position": "Frontend Software Engineer",
-			"joiningDate": "2020-10-01",
-			"endDate": "2020-10-01",
+			"name": "Softvercasa",
+			"position": "Frontend Web Developer",
+			"joiningDate": "2020-11-01",
+			"endDate": "2021-05-01",
 			"currentlyWorkHere": false,
-			"skills": [],
+			"skills": [
+				{ "id": 3, "name": "React" },
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 13, "name": "Tailwind CSS" },
+				{ "id": 21, "name": "Figma" },
+				{ "id": 22, "name": "Gsap" }
+			],
 			"responsibilities": [
 				{
 					"id": "1",
-					"responsibility": "Developed and maintained web applications using React.js and Redux."
+					"responsibility": "Collaborated with cross-functional teams on the creation of innovative and user-friendly solutions."
 				},
 				{
 					"id": "2",
-					"responsibility": "Developed and maintained web applications using React.js and Redux."
+					"responsibility": "Conducted meticulous quality assurance testing to ensure an exceptional user experience."
 				}
 			]
 		}

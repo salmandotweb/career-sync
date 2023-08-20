@@ -19,7 +19,6 @@ import { skillSlice } from './slices/skills/educationSlice'
 const persistConfig = {
     key: 'root',
     storage: storage,
-    version: 1,
 }
 
 const rootReducers = combineReducers({

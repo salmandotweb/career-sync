@@ -54,7 +54,7 @@ const Education = () => {
 			</FormInput>
 			<FormInput label="Ending Date" name="endingDate">
 				<CustomCalendar
-					date={new Date(education.endDate)}
+					date={new Date(education.endDate ?? new Date())}
 					disabled={education.currentlyEnrolled}
 					setDate={(date) => {
 						dispatch(

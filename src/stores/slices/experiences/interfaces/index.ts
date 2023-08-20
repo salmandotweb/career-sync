@@ -3,7 +3,7 @@ export interface IExperienceItem {
     name: string;
     position: string;
     joiningDate: string;
-    endDate: string;
+    endDate: string | null;
     currentlyWorkHere: boolean
     skills: ISkillsItem[];
     responsibilities: Responsibility[];

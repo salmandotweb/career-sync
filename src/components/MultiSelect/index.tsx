@@ -23,6 +23,9 @@ const skills = [
 	{ id: 17, name: "React Testing Library" },
 	{ id: 18, name: "Cypress" },
 	{ id: 19, name: "React Hook Form" },
+	{ id: 20, name: "Styled Components" },
+	{ id: 21, name: "Figma" },
+	{ id: 22, name: "Gsap" },
 ];
 
 export default function MultiSelect({

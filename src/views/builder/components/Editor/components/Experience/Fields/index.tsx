@@ -75,7 +75,7 @@ const Fields: FC<indexProps> = ({ experience }) => {
 			</FormInput>
 			<FormInput label="Leaving Date" name="leavingDate">
 				<CustomCalendar
-					date={new Date(experience.endDate)}
+					date={new Date(experience.endDate ?? new Date())}
 					disabled={experience.currentlyWorkHere}
 					setDate={(date) => {
 						dispatch(
@@ -110,7 +110,7 @@ const Fields: FC<indexProps> = ({ experience }) => {
 			</div>
 			<FormInput label="Skills" name="skills">
 				<MultiSelect
-					maxSkills={3}
+					maxSkills={5}
 					selectSkills={experience.skills}
 					setSelectSkills={(skills) => {
 						dispatch(
@@ -131,7 +131,7 @@ const Fields: FC<indexProps> = ({ experience }) => {
 						key={index}
 						className="resize-none"
 						placeholder={`${index + 1}.`}
-						rows={2}
+						rows={3}
 						value={item.responsibility ?? ""}
 						onChange={(e) => {
 							const updatedResponsibilities = [...experience.responsibilities];

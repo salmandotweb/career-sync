@@ -16,7 +16,6 @@ export interface BasicInfo {
     email: string;
     phone: string;
     url: string;
-    summary: string;
     location: ILocation;
     profiles: IProfiles[];
 }
