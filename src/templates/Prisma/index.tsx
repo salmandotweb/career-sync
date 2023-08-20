@@ -2,9 +2,9 @@ import Gradient from "@/templates/Prisma/components/Gradient";
 import { FC } from "react";
 import { FiMapPin } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
-import { HiOutlineGlobeAlt } from "react-icons/hi";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
+import { HiOutlineGlobeAlt } from "react-icons/hi";
 import { Separator } from "@/components/ui/separator";
 import { useAppSelector } from "@/stores/hooks";
 import { selectBasicInfo } from "@/stores/slices/basic/basicInfoSlice";
@@ -55,7 +55,13 @@ const Prisma: FC<indexProps> = ({}) => {
 								className={`bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[${profile.color}]`}
 								key={profile.network}
 								target="_blank">
-								<HiOutlineGlobeAlt />
+								{profile.network === "linkedin" ? (
+									<BsLinkedin />
+								) : profile.network === "github" ? (
+									<AiFillGithub />
+								) : profile.network === "website" ? (
+									<HiOutlineGlobeAlt />
+								) : null}
 								{profile.username}
 							</a>
 						);
@@ -95,7 +101,7 @@ const Prisma: FC<indexProps> = ({}) => {
 					</div>
 				</div>
 				<Separator className="bg-[#334155]" />
-				<div className="grid grid-cols-[1fr,4.7fr] gap-2 items-start w-[100%]">
+				<div className="grid grid-cols-[1fr,4.7fr] gap-1 items-start w-[100%]">
 					<h1 className="text-[#E2E8F0] text-[12px] font-medium">Experience</h1>
 					<div className="flex flex-col gap-2">
 						{experiences?.map((experience) => {
@@ -115,8 +121,8 @@ const Prisma: FC<indexProps> = ({}) => {
 					<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 						Featured Project
 					</h1>
-					<div className="flex flex-col gap-2">
-						<div className="grid grid-cols-[2fr,1fr] gap-2 items-start">
+					<div className="flex flex-col gap-1.5">
+						<div className="grid grid-cols-[2fr,1fr] gap-1.5 items-start">
 							<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 								{featuredProject.projectName}
 							</h1>
@@ -180,8 +186,8 @@ const Experience = ({
 	responsibilities,
 }: IExperienceItem) => {
 	return (
-		<div className="flex flex-col gap-2 w-[100%]">
-			<div className="grid grid-cols-[2fr,1fr] gap-3 items-start w-[100%]">
+		<div className="flex flex-col gap-1.5 w-[100%]">
+			<div className="grid grid-cols-[2fr,1fr] gap-2 items-start w-[100%]">
 				<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 					{name} <span className="text-[#CBD5E1]"> - </span>
 					<span className="text-[#E2E8F0] font-light">{position}</span>

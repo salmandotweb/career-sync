@@ -49,9 +49,9 @@
 			"endDate": null,
 			"currentlyWorkHere": true,
 			"skills": [
-				{ "id": 4, "name": "Next.js" },
-				{ "id": 2, "name": "TypeScript" },
-				{ "id": 15, "name": "Material UI" }
+				{ "id": 340, "name": "Next.js" },
+				{ "id": 443, "name": "TypeScript" },
+				{ "id": 501, "name": "Material UI" }
 			],
 			"responsibilities": [
 				{
@@ -72,9 +72,9 @@
 			"endDate": "2022-09-01",
 			"currentlyWorkHere": false,
 			"skills": [
-				{ "id": 3, "name": "React" },
-				{ "id": 2, "name": "TypeScript" },
-				{ "id": 20, "name": "Styled Components" }
+				{ "id": 17, "name": "React" },
+				{ "id": 443, "name": "TypeScript" },
+				{ "id": 502, "name": "Styled Components" }
 			],
 			"responsibilities": [
 				{
@@ -95,7 +95,7 @@
 			"endDate": "2021-05-01",
 			"currentlyWorkHere": false,
 			"skills": [
-				{ "id": 3, "name": "React" },
+				{ "id": 17, "name": "React" },
 				{ "id": 1, "name": "JavaScript" },
 				{ "id": 13, "name": "Tailwind CSS" },
 				{ "id": 21, "name": "Figma" },
@@ -117,9 +117,12 @@
 	"featuredProject": {
 		"projectName": "Nexcare.io",
 		"skills": [
-			{ "id": 1, "name": "JavaScript" },
-			{ "id": 2, "name": "TypeScript" },
-			{ "id": 3, "name": "React" }
+			{ "id": 340, "name": "Next.js" },
+			{ "id": 443, "name": "TypeScript" },
+			{ "id": 501, "name": "Material UI" },
+			{ "id": 6, "name": "PHP" },
+			{ "id": 24, "name": "Laravel" },
+			{ "id": 507, "name": "MySQL" }
 		],
 		"description": "Nexcare.io is a platform that connects patients with doctors and provides them with a secure and easy way to communicate with each other. It also provides a platform for doctors to manage their patients and appointments.",
 		"projectLink": "https://www.nexcare.io/",
@@ -131,44 +134,51 @@
 			"title": "Languages",
 			"frontendRelated": [
 				{ "id": 1, "name": "JavaScript" },
-				{ "id": 2, "name": "TypeScript" },
-				{ "id": 3, "name": "React" }
+				{ "id": 17, "name": "React" },
+				{ "id": 340, "name": "Next.js" },
+				{ "id": 2, "name": "TypeScript" }
 			],
 			"backendRelated": [
-				{ "id": 1, "name": "JavaScript" },
-				{ "id": 2, "name": "TypeScript" },
-				{ "id": 3, "name": "React" }
+				{ "id": 16, "name": "Node.js" },
+				{ "id": 533, "name": "TRPC" },
+				{ "id": 508, "name": "PostgreSQL" }
 			]
 		},
 		{
 			"title": "Technologies",
 			"uiRelated": [
-				{ "id": 1, "name": "JavaScript" },
-				{ "id": 2, "name": "TypeScript" },
-				{ "id": 3, "name": "React" }
+				{ "id": 503, "name": "Tailwind CSS" },
+				{ "id": 536, "name": "Material UI" },
+				{ "id": 538, "name": "Chakra UI" },
+				{ "id": 535, "name": "Bootstrap" },
+				{ "id": 544, "name": "Shadcn UI" }
 			],
 			"frontendRelated": [
-				{ "id": 1, "name": "JavaScript" },
+				{ "id": 17, "name": "React" },
+				{ "id": 340, "name": "Next.js" },
+				{ "id": 545, "name": "Framer Motion" },
+				{ "id": 546, "name": "Storybook" },
 				{ "id": 2, "name": "TypeScript" },
-				{ "id": 3, "name": "React" }
+				{ "id": 547, "name": "Redux" }
 			],
 			"backendRelated": [
-				{ "id": 1, "name": "JavaScript" },
-				{ "id": 2, "name": "TypeScript" },
-				{ "id": 3, "name": "React" }
+				{ "id": 27, "name": "Express.js" },
+				{ "id": 512, "name": "Redis" },
+				{ "id": 14, "name": "MongoDB" }
 			]
 		},
 		{
 			"title": "Tools & Softwares",
 			"coderRelated": [
-				{ "id": 1, "name": "JavaScript" },
-				{ "id": 2, "name": "TypeScript" },
-				{ "id": 3, "name": "React" }
+				{ "id": 548, "name": "Visual Studio Code" },
+				{ "id": 16, "name": "Node.js" },
+				{ "id": 34, "name": "Version Control (Git)" },
+				{ "id": 551, "name": "Postman" }
 			],
 			"designerRelated": [
-				{ "id": 1, "name": "JavaScript" },
-				{ "id": 2, "name": "TypeScript" },
-				{ "id": 3, "name": "React" }
+				{ "id": 504, "name": "Figma" },
+				{ "id": 552, "name": "Adobe XD" },
+				{ "id": 545, "name": "Framer Motion" }
 			]
 		}
 	]
