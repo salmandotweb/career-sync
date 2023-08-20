@@ -64,9 +64,7 @@ export const TemplateSlider = () => {
 					},
 				}}
 			/>
-			<section
-				className="splide mt-[26px] mb-[32px] px-[40px]"
-				ref={targetElementRef}>
+			<section className="splide px-[40px]" ref={targetElementRef}>
 				<div className="splide__track">
 					<ul className="splide__list">
 						{Object.keys(AVAILABLE_TEMPLATES).map((templateKey) => {
@@ -102,7 +100,8 @@ export const TemplateSlide = ({
 	onChangeTemplate: (id: string) => void;
 }) => {
 	return (
-		<li className="splide__slide flex justify-center">
+		<li className="splide__slide flex justify-center flex-col gap-2 items-center">
+			<h1 className="text-[18px] text-center font-semibold">{name}</h1>
 			<div
 				className={`h-[255px] w-[180px] rounded border hover:cursor-pointer overflow-hidden relative ${
 					isActive ? "border-resume-800" : "border-resume-200"
