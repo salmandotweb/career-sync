@@ -90,14 +90,14 @@ const Prisma: FC<indexProps> = ({}) => {
 							{formatDate(new Date(education.startDate))} -{" "}
 							{education.currentlyEnrolled
 								? "Present"
-								: formatDate(new Date(education.endDate))}
+								: formatDate(new Date(education.endDate ?? new Date()))}
 						</h3>
 					</div>
 				</div>
 				<Separator className="bg-[#334155]" />
 				<div className="grid grid-cols-[1fr,4.7fr] gap-2 items-start w-[100%]">
 					<h1 className="text-[#E2E8F0] text-[12px] font-medium">Experience</h1>
-					<div className="flex flex-col gap-3">
+					<div className="flex flex-col gap-2">
 						{experiences?.map((experience) => {
 							return (
 								<>
@@ -116,7 +116,7 @@ const Prisma: FC<indexProps> = ({}) => {
 						Featured Project
 					</h1>
 					<div className="flex flex-col gap-2">
-						<div className="grid grid-cols-[2fr,1fr] gap-3 items-start">
+						<div className="grid grid-cols-[2fr,1fr] gap-2 items-start">
 							<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 								{featuredProject.projectName}
 							</h1>
@@ -190,7 +190,9 @@ const Experience = ({
 					<BsCalendar2Minus />
 					<h3 className="text-[#E2E8F0] text-[10px] font-medium whitespace-nowrap">
 						{formatDate(new Date(joiningDate))} -{" "}
-						{currentlyWorkHere ? "Present" : formatDate(new Date(endDate))}
+						{currentlyWorkHere
+							? "Present"
+							: formatDate(new Date(endDate ?? new Date()))}
 					</h3>
 				</div>
 			</div>
@@ -199,7 +201,7 @@ const Experience = ({
 					return <CustomBadge label={skill.name} key={skill.id} />;
 				})}
 			</div>
-			<div className="flex flex-col gap-3 justify-start items-start mt-2">
+			<div className="flex flex-col gap-2 justify-start items-start mt-2">
 				{responsibilities?.map((responsibility) => {
 					return (
 						<Summary
