@@ -43,7 +43,7 @@ const Navbar = () => {
 						<nav aria-label="Global" className="hidden md:block">
 							<ul className="flex items-center gap-6 text-sm">
 								{NavLinks.map((link) => (
-									<li>
+									<li key={link.href}>
 										<a
 											className="text-gray-500 transition hover:text-gray-500/75"
 											href={link.href}>
