@@ -1,7 +1,7 @@
-import Navbar from "@/components/Layout/Navbar";
+import Builder from "@/views/builder";
 import Head from "next/head";
 
-export default function Home() {
+export default function BuilderPage() {
 	return (
 		<>
 			<Head>
@@ -10,9 +10,7 @@ export default function Home() {
 				<link rel="icon" type="image/png" href="favicon.png" />
 			</Head>
 
-			<main>
-				<Navbar />
-			</main>
+			<Builder />
 		</>
 	);
 }
