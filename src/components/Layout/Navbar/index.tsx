@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const links = [
@@ -32,7 +33,7 @@ const Navbar = () => {
 	return (
 		<div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-3xl md:px-24 lg:px-8">
 			<div className="relative flex items-center justify-between">
-				<a
+				<Link
 					href="/"
 					aria-label="Company"
 					title="Company"
@@ -41,7 +42,7 @@ const Navbar = () => {
 					<span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
 						CareerSync.
 					</span>
-				</a>
+				</Link>
 				<ul className="hidden items-center space-x-8 lg:flex">
 					{links.map((link) =>
 						link.button ? (
@@ -50,13 +51,13 @@ const Navbar = () => {
 							</Button>
 						) : (
 							<li key={link.label}>
-								<a
+								<Link
 									href={link.href}
 									aria-label={link.label}
 									title={link.label}
 									className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
 									{link.label}
-								</a>
+								</Link>
 							</li>
 						)
 					)}
@@ -87,7 +88,7 @@ const Navbar = () => {
 							<div className="p-5 bg-white border rounded shadow-sm">
 								<div className="flex items-center justify-between mb-4">
 									<div>
-										<a
+										<Link
 											href="/"
 											aria-label="Company"
 											title="Company"
@@ -109,7 +110,7 @@ const Navbar = () => {
 											<span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
 												Company
 											</span>
-										</a>
+										</Link>
 									</div>
 									<div>
 										<button
@@ -129,40 +130,40 @@ const Navbar = () => {
 								<nav>
 									<ul className="space-y-4">
 										<li>
-											<a
+											<Link
 												href="/"
 												aria-label="Our product"
 												title="Our product"
 												className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
 												Product
-											</a>
+											</Link>
 										</li>
 										<li>
-											<a
+											<Link
 												href="/"
 												aria-label="Our product"
 												title="Our product"
 												className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
 												Features
-											</a>
+											</Link>
 										</li>
 										<li>
-											<a
+											<Link
 												href="/"
 												aria-label="Product pricing"
 												title="Product pricing"
 												className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
 												Pricing
-											</a>
+											</Link>
 										</li>
 										<li>
-											<a
+											<Link
 												href="/"
 												aria-label="About us"
 												title="About us"
 												className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
 												About us
-											</a>
+											</Link>
 										</li>
 										<Button variant="default">Sign up</Button>
 									</ul>
