@@ -11,10 +11,8 @@ export default function Home() {
 				<link rel="icon" type="image/png" href="favicon.png" />
 			</Head>
 
-			<main>
-				<Navbar />
-				<Hero />
-			</main>
+			<Navbar />
+			<Hero />
 		</>
 	);
 }
