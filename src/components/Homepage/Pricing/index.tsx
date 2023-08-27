@@ -11,7 +11,7 @@ const Pricing = () => {
 			</h1>
 			<div className="flex flex-col items-center gap-7">
 				<h1 className="text-6xl font-bold text-gray-900">
-					Nothing, it's free! 🎉
+					Nothing, {`it's`} free! 🎉
 				</h1>
 				<Button variant="default">
 					<Link href="/builder">Get Started</Link>
