@@ -1,4 +1,6 @@
 import Hero from "@/components/Homepage/Hero";
+import HowItWorks from "@/components/Homepage/HowItWorks";
+import Testimonials from "@/components/Homepage/Testimonial";
 import Navbar from "@/components/Layout/Navbar";
 import Head from "next/head";
 
@@ -13,6 +15,8 @@ export default function Home() {
 
 			<Navbar />
 			<Hero />
+			<HowItWorks />
+			<Testimonials />
 		</>
 	);
 }
