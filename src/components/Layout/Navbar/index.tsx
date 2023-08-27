@@ -5,20 +5,20 @@ import { useState } from "react";
 
 const links = [
 	{
-		label: "About",
-		href: "/builder",
+		label: "How It Works?",
+		href: "/#how-it-works",
+	},
+	{
+		label: "Featured Template",
+		href: "/#featured-template",
 	},
 	{
 		label: "Pricing",
-		href: "/builder",
+		href: "/#pricing",
 	},
 	{
-		label: "Templates",
-		href: "/builder",
-	},
-	{
-		label: "FAQ",
-		href: "/builder",
+		label: "Reviews",
+		href: "/#reviews",
 	},
 	{
 		label: "Get Started",
@@ -47,7 +47,7 @@ const Navbar = () => {
 					{links.map((link) =>
 						link.button ? (
 							<Button variant="default" key={link.label}>
-								{link.label}
+								<Link href={link.href}>{link.label}</Link>
 							</Button>
 						) : (
 							<li key={link.label}>

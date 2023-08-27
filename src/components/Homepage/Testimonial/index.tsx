@@ -26,7 +26,7 @@ const TestimonialsData = [
 
 const Testimonials = () => {
 	return (
-		<section className="bg-white mt-28">
+		<section className="bg-white mt-28" id="reviews">
 			<div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 				<h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
 					Read trusted reviews from our customers

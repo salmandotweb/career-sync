@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 
 interface indexProps {}
@@ -20,7 +21,7 @@ const Hero: FC<indexProps> = ({}) => {
 					experience
 				</p>
 				<Button variant="outline" className="mt-4">
-					View All Templates
+					<Link href="/builder">View All Templates</Link>
 				</Button>
 			</div>
 			<div className="mt-8 relative rounded-lg overflow-hidden w-[1200px] h-[800px]">

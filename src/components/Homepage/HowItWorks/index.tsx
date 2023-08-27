@@ -7,7 +7,9 @@ interface indexProps {}
 
 const HowItWorks: FC<indexProps> = ({}) => {
 	return (
-		<div className="flex flex-col items-center justify-center gap-4 p-6 mt-28">
+		<div
+			className="flex flex-col items-center justify-center gap-4 p-6 mt-28"
+			id="how-it-works">
 			<p className="mt-4 text-lg text-center text-gray-600 font-normal">
 				How It Works
 			</p>
@@ -55,7 +57,7 @@ const Step = ({
 }) => {
 	return (
 		<div
-			className={`flex items-center justify-between gap-4 w-full ${
+			className={`flex items-center justify-between w-full gap-10 ${
 				reverse ? "flex-row-reverse" : "flex-row"
 			}`}>
 			<div className="flex flex-col items-start justify-start gap-4">

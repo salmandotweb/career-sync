@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const FeatureTemplate = () => {
 	return (
-		<div className="flex items-center justify-center min-h-[50vh] mx-auto max-w-screen-xl mt-22 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+		<div
+			className="flex items-center justify-center min-h-[50vh] mx-auto max-w-screen-xl mt-22 px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
+			id="featured-template">
 			<div className="flex-1 flex flex-col items-start justify-start gap-3">
 				<h1 className="text-4xl font-bold">PRISMA</h1>
 				<p className="text-xl">
@@ -30,7 +33,9 @@ const FeatureTemplate = () => {
 					</div>
 				</div>
 				<div className="flex items-center gap-4">
-					<Button variant="default">Customize this template</Button>
+					<Button variant="default">
+						<Link href="/builder">Customize this template</Link>
+					</Button>
 					<Button variant="outline">Browse all</Button>
 				</div>
 			</div>
