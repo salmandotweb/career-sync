@@ -18,7 +18,7 @@ const Hero: FC<indexProps> = ({}) => {
 				</h1>
 				<p className="text-center text-gray-400 text-base font-normal">
 					For young starters, professionals, freelancers, and all levels of
-					experience
+					experience.
 				</p>
 				<Button variant="outline" className="mt-4">
 					<Link href="/builder">View All Templates</Link>
