@@ -66,18 +66,6 @@ const Prisma: FC<indexProps> = ({}) => {
 							</a>
 						);
 					})}
-					{/* <div className="bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#7C3AED]">
-						<HiOutlineGlobeAlt />
-						salmandotweb.me
-					</div>
-					<div className="bg-[#F1F8FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#0A66C2]">
-						<BsLinkedin />
-						salmandotweb
-					</div>
-					<div className="bg-[#F2F2F2] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#222]">
-						<AiFillGithub />
-						salmandotweb
-					</div> */}
 				</div>
 			</div>
 			<Separator className="bg-[#334155]" />

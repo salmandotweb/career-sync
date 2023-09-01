@@ -1,8 +1,8 @@
-import EditBasicInfo from "./components/BasicInfo";
-import Education from "./components/Education";
-import EditExperience from "./components/Experience";
-import FeaturedProject from "./components/FeaturedProject";
-import SkillsTools from "./components/SkillsTools";
+import EditBasicInfo from "./templates/prisma/components/BasicInfo";
+import Education from "./templates/prisma/components/Education";
+import EditExperience from "./templates/prisma/components/Experience";
+import FeaturedProject from "./templates/prisma/components/FeaturedProject";
+import SkillsTools from "./templates/prisma/components/SkillsTools";
 
 export const headers: {
 	[key: string]: {
@@ -13,7 +13,7 @@ export const headers: {
 } = {
 	"basic-details": {
 		title: "Basic details",
-		templates: ["prisma"],
+		templates: ["prisma", "spectrum"],
 		component: EditBasicInfo,
 	},
 	education: {
