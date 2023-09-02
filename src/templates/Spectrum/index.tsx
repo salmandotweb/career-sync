@@ -52,9 +52,9 @@ const Spectrum: FC<indexProps> = ({}) => {
 							<SingleExperience />
 						</div>
 					</div>
-					<div className="flex flex-col items-start gap-4">
+					<div className="flex flex-col items-start gap-4 w-full">
 						<h1 className="font-semi-bold">Education</h1>
-						<div className="flex items-start gap-4">
+						<div className="flex items-start gap-2 justify-between w-full">
 							<Education />
 							<Education />
 							<Education />
@@ -126,7 +126,7 @@ export default Spectrum;
 
 const Education = () => {
 	return (
-		<div className="py-3 px-4 flex flex-col items-start gap-4 bg-[#2E2E48] rounded-md">
+		<div className="py-3 px-4 flex flex-col items-start gap-4 bg-[#2E2E48] rounded-md w-full">
 			<div className="flex items-center gap-2">
 				<img
 					src="https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4"
