@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { FC } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
 
 interface indexProps {}
 
@@ -42,13 +43,96 @@ const Spectrum: FC<indexProps> = ({}) => {
 						<Info />
 					</div>
 				</div>
-				<div className="w-[70%] h-[100%] bg-[#232339]"></div>
+				<div className="w-[70%] h-[100%] bg-[#232339] py-6 px-4 flex flex-col items-start gap-6">
+					<div className="flex flex-col items-start gap-4">
+						<h1 className="font-semi-bold">Experience</h1>
+						<div className="flex flex-col items-start gap-4">
+							<SingleExperience />
+							<SingleExperience />
+							<SingleExperience />
+						</div>
+					</div>
+					<div className="flex flex-col items-start gap-4">
+						<h1 className="font-semi-bold">Education</h1>
+						<div className="flex items-start gap-4">
+							<Education />
+							<Education />
+							<Education />
+						</div>
+					</div>
+					<div className="flex flex-col items-start gap-4">
+						<h1 className="font-semi-bold">Skills</h1>
+						<div className="flex items-start gap-4"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
 };
 
 export default Spectrum;
+
+const Education = () => {
+	return (
+		<div className="py-3 px-4 flex flex-col items-start gap-4 bg-[#2E2E48] rounded-md">
+			<div className="flex items-center gap-2">
+				<img
+					src="https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4"
+					height={30}
+					width={30}
+					alt=""
+				/>
+				<h3 className="text-[10px] font-light">Virtual University PK</h3>
+			</div>
+			<div className="flex flex-col items-start gap-1">
+				<h3 className="text-[10px] font-light">High School</h3>
+				<h3 className="text-[9px] text-[#ACB1C3]">2016 - 2018</h3>
+			</div>
+		</div>
+	);
+};
+
+const SingleExperience = () => {
+	return (
+		<div className="flex items-start gap-2">
+			<div className="flex flex-col items-center gap-1 mt-[5px]">
+				<div className="h-[5px] w-[5px] rounded-3xl bg-[#ACB1C3]" />
+				<div className="h-[50px] w-[2px] bg-[#2E2E48]" />
+			</div>
+			<div className="flex flex-col items-start gap-2">
+				<div className="flex items-center gap-[5px]">
+					<h3 className="text-[8px] font-light">Sep 2022</h3>
+					<h3 className="text-[8px] font-light">Present</h3>
+					<FaLocationDot className="w-[5px] font-light" />
+					<h3 className="text-[8px] font-light">Lahore, Pakistan</h3>
+				</div>
+				<div className="flex items-start gap-2">
+					<img
+						src="https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4"
+						height={30}
+						width={30}
+						alt=""
+					/>
+					<div className="flex flex-col items-start gap-1">
+						<h3 className="text-[9px] font-light">Software Engineer</h3>
+						<h1 className="font-semi-bold text-[10px]">Rising Technologies</h1>
+					</div>
+				</div>
+			</div>
+			<div className="flex flex-col items-start gap-2 w-[65%] ml-auto">
+				<p className="text-[9px] font-light">
+					- Working as a Software Engineer at Rising Technologies. I am
+					developing web applications using React.js, Next.js, TypeScript,
+					JavaScript, and other technologies.
+				</p>
+				<p className="text-[9px] font-light">
+					- Led the design and implementation of company websites and
+					API-integrated projects, ensuring cutting-edge user experiences.
+				</p>
+			</div>
+		</div>
+	);
+};
 
 const Info = () => {
 	return (
