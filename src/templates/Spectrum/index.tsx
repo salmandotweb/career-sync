@@ -60,9 +60,61 @@ const Spectrum: FC<indexProps> = ({}) => {
 							<Education />
 						</div>
 					</div>
-					<div className="flex flex-col items-start gap-4">
+					<div className="flex flex-col items-start gap-4 w-full">
 						<h1 className="font-semi-bold">Skills</h1>
-						<div className="flex items-start gap-4"></div>
+						<div className="flex items-start gap-4 w-full justify-between">
+							<div className="flex-1 flex flex-col gap-2">
+								<div className="flex items-center gap-2">
+									<img
+										src="/images/icons/frontend.svg"
+										alt="frontend"
+										height={20}
+										width={20}
+									/>
+									<h3 className="text-[10px] font-light whitespace-nowrap">
+										Frontend
+									</h3>
+								</div>
+								<div className="grid grid-cols-2 gap-2">
+									<Skill />
+									<Skill />
+								</div>
+								<div className="grid grid-cols-1 gap-2">
+									<Skill />
+								</div>
+								<div className="grid grid-cols-2 gap-2">
+									<Skill />
+									<Skill />
+								</div>
+							</div>
+							<div className="flex-1 flex flex-col gap-2">
+								<div className="flex items-center gap-2">
+									<img
+										src="/images/icons/backend.svg"
+										alt="frontend"
+										height={20}
+										width={20}
+									/>
+									<h3 className="text-[10px] font-light whitespace-nowrap">
+										Backend
+									</h3>
+								</div>
+								<div className="grid grid-cols-2 gap-2">
+									<Skill />
+									<Skill />
+								</div>
+								<div className="grid grid-cols-1 gap-2">
+									<Skill />
+								</div>
+								<div className="grid grid-cols-2 gap-2">
+									<Skill />
+									<Skill />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="flex flex-col items-start gap-4 w-full">
+						<h1 className="font-semi-bold">Tools</h1>
 					</div>
 				</div>
 			</div>
@@ -88,6 +140,14 @@ const Education = () => {
 				<h3 className="text-[10px] font-light">High School</h3>
 				<h3 className="text-[9px] text-[#ACB1C3]">2016 - 2018</h3>
 			</div>
+		</div>
+	);
+};
+
+const Skill = () => {
+	return (
+		<div className="p-6 flex items-center justify-center bg-[#2E2E48] rounded-md flex-wrap w-full">
+			<h3 className="text-[10px] font-light text-[#95AAFB]">React JS</h3>
 		</div>
 	);
 };
