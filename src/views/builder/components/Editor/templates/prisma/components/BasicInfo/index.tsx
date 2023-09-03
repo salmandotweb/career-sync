@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import {
 	selectBasicInfo,
 	updateBasicInfo,
-} from "@/stores/slices/prisma/basic/basicInfoSlice";
+} from "@/stores/slices/basic/basicInfoSlice";
 
 const EditBasicInfo = () => {
 	const basicInfo = useAppSelector(selectBasicInfo);

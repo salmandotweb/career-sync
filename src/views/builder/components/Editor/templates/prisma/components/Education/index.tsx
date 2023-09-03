@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import {
 	selectEducation,
 	updateEducation,
-} from "@/stores/slices/prisma/education/educationSlice";
+} from "@/stores/slices/education/educationSlice";
 
 const Education = () => {
 	const education = useAppSelector(selectEducation);

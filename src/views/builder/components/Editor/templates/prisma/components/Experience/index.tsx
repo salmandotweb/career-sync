@@ -2,8 +2,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAppSelector } from "@/stores/hooks";
 import Fields from "./Fields";
-import { selectExperience } from "@/stores/slices/prisma/experiences/experienceSlice";
-import { IExperienceItem } from "@/stores/slices/prisma/experiences/interfaces";
+import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
+import { selectExperience } from "@/stores/slices/experiences/experienceSlice";
 
 const EditExperience = () => {
 	const experiences = useAppSelector(selectExperience);

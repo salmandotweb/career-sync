@@ -3,11 +3,8 @@ import MultiSelect from "@/components/MultiSelect";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
-import {
-	selectSkills,
-	updateSkills,
-} from "@/stores/slices/prisma/skills/educationSlice";
-import { SkillsTools as Skills } from "@/stores/slices/prisma/skills/interfaces";
+import { SkillsTools as Skills } from "@/stores/slices/skills/interfaces";
+import { selectSkills, updateSkills } from "@/stores/slices/skills/skillSlice";
 
 const SkillsTools = () => {
 	const skills = useAppSelector(selectSkills);

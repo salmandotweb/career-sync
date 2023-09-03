@@ -1,5 +1,4 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import basicInfoSlice from './slices/prisma/basic/basicInfoSlice'
 import {
     persistReducer,
     FLUSH,
@@ -11,10 +10,11 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import templateSlice from './slices/templates/templateSlice'
-import educationSlice from './slices/prisma/education/educationSlice'
-import experienceSlice from './slices/prisma/experiences/experienceSlice'
-import featuredProjectSlice from './slices/prisma/featuredProject/featuredProjectSlice'
-import { skillSlice } from './slices/prisma/skills/educationSlice'
+import featuredProjectSlice from './slices/featuredProject/featuredProjectSlice'
+import basicInfoSlice from './slices/basic/basicInfoSlice'
+import educationSlice from './slices/education/educationSlice'
+import experienceSlice from './slices/experiences/experienceSlice'
+import skillSlice from './slices/skills/skillSlice'
 
 
 const persistConfig = {
@@ -28,7 +28,7 @@ const rootReducers = combineReducers({
     educationReducer: educationSlice,
     experienceReducer: experienceSlice,
     featuredProjectReducer: featuredProjectSlice,
-    skillsReducer: skillSlice.reducer,
+    skillsReducer: skillSlice,
 })
 
 

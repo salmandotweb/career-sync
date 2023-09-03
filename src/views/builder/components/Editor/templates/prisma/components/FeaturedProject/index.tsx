@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import {
 	selectFeaturedProject,
 	updateFeaturedProject,
-} from "@/stores/slices/prisma/featuredProject/featuredProjectSlice";
+} from "@/stores/slices/featuredProject/featuredProjectSlice";
 
 const FeaturedProject = () => {
 	const featuredProject = useAppSelector(selectFeaturedProject);

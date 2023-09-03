@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { formatDate } from "@/lib/utils";
 import { useAppDispatch } from "@/stores/hooks";
-import { updateExperience } from "@/stores/slices/prisma/experiences/experienceSlice";
-import { IExperienceItem } from "@/stores/slices/prisma/experiences/interfaces";
+import { updateExperience } from "@/stores/slices/experiences/experienceSlice";
+import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
 import { FC } from "react";
 
 interface indexProps {
