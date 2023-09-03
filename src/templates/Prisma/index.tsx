@@ -21,6 +21,7 @@ import { selectExperience } from "@/stores/slices/experiences/experienceSlice";
 import { selectSkills } from "@/stores/slices/skills/skillSlice";
 import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
 import { SkillsTools } from "@/stores/slices/skills/interfaces";
+import Link from "next/link";
 
 interface indexProps {}
 
@@ -52,9 +53,9 @@ const Prisma: FC<indexProps> = ({}) => {
 				<div className="flex items-center justify-center gap-4 text-[11px]">
 					{basicInfo.profiles.map((profile) => {
 						return (
-							<a
+							<Link
 								href={profile.url}
-								className={`bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[${profile.color}]`}
+								className={`bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#222]`}
 								key={profile.network}
 								target="_blank">
 								{profile.network === "linkedin" ? (
@@ -64,8 +65,9 @@ const Prisma: FC<indexProps> = ({}) => {
 								) : profile.network === "website" ? (
 									<HiOutlineGlobeAlt />
 								) : null}
+
 								{profile.username}
-							</a>
+							</Link>
 						);
 					})}
 				</div>

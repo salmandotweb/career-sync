@@ -1,15 +1,21 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
+import { TEMPLATES } from "@/enums/availableTemplates";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import {
 	selectBasicInfo,
 	updateBasicInfo,
 } from "@/stores/slices/basic/basicInfoSlice";
+import { selectTemplate } from "@/stores/slices/templates/templateSlice";
 
 const EditBasicInfo = () => {
 	const basicInfo = useAppSelector(selectBasicInfo);
 	const dispatch = useAppDispatch();
+
+	const ActiveTemplate = useAppSelector(selectTemplate);
+
 	return (
 		<>
 			<Tabs defaultValue="about" className="w-[100%]">
@@ -61,6 +67,25 @@ const EditBasicInfo = () => {
 							}}
 						/>
 					</div>
+					{TEMPLATES.spectrum === ActiveTemplate.id && (
+						<div className="grid w-full max-w-sm items-center gap-2">
+							<Label htmlFor="intro">Introduction</Label>
+							<Textarea
+								id="intro"
+								placeholder="Your introduction"
+								value={basicInfo.intro}
+								rows={5}
+								onChange={(e) => {
+									dispatch(
+										updateBasicInfo({
+											...basicInfo,
+											intro: e.target.value,
+										})
+									);
+								}}
+							/>
+						</div>
+					)}
 				</TabsContent>
 				<TabsContent
 					value="contact"
@@ -102,6 +127,47 @@ const EditBasicInfo = () => {
 							}}
 						/>
 					</div>
+					{TEMPLATES.spectrum === ActiveTemplate.id && (
+						<>
+							<div className="grid w-full max-w-sm items-center gap-2">
+								<Label htmlFor="tel">Phone</Label>
+								<Input
+									type="tel"
+									id="tel"
+									placeholder="Enter your phone number"
+									value={basicInfo.phone}
+									onChange={(e) => {
+										dispatch(
+											updateBasicInfo({
+												...basicInfo,
+												phone: e.target.value,
+											})
+										);
+									}}
+								/>
+							</div>
+							<div className="grid w-full max-w-sm items-center gap-2">
+								<Label htmlFor="address">Address</Label>
+								<Input
+									type="text"
+									id="address"
+									placeholder="Enter your address"
+									value={basicInfo.location.city}
+									onChange={(e) => {
+										dispatch(
+											updateBasicInfo({
+												...basicInfo,
+												location: {
+													...basicInfo.location,
+													city: e.target.value,
+												},
+											})
+										);
+									}}
+								/>
+							</div>
+						</>
+					)}
 				</TabsContent>
 				<TabsContent
 					value="links"

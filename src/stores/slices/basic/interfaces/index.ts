@@ -13,6 +13,7 @@ export interface BasicInfo {
     name: string;
     label: string;
     image: string;
+    intro: string;
     email: string;
     phone: string;
     url: string;

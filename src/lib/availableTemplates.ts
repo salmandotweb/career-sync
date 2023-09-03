@@ -1,9 +1,10 @@
+import { TEMPLATES } from '@/enums/availableTemplates';
 import { ITemplate } from '@/stores/slices/templates/interfaces/templates';
 import dynamic from 'next/dynamic';
 
 export const AVAILABLE_TEMPLATES: ITemplate = {
     prisma: {
-        id: 'prisma',
+        id: TEMPLATES.prisma,
         name: 'Prisma',
         thumbnail: '/templates/prisma.jpg',
         component: dynamic(() => import("../templates/Prisma"), {
@@ -11,7 +12,7 @@ export const AVAILABLE_TEMPLATES: ITemplate = {
         }),
     },
     spectrum: {
-        id: 'spectrum',
+        id: TEMPLATES.spectrum,
         name: 'Spectrum',
         thumbnail: '/templates/spectrum.jpg',
         component: dynamic(() => import("../templates/Spectrum"), {

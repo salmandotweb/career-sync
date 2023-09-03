@@ -1,11 +1,13 @@
 import { Separator } from "@/components/ui/separator";
-import { FC } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
+import { useAppSelector } from "@/stores/hooks";
+import { selectBasicInfo } from "@/stores/slices/basic/basicInfoSlice";
+import { AiOutlineLink } from "react-icons/ai";
+import { BiPhone, BiSolidMap } from "react-icons/bi";
 
-interface indexProps {}
-
-const Spectrum: FC<indexProps> = ({}) => {
+const Spectrum = () => {
+	const basicInfo = useAppSelector(selectBasicInfo);
 	return (
 		<div
 			className="bg-[#232339] h-[100%] w-[100%] text-white overflow-hidden"
@@ -14,33 +16,47 @@ const Spectrum: FC<indexProps> = ({}) => {
 				<div className="w-[30%] h-[100%] bg-[#1e1e2f] flex flex-col items-start gap-6 py-6 px-4">
 					<div className="flex flex-col items-start gap-1">
 						<h1 className="text-[16px] text-white font-semibold">
-							Muhammad Salman
+							{basicInfo.name}
 						</h1>
-						<h3 className="text-[12px] text-[#D9DFE8]">Software Engineer</h3>
-						<p className="text-[8px] font-light text-[#D9DFE8] mt-2">
-							Adept at collaborating with online clients to gather requirements,
-							devise plans, and enhance designs for usability and functionality.
-							Proficient in JavaScript, TypeScript, React.js, and Next.js.
+						<h3 className="text-[12px] text-[#D9DFE8]">{basicInfo.label}</h3>
+						<p className="text-[9.5px] font-light text-[#D9DFE8] mt-2">
+							{basicInfo.intro}
 						</p>
 					</div>
 					<Separator className="h-[.080px] bg-[#D9DFE8] opacity-[10%]" />
 					<div className="flex flex-col gap-5">
-						<Info />
-						<Info />
-						<Info />
-						<Info />
+						<Info
+							icon={<MdOutlineMailOutline className="text-[#D9DFE8]" />}
+							label="Email"
+							value={basicInfo.email}
+						/>
+						<Info
+							icon={<AiOutlineLink className="text-[#D9DFE8]" />}
+							label="Website"
+							value={basicInfo.url}
+						/>
+						<Info
+							icon={<BiPhone className="text-[#D9DFE8]" />}
+							label="Phone"
+							value={basicInfo.phone}
+						/>
+						<Info
+							icon={<BiSolidMap className="text-[#D9DFE8]" />}
+							label="Address"
+							value={basicInfo.location.city}
+						/>
 					</div>
 					<Separator className="h-[.080px] bg-[#D9DFE8] opacity-[10%]" />
 					<div className="flex flex-col gap-5">
+						{/* <Info />
 						<Info />
 						<Info />
-						<Info />
-						<Info />
+						<Info /> */}
 					</div>
 					<Separator className="h-[.080px] bg-[#D9DFE8] opacity-[10%]" />
 					<div className="flex flex-col gap-5">
-						<Info />
-						<Info />
+						{/* <Info />
+						<Info /> */}
 					</div>
 				</div>
 				<div className="w-[70%] h-[100%] bg-[#232339] py-6 px-4 flex flex-col items-start gap-6">
@@ -194,19 +210,23 @@ const SingleExperience = () => {
 	);
 };
 
-const Info = () => {
+const Info = ({
+	icon,
+	label,
+	value,
+}: {
+	icon: React.ReactNode;
+	label: string;
+	value: string;
+}) => {
 	return (
 		<div className="flex items-center gap-2">
 			<div className="h-[8px] w-[8px] rounded-2xl flex items-center justify-center bg-[#2E2E48] p-3">
-				<div>
-					<MdOutlineMailOutline className="text-[#D9DFE8]" />
-				</div>
+				<div>{icon}</div>
 			</div>
 			<div className="flex flex-col gap-[.5]">
-				<h3 className="text-[9px] text-[#ACB1C3]">Email</h3>
-				<p className="text-[9px] font-light text-[#D9DFE8]">
-					salmandotweb@gmail.com
-				</p>
+				<h3 className="text-[9px] text-[#ACB1C3]">{label}</h3>
+				<p className="text-[9px] font-light text-[#D9DFE8]">{value}</p>
 			</div>
 		</div>
 	);

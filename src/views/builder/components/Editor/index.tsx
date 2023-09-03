@@ -1,13 +1,15 @@
-import EditBasicInfo from "./templates/prisma/components/BasicInfo";
-import Education from "./templates/prisma/components/Education";
-import EditExperience from "./templates/prisma/components/Experience";
-import FeaturedProject from "./templates/prisma/components/FeaturedProject";
-import SkillsTools from "./templates/prisma/components/SkillsTools";
+import EditBasicInfo from "./components/BasicInfo";
+import Education from "./components/Education";
+import EditExperience from "./components/Experience";
+import FeaturedProject from "./components/FeaturedProject";
+import SkillsTools from "./components/SkillsTools";
+
+export type Templates = "prisma" | "spectrum";
 
 export const headers: {
 	[key: string]: {
 		title: string;
-		templates: string[];
+		templates: Templates[];
 		component: () => JSX.Element;
 	};
 } = {
@@ -23,7 +25,7 @@ export const headers: {
 	},
 	experience: {
 		title: "Experience",
-		templates: ["prisma"],
+		templates: ["prisma", "spectrum"],
 		component: EditExperience,
 	},
 	featuredProject: {
@@ -33,7 +35,7 @@ export const headers: {
 	},
 	skillsTools: {
 		title: "Skills & Tools",
-		templates: ["prisma"],
+		templates: ["prisma", "spectrum"],
 		component: SkillsTools,
 	},
 };
