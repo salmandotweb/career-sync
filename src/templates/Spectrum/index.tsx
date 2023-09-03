@@ -57,6 +57,7 @@ const Spectrum = () => {
 						{filteredProfiles.map((profile) => {
 							return (
 								<Info
+									key={profile.network}
 									image={`/images/icons/${profile.network}.svg`}
 									label={profile.network}
 									value={profile.url}

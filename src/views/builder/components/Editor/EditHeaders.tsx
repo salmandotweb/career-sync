@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { headers } from ".";
+import { Templates, headers } from ".";
 import { Separator } from "@/components/ui/separator";
 
 const animation = {
@@ -17,7 +17,7 @@ const EditHeaders = ({
 	return (
 		<motion.div initial={animation.initial} animate={animation.animate}>
 			{Object.entries(headers).map(([link, { title, templates }]) => {
-				if (templates.includes(selectedTemplate)) {
+				if (templates.includes(selectedTemplate as Templates)) {
 					return (
 						<a
 							onClick={() => onLinkClick(link)}
