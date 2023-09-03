@@ -2,7 +2,8 @@ export type IProfiles = {
     network: string;
     username: string;
     url: string;
-    color: string;
+    color?: string;
+    template?: string[];
 };
 
 type ILocation = {

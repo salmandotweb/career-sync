@@ -5,9 +5,15 @@ import { useAppSelector } from "@/stores/hooks";
 import { selectBasicInfo } from "@/stores/slices/basic/basicInfoSlice";
 import { AiOutlineLink } from "react-icons/ai";
 import { BiPhone, BiSolidMap } from "react-icons/bi";
+import Link from "next/link";
+import Image from "next/image";
 
 const Spectrum = () => {
 	const basicInfo = useAppSelector(selectBasicInfo);
+
+	const filteredProfiles = basicInfo.profiles.filter(
+		(profile) => profile.network !== "Website"
+	);
 	return (
 		<div
 			className="bg-[#232339] h-[100%] w-[100%] text-white overflow-hidden"
@@ -48,10 +54,17 @@ const Spectrum = () => {
 					</div>
 					<Separator className="h-[.080px] bg-[#D9DFE8] opacity-[10%]" />
 					<div className="flex flex-col gap-5">
-						{/* <Info />
-						<Info />
-						<Info />
-						<Info /> */}
+						{filteredProfiles.map((profile) => {
+							return (
+								<Info
+									image={`/images/icons/${profile.network}.svg`}
+									label={profile.network}
+									value={profile.url}
+									username={profile.username}
+									link={true}
+								/>
+							);
+						})}
 					</div>
 					<Separator className="h-[.080px] bg-[#D9DFE8] opacity-[10%]" />
 					<div className="flex flex-col gap-5">
@@ -212,21 +225,38 @@ const SingleExperience = () => {
 
 const Info = ({
 	icon,
+	image,
 	label,
 	value,
+	username,
+	link,
 }: {
-	icon: React.ReactNode;
+	icon?: React.ReactNode;
+	image?: string;
 	label: string;
 	value: string;
+	username?: string;
+	link?: boolean;
 }) => {
 	return (
 		<div className="flex items-center gap-2">
-			<div className="h-[8px] w-[8px] rounded-2xl flex items-center justify-center bg-[#2E2E48] p-3">
+			<div className="h-[8px] w-[8px] rounded-2xl flex items-center justify-center bg-[#2E2E48] p-3 relative">
 				<div>{icon}</div>
+				{image && <Image src={image} alt="icon" fill />}
 			</div>
+
 			<div className="flex flex-col gap-[.5]">
 				<h3 className="text-[9px] text-[#ACB1C3]">{label}</h3>
-				<p className="text-[9px] font-light text-[#D9DFE8]">{value}</p>
+				{!link ? (
+					<p className="text-[9px] font-light text-[#D9DFE8]">{value}</p>
+				) : (
+					<Link
+						href={value}
+						className="text-[9px] font-light text-[#D9DFE8]"
+						target="_blank">
+						@{username}
+					</Link>
+				)}
 			</div>
 		</div>
 	);

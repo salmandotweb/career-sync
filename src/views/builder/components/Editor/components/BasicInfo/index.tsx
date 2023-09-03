@@ -146,26 +146,6 @@ const EditBasicInfo = () => {
 									}}
 								/>
 							</div>
-							<div className="grid w-full max-w-sm items-center gap-2">
-								<Label htmlFor="address">Address</Label>
-								<Input
-									type="text"
-									id="address"
-									placeholder="Enter your address"
-									value={basicInfo.location.city}
-									onChange={(e) => {
-										dispatch(
-											updateBasicInfo({
-												...basicInfo,
-												location: {
-													...basicInfo.location,
-													city: e.target.value,
-												},
-											})
-										);
-									}}
-								/>
-							</div>
 						</>
 					)}
 				</TabsContent>
@@ -174,62 +154,68 @@ const EditBasicInfo = () => {
 					className="w-full flex items-start flex-col gap-5">
 					{basicInfo.profiles.map((profile, index) => {
 						return (
-							<div
-								className="grid w-full max-w-sm items-center gap-2"
-								key={index}>
-								<Label htmlFor={profile.network}>
-									{profile.network.charAt(0).toUpperCase() +
-										profile.network.slice(1)}
-								</Label>
-								<div className="flex items-center gap-3 flex-col">
-									<Input
-										type="text"
-										id={profile.username}
-										placeholder="Username"
-										value={profile.username}
-										onChange={(e) => {
-											const newProfiles = basicInfo.profiles.map((item, i) => {
-												if (index === i) {
-													return {
-														...item,
-														username: e.target.value,
-													};
-												}
-												return item;
-											});
-											dispatch(
-												updateBasicInfo({
-													...basicInfo,
-													profiles: newProfiles,
-												})
-											);
-										}}
-									/>
-									<Input
-										type="url"
-										id={profile.network}
-										placeholder="Url"
-										value={profile.url}
-										onChange={(e) => {
-											const newProfiles = basicInfo.profiles.map((item, i) => {
-												if (index === i) {
-													return {
-														...item,
-														url: e.target.value,
-													};
-												}
-												return item;
-											});
-											dispatch(
-												updateBasicInfo({
-													...basicInfo,
-													profiles: newProfiles,
-												})
-											);
-										}}
-									/>
+							profile.template?.includes(ActiveTemplate.id) && (
+								<div
+									className="grid w-full max-w-sm items-center gap-2"
+									key={index}>
+									<Label htmlFor={profile.network}>
+										{profile.network.charAt(0).toUpperCase() +
+											profile.network.slice(1)}
+									</Label>
+									<div className="flex items-center gap-3 flex-col">
+										<Input
+											type="text"
+											id={profile.username}
+											placeholder="Username"
+											value={profile.username}
+											onChange={(e) => {
+												const newProfiles = basicInfo.profiles.map(
+													(item, i) => {
+														if (index === i) {
+															return {
+																...item,
+																username: e.target.value,
+															};
+														}
+														return item;
+													}
+												);
+												dispatch(
+													updateBasicInfo({
+														...basicInfo,
+														profiles: newProfiles,
+													})
+												);
+											}}
+										/>
+										<Input
+											type="url"
+											id={profile.network}
+											placeholder="Url"
+											value={profile.url}
+											onChange={(e) => {
+												const newProfiles = basicInfo.profiles.map(
+													(item, i) => {
+														if (index === i) {
+															return {
+																...item,
+																url: e.target.value,
+															};
+														}
+														return item;
+													}
+												);
+												dispatch(
+													updateBasicInfo({
+														...basicInfo,
+														profiles: newProfiles,
+													})
+												);
+											}}
+										/>
+									</div>
 								</div>
-							</div>
+							)
 						);
 					})}
 				</TabsContent>

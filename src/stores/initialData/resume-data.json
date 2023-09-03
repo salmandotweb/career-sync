@@ -13,22 +13,37 @@
 
 		"profiles": [
 			{
-				"network": "website",
+				"network": "Website",
 				"username": "salmandotweb.me",
 				"url": "https://www.salmandotweb.me/",
-				"color": "#7C3AED"
+				"color": "#7C3AED",
+				"template": ["prisma", "spectrum"]
 			},
 			{
-				"network": "linkedin",
+				"network": "Linkedin",
 				"username": "salmandotweb",
 				"url": "https://www.linkedin.com/in/salmandotweb/",
-				"color": "#0A66C2"
+				"color": "#0A66C2",
+				"template": ["prisma", "spectrum"]
 			},
 			{
-				"network": "github",
+				"network": "Github",
 				"username": "salmandotweb",
 				"url": "https://github.com/salmandotweb",
-				"color": "#222"
+				"color": "#222",
+				"template": ["prisma", "spectrum"]
+			},
+			{
+				"network": "Twitter",
+				"username": "salmandotweb",
+				"url": "https://github.com/salmandotweb",
+				"template": ["spectrum"]
+			},
+			{
+				"network": "Instagram",
+				"username": "salmandotweb_",
+				"url": "https://github.com/salmandotweb",
+				"template": ["spectrum"]
 			}
 		]
 	},

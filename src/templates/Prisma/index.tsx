@@ -22,6 +22,7 @@ import { selectSkills } from "@/stores/slices/skills/skillSlice";
 import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
 import { SkillsTools } from "@/stores/slices/skills/interfaces";
 import Link from "next/link";
+import { selectTemplate } from "@/stores/slices/templates/templateSlice";
 
 interface indexProps {}
 
@@ -31,6 +32,8 @@ const Prisma: FC<indexProps> = ({}) => {
 	const experiences = useAppSelector(selectExperience);
 	const featuredProject = useAppSelector(selectFeaturedProject);
 	const skills = useAppSelector(selectSkills);
+
+	const ActiveTemplate = useAppSelector(selectTemplate);
 
 	return (
 		<div
@@ -53,21 +56,23 @@ const Prisma: FC<indexProps> = ({}) => {
 				<div className="flex items-center justify-center gap-4 text-[11px]">
 					{basicInfo.profiles.map((profile) => {
 						return (
-							<Link
-								href={profile.url}
-								className={`bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#222]`}
-								key={profile.network}
-								target="_blank">
-								{profile.network === "linkedin" ? (
-									<BsLinkedin />
-								) : profile.network === "github" ? (
-									<AiFillGithub />
-								) : profile.network === "website" ? (
-									<HiOutlineGlobeAlt />
-								) : null}
+							profile.template?.includes(ActiveTemplate.id) && (
+								<Link
+									href={profile.url}
+									className={`bg-[#F6F3FF] flex items-center justify-center rounded-[20px] px-2 gap-1 text-[#222]`}
+									key={profile.network}
+									target="_blank">
+									{profile.network === "Linkedin" ? (
+										<BsLinkedin />
+									) : profile.network === "Github" ? (
+										<AiFillGithub />
+									) : profile.network === "Website" ? (
+										<HiOutlineGlobeAlt />
+									) : null}
 
-								{profile.username}
-							</Link>
+									{profile.username}
+								</Link>
+							)
 						);
 					})}
 				</div>
