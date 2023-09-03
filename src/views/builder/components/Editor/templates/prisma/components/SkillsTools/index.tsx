@@ -6,8 +6,8 @@ import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import {
 	selectSkills,
 	updateSkills,
-} from "@/stores/slices/skills/educationSlice";
-import { SkillsTools as Skills } from "@/stores/slices/skills/interfaces";
+} from "@/stores/slices/prisma/skills/educationSlice";
+import { SkillsTools as Skills } from "@/stores/slices/prisma/skills/interfaces";
 
 const SkillsTools = () => {
 	const skills = useAppSelector(selectSkills);

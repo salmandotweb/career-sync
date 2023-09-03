@@ -2,7 +2,7 @@ import { RootState } from "@/stores/store";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { Education } from "./interfaces";
-import resumeData from "../../initialData/prisma/resume-data.json";
+import resumeData from "../../../initialData/prisma/resume-data.json";
 
 const initialState: Education = resumeData.education
 

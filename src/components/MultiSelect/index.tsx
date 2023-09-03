@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
-import { ISkillsItem } from "@/stores/slices/experiences/interfaces";
+import { ISkillsItem } from "@/stores/slices/prisma/experiences/interfaces";
 
 const skills = [
 	{ id: 1, name: "JavaScript" },

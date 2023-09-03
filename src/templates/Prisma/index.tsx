@@ -7,18 +7,18 @@ import { AiFillGithub } from "react-icons/ai";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 import { Separator } from "@/components/ui/separator";
 import { useAppSelector } from "@/stores/hooks";
-import { selectBasicInfo } from "@/stores/slices/basic/basicInfoSlice";
+import { selectBasicInfo } from "@/stores/slices/prisma/basic/basicInfoSlice";
 import { BsCalendar2Minus } from "react-icons/bs";
 import { Badge } from "@/components/ui/badge";
 import { BsLink45Deg } from "react-icons/bs";
 import { BsStars } from "react-icons/bs";
-import { selectEducation } from "@/stores/slices/education/educationSlice";
 import { formatDate } from "@/lib/utils";
-import { selectExperience } from "@/stores/slices/experiences/experienceSlice";
-import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
-import { selectFeaturedProject } from "@/stores/slices/featuredProject/featuredProjectSlice";
-import { selectSkills } from "@/stores/slices/skills/educationSlice";
-import { SkillsTools } from "@/stores/slices/skills/interfaces";
+import { selectEducation } from "@/stores/slices/prisma/education/educationSlice";
+import { selectExperience } from "@/stores/slices/prisma/experiences/experienceSlice";
+import { selectFeaturedProject } from "@/stores/slices/prisma/featuredProject/featuredProjectSlice";
+import { selectSkills } from "@/stores/slices/prisma/skills/educationSlice";
+import { IExperienceItem } from "@/stores/slices/prisma/experiences/interfaces";
+import { SkillsTools } from "@/stores/slices/prisma/skills/interfaces";
 
 interface indexProps {}
 

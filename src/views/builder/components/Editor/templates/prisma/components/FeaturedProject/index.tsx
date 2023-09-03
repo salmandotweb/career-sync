@@ -3,21 +3,15 @@ import MultiSelect from "@/components/MultiSelect";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
-import { ISkillsItem } from "@/stores/slices/experiences/interfaces";
 import {
 	selectFeaturedProject,
 	updateFeaturedProject,
-} from "@/stores/slices/featuredProject/featuredProjectSlice";
-import { useState } from "react";
+} from "@/stores/slices/prisma/featuredProject/featuredProjectSlice";
 
 const FeaturedProject = () => {
 	const featuredProject = useAppSelector(selectFeaturedProject);
 
 	const dispatch = useAppDispatch();
-
-	const [selectedSkills, setSelectedSkills] = useState<
-		ISkillsItem[] | null | any
-	>([]);
 
 	return (
 		<div className="w-full flex items-start flex-col gap-5">
