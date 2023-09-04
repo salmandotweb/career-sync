@@ -1,4 +1,4 @@
 export enum TEMPLATES {
-    prisma = "prisma",
-    spectrum = "spectrum"
+  prisma = "prisma",
+  spectrum = "spectrum",
 }

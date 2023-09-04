@@ -1,28 +1,28 @@
 export type IProfiles = {
-    network: string;
-    username: string;
-    url: string;
-    color?: string;
-    template?: string[];
+  network: string;
+  username: string;
+  url: string;
+  color?: string;
+  template?: string[];
 };
 
 type ILocation = {
-    city: string;
+  city: string;
 };
 
 export interface BasicInfo {
-    name: string;
-    label: string;
-    image: string;
-    intro: string;
-    email: string;
-    phone: string;
-    url: string;
-    location: ILocation;
-    profiles: IProfiles[];
+  name: string;
+  label: string;
+  image: string;
+  intro: string;
+  email: string;
+  phone: string;
+  url: string;
+  location: ILocation;
+  profiles: IProfiles[];
 }
 
 export interface IBasicDetailsStore {
-    values: BasicInfo;
-    reset: (values: BasicInfo) => void;
+  values: BasicInfo;
+  reset: (values: BasicInfo) => void;
 }
