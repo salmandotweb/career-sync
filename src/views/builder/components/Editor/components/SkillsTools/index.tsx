@@ -2,18 +2,25 @@ import FormInput from "@/components/FormInput";
 import MultiSelect from "@/components/MultiSelect";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TEMPLATES } from "@/enums/availableTemplates";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { SkillsTools as Skills } from "@/stores/slices/skills/interfaces";
 import { selectSkills, updateSkills } from "@/stores/slices/skills/skillSlice";
+import { selectTemplate } from "@/stores/slices/templates/templateSlice";
 
 const SkillsTools = () => {
 	const skills = useAppSelector(selectSkills);
 	const dispatch = useAppDispatch();
 
+	const ActiveTemplate = useAppSelector(selectTemplate);
+
 	return (
 		<>
 			<Tabs defaultValue="Languages" className="w-[100%]">
-				<TabsList className="w-full mb-5">
+				<TabsList
+					className={`w-full mb-5 ${
+						TEMPLATES.spectrum === ActiveTemplate.id ? "hidden" : "flex"
+					}`}>
 					{skills?.map((skill) => {
 						return (
 							<TabsTrigger

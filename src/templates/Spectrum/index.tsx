@@ -12,11 +12,13 @@ import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
 import { formatDate } from "@/lib/utils";
 import { selectEducation } from "@/stores/slices/education/educationSlice";
 import { Education } from "@/stores/slices/education/interfaces";
+import { selectSkills } from "@/stores/slices/skills/skillSlice";
 
 const Spectrum = () => {
 	const basicInfo = useAppSelector(selectBasicInfo);
 	const experiences = useAppSelector(selectExperience);
 	const education = useAppSelector(selectEducation);
+	const skills = useAppSelector(selectSkills);
 
 	const filteredProfiles = basicInfo.profiles.filter(
 		(profile) => profile.network !== "Website"
@@ -25,6 +27,9 @@ const Spectrum = () => {
 	const getWebsiteProfile = basicInfo.profiles.filter(
 		(profile) => profile.network === "Website"
 	);
+
+	const frontendSkills = skills[0]?.frontendRelated;
+	const backendSkills = skills[0]?.backendRelated;
 
 	return (
 		<div
@@ -131,16 +136,10 @@ const Spectrum = () => {
 										Frontend
 									</h3>
 								</div>
-								<div className="grid grid-cols-2 gap-2">
-									<Skill />
-									<Skill />
-								</div>
-								<div className="grid grid-cols-1 gap-2">
-									<Skill />
-								</div>
-								<div className="grid grid-cols-2 gap-2">
-									<Skill />
-									<Skill />
+								<div className={`grid grid-cols-2 gap-2`}>
+									{frontendSkills?.map((skill) => {
+										return <Skill key={skill.id} skill={skill.name} />;
+									})}
 								</div>
 							</div>
 							<div className="flex-1 flex flex-col gap-2">
@@ -155,16 +154,10 @@ const Spectrum = () => {
 										Backend
 									</h3>
 								</div>
-								<div className="grid grid-cols-2 gap-2">
-									<Skill />
-									<Skill />
-								</div>
-								<div className="grid grid-cols-1 gap-2">
-									<Skill />
-								</div>
-								<div className="grid grid-cols-2 gap-2">
-									<Skill />
-									<Skill />
+								<div className={`grid grid-cols-2 gap-2`}>
+									{backendSkills?.map((skill) => {
+										return <Skill key={skill.id} skill={skill.name} />;
+									})}
 								</div>
 							</div>
 						</div>
@@ -202,10 +195,12 @@ const Education = ({
 	);
 };
 
-const Skill = () => {
+const Skill = ({ skill }: { skill: string }) => {
 	return (
-		<div className="p-6 flex items-center justify-center bg-[#2E2E48] rounded-md flex-wrap w-full">
-			<h3 className="text-[10px] font-light text-[#95AAFB]">React JS</h3>
+		<div className="p-5 flex items-center justify-center bg-[#2E2E48] rounded-md flex-wrap w-full">
+			<h3 className="text-[10px] font-light text-[#95AAFB] text-center">
+				{skill}
+			</h3>
 		</div>
 	);
 };
