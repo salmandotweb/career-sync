@@ -20,7 +20,7 @@ export const headers: {
 	},
 	education: {
 		title: "Education",
-		templates: ["prisma"],
+		templates: ["prisma", "spectrum"],
 		component: Education,
 	},
 	experience: {

@@ -1,6 +1,7 @@
 export interface IExperienceItem {
     id: string;
     name: string;
+    companyLogo?: string;
     position: string;
     joiningDate: string;
     endDate: string | null;

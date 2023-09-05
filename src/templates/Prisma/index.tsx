@@ -35,6 +35,10 @@ const Prisma: FC<indexProps> = ({}) => {
 
 	const ActiveTemplate = useAppSelector(selectTemplate);
 
+	const templateEducation = education.filter(
+		(item) => item.type === "University"
+	);
+
 	return (
 		<div
 			className="bg-[#0F172A] h-[100%] w-[100%] text-white overflow-hidden"
@@ -79,24 +83,29 @@ const Prisma: FC<indexProps> = ({}) => {
 			</div>
 			<Separator className="bg-[#334155]" />
 			<div className="flex flex-col items-start justify-start w-[90%] mx-auto py-[20px] gap-4">
-				<div className="grid grid-cols-[1fr,3.5fr,1fr] gap-2 items-start w-[100%]">
-					<h1 className="text-[#E2E8F0] text-[12px] font-medium">Education</h1>
-					<h1 className="text-[#E2E8F0] text-[12px] font-medium">
-						{education.degree} <span className="text-[#CBD5E1]"> - </span>
-						<span className="text-[#E2E8F0] font-light">
-							{education.institution}
-						</span>
-					</h1>
-					<div className="flex items-center gap-2 text-[8px] ml-auto">
-						<BsCalendar2Minus />
-						<h3 className="text-[#E2E8F0] text-[10px] font-medium whitespace-nowrap">
-							{formatDate(new Date(education.startDate))} -{" "}
-							{education.currentlyEnrolled
-								? "Present"
-								: formatDate(new Date(education.endDate ?? new Date()))}
-						</h3>
-					</div>
-				</div>
+				{templateEducation?.map((education) => {
+					return (
+						<div className="grid grid-cols-[1fr,3.5fr,1fr] gap-2 items-start w-[100%]">
+							<h1 className="text-[#E2E8F0] text-[12px] font-medium">
+								Education
+							</h1>
+							<h1 className="text-[#E2E8F0] text-[12px] font-medium">
+								{education.degree} <span className="text-[#CBD5E1]"> - </span>
+								<span className="text-[#E2E8F0] font-light">
+									{education.institution}
+								</span>
+							</h1>
+							<div className="flex items-center gap-2 text-[8px] ml-auto">
+								<BsCalendar2Minus />
+								<h3 className="text-[#E2E8F0] text-[10px] font-medium whitespace-nowrap">
+									{education.startYear} -{" "}
+									{education.currentlyEnrolled ? "Present" : education.endYear}
+								</h3>
+							</div>
+						</div>
+					);
+				})}
+
 				<Separator className="bg-[#334155]" />
 				<div className="grid grid-cols-[1fr,4.7fr] gap-1 items-start w-[100%]">
 					<h1 className="text-[#E2E8F0] text-[12px] font-medium">Experience</h1>

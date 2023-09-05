@@ -10,10 +10,13 @@ import Image from "next/image";
 import { selectExperience } from "@/stores/slices/experiences/experienceSlice";
 import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
 import { formatDate } from "@/lib/utils";
+import { selectEducation } from "@/stores/slices/education/educationSlice";
+import { Education } from "@/stores/slices/education/interfaces";
 
 const Spectrum = () => {
 	const basicInfo = useAppSelector(selectBasicInfo);
 	const experiences = useAppSelector(selectExperience);
+	const education = useAppSelector(selectEducation);
 
 	const filteredProfiles = basicInfo.profiles.filter(
 		(profile) => profile.network !== "Website"
@@ -108,9 +111,9 @@ const Spectrum = () => {
 					<div className="flex flex-col items-start gap-4 w-full">
 						<h1 className="font-semi-bold">Education</h1>
 						<div className="flex items-start gap-2 justify-between w-full">
-							<Education />
-							<Education />
-							<Education />
+							{education?.map((education) => {
+								return <Education {...education} key={education.type} />;
+							})}
 						</div>
 					</div>
 					<div className="flex flex-col items-start gap-4 w-full">
@@ -177,21 +180,23 @@ const Spectrum = () => {
 
 export default Spectrum;
 
-const Education = () => {
+const Education = ({
+	institution,
+	startYear,
+	endYear,
+	degree,
+	currentlyEnrolled,
+}: Education) => {
 	return (
-		<div className="py-3 px-4 flex flex-col items-start gap-4 bg-[#2E2E48] rounded-md w-full">
+		<div className="py-3 px-4 flex flex-col items-start gap-3 bg-[#2E2E48] rounded-md w-full">
 			<div className="flex items-center gap-2">
-				<img
-					src="https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4"
-					height={30}
-					width={30}
-					alt=""
-				/>
-				<h3 className="text-[10px] font-light">Virtual University PK</h3>
+				<h3 className="text-[11px] font-light">{degree}</h3>
 			</div>
 			<div className="flex flex-col items-start gap-1">
-				<h3 className="text-[10px] font-light">High School</h3>
-				<h3 className="text-[9px] text-[#ACB1C3]">2016 - 2018</h3>
+				<h3 className="text-[9px] font-light">{institution}</h3>
+				<h3 className="text-[9px] text-[#ACB1C3]">
+					{startYear} - {currentlyEnrolled ? "Present" : endYear}
+				</h3>
 			</div>
 		</div>
 	);
@@ -207,11 +212,11 @@ const Skill = () => {
 
 const Experience = ({
 	name,
+	companyLogo,
 	position,
 	joiningDate,
 	endDate,
 	currentlyWorkHere,
-	skills,
 	responsibilities,
 	location,
 }: IExperienceItem) => {
@@ -239,28 +244,25 @@ const Experience = ({
 					)}
 				</div>
 				<div className="flex items-start gap-2">
-					<img
-						src="https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4"
-						height={30}
-						width={30}
-						alt=""
-					/>
+					{companyLogo && (
+						<img src={companyLogo} height={30} width={30} alt="" />
+					)}
 					<div className="flex flex-col items-start gap-1">
-						<h3 className="text-[9px] font-light">Software Engineer</h3>
-						<h1 className="font-semi-bold text-[10px]">Rising Technologies</h1>
+						<h3 className="text-[9px] font-light">{name}</h3>
+						<h1 className="font-semi-bold text-[9px] whitespace-nowrap">
+							{position}
+						</h1>
 					</div>
 				</div>
 			</div>
 			<div className="flex flex-col items-start gap-2 w-[65%] ml-auto">
-				<p className="text-[9px] font-light">
-					- Working as a Software Engineer at Rising Technologies. I am
-					developing web applications using React.js, Next.js, TypeScript,
-					JavaScript, and other technologies.
-				</p>
-				<p className="text-[9px] font-light">
-					- Led the design and implementation of company websites and
-					API-integrated projects, ensuring cutting-edge user experiences.
-				</p>
+				{responsibilities?.map((responsibility) => {
+					return (
+						<p className="text-[9px] font-light" key={responsibility.id}>
+							{responsibility.responsibility}
+						</p>
+					);
+				})}
 			</div>
 		</div>
 	);

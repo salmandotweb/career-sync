@@ -1,7 +1,8 @@
 export interface Education {
     institution: string
     degree: string
-    startDate: string
-    endDate: string | null
+    startYear: string
+    endYear: string | null
     currentlyEnrolled: boolean
+    type: string
 }

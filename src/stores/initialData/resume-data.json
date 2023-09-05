@@ -48,13 +48,32 @@
 		]
 	},
 
-	"education": {
-		"degree": "Software Engineering",
-		"institution": "Virtual University Pakistan",
-		"startDate": "2020-11-1",
-		"endDate": null,
-		"currentlyEnrolled": true
-	},
+	"education": [
+		{
+			"degree": "High School",
+			"institution": "A.W Grammer School",
+			"startYear": "2016",
+			"endYear": "2018",
+			"currentlyEnrolled": false,
+			"type": "School"
+		},
+		{
+			"degree": "Intermediate",
+			"institution": "GOVT College Jrw",
+			"startYear": "2018",
+			"endYear": "2020",
+			"currentlyEnrolled": false,
+			"type": "College"
+		},
+		{
+			"degree": "Software Engineering",
+			"institution": "Virtual University Pakistan",
+			"startYear": "2020",
+			"endYear": null,
+			"currentlyEnrolled": true,
+			"type": "University"
+		}
+	],
 
 	"experience": [
 		{
@@ -65,6 +84,7 @@
 			"endDate": null,
 			"currentlyWorkHere": true,
 			"location": "Lahore, Pakistan",
+			"companyLogo": "https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4",
 			"skills": [
 				{ "id": 340, "name": "Next.js" },
 				{ "id": 443, "name": "TypeScript" },
@@ -89,6 +109,7 @@
 			"endDate": "2022-09-01",
 			"currentlyWorkHere": false,
 			"location": "Remote",
+			"companyLogo": "https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4",
 			"skills": [
 				{ "id": 17, "name": "React" },
 				{ "id": 443, "name": "TypeScript" },
@@ -113,6 +134,7 @@
 			"endDate": "2021-05-01",
 			"currentlyWorkHere": false,
 			"location": "Remote",
+			"companyLogo": "https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4",
 			"skills": [
 				{ "id": 17, "name": "React" },
 				{ "id": 1, "name": "JavaScript" },

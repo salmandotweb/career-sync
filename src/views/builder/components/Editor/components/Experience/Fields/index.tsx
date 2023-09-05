@@ -23,6 +23,28 @@ const Fields: FC<indexProps> = ({ experience }) => {
 
 	return (
 		<div className="grid w-full max-w-sm items-center gap-4">
+			{TEMPLATES.spectrum === ActiveTemplate.id && (
+				<FormInput label="Company Logo" name="companyLogo">
+					<Input
+						type="text"
+						id="companyLogo"
+						placeholder="Paste the company logo URL"
+						value={experience.companyLogo}
+						onChange={(e) => {
+							dispatch(
+								updateExperience({
+									index: Number(experience.id) - 1,
+									updatedInfo: {
+										...experience,
+										companyLogo: e.target.value,
+									},
+								})
+							);
+						}}
+					/>
+				</FormInput>
+			)}
+
 			<FormInput label="Company Name" name="companyName">
 				<Input
 					type="text"
@@ -133,51 +155,57 @@ const Fields: FC<indexProps> = ({ experience }) => {
 					/>
 				</FormInput>
 			)}
-			<FormInput label="Skills" name="skills">
-				<MultiSelect
-					maxSkills={5}
-					selectSkills={experience.skills}
-					setSelectSkills={(skills) => {
-						dispatch(
-							updateExperience({
-								index: Number(experience.id) - 1,
-								updatedInfo: {
-									...experience,
-									skills,
-								},
-							})
-						);
-					}}
-				/>
-			</FormInput>
-			<FormInput label="Responsibilities" name="experience">
-				{experience.responsibilities.map((item, index) => (
-					<Textarea
-						key={index}
-						className="resize-none"
-						placeholder={`${index + 1}.`}
-						rows={3}
-						value={item.responsibility ?? ""}
-						onChange={(e) => {
-							const updatedResponsibilities = [...experience.responsibilities];
-							updatedResponsibilities[index] = {
-								...item,
-								responsibility: e.target.value,
-							};
+			{TEMPLATES.prisma === ActiveTemplate.id && (
+				<>
+					<FormInput label="Skills" name="skills">
+						<MultiSelect
+							maxSkills={5}
+							selectSkills={experience.skills}
+							setSelectSkills={(skills) => {
+								dispatch(
+									updateExperience({
+										index: Number(experience.id) - 1,
+										updatedInfo: {
+											...experience,
+											skills,
+										},
+									})
+								);
+							}}
+						/>
+					</FormInput>
+					<FormInput label="Responsibilities" name="experience">
+						{experience.responsibilities.map((item, index) => (
+							<Textarea
+								key={index}
+								className="resize-none"
+								placeholder={`${index + 1}.`}
+								rows={3}
+								value={item.responsibility ?? ""}
+								onChange={(e) => {
+									const updatedResponsibilities = [
+										...experience.responsibilities,
+									];
+									updatedResponsibilities[index] = {
+										...item,
+										responsibility: e.target.value,
+									};
 
-							dispatch(
-								updateExperience({
-									index: Number(experience.id) - 1,
-									updatedInfo: {
-										...experience,
-										responsibilities: updatedResponsibilities,
-									},
-								})
-							);
-						}}
-					/>
-				))}
-			</FormInput>
+									dispatch(
+										updateExperience({
+											index: Number(experience.id) - 1,
+											updatedInfo: {
+												...experience,
+												responsibilities: updatedResponsibilities,
+											},
+										})
+									);
+								}}
+							/>
+						))}
+					</FormInput>
+				</>
+			)}
 		</div>
 	);
 };

@@ -4,14 +4,15 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { Education } from "./interfaces";
 import resumeData from '../../initialData/resume-data.json'
 
-const initialState: Education = resumeData.education
+const initialState: Education[] = resumeData.education
 
 export const educationSlice = createSlice({
     name: "education",
     initialState,
     reducers: {
-        updateEducation: (state, action: PayloadAction<Education>) => {
-            return action.payload;
+        updateEducation: (state, action: PayloadAction<{ index: number, updatedInfo: Education }>) => {
+            const { index, updatedInfo } = action.payload
+            state[index] = updatedInfo
         }
     },
 });
