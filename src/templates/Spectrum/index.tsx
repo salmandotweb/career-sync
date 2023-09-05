@@ -38,6 +38,18 @@ const Spectrum = () => {
 			<div className="flex flex-row h-[100%] w-[100%]">
 				<div className="w-[30%] h-[100%] bg-[#1e1e2f] flex flex-col items-start gap-6 py-6 px-4">
 					<div className="flex flex-col items-start gap-1">
+						{basicInfo.profileImage && (
+							<img
+								src={basicInfo.profileImage}
+								alt="profile"
+								height={80}
+								width={80}
+								style={{
+									borderRadius: "50%",
+								}}
+							/>
+						)}
+
 						<h1 className="text-[16px] text-white font-semibold">
 							{basicInfo.name}
 						</h1>
@@ -60,6 +72,8 @@ const Spectrum = () => {
 								icon={<AiOutlineLink className="text-[#D9DFE8]" />}
 								label="Website"
 								value={basicInfo.url}
+								username="salmandotweb.me"
+								link
 							/>
 						)}
 						{basicInfo.phone && (
@@ -294,7 +308,7 @@ const Info = ({
 						href={value}
 						className="text-[9px] font-light text-[#D9DFE8]"
 						target="_blank">
-						@{username}
+						{username}
 					</Link>
 				)}
 			</div>

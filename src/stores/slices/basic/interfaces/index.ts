@@ -11,6 +11,7 @@ type ILocation = {
 };
 
 export interface BasicInfo {
+    profileImage?: string;
     name: string;
     label: string;
     image: string;

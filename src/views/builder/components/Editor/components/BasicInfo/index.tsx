@@ -33,6 +33,26 @@ const EditBasicInfo = () => {
 				<TabsContent
 					value="about"
 					className="w-full flex items-start flex-col gap-5">
+					{TEMPLATES.spectrum === ActiveTemplate.id && (
+						<div className="grid w-full max-w-sm items-center gap-2">
+							<Label htmlFor="profileImage">Profile Image</Label>
+							<Input
+								type="text"
+								id="profileImage"
+								placeholder="Paste your image url"
+								value={basicInfo.profileImage}
+								onChange={(e) => {
+									dispatch(
+										updateBasicInfo({
+											...basicInfo,
+											profileImage: e.target.value,
+										})
+									);
+								}}
+							/>
+						</div>
+					)}
+
 					<div className="grid w-full max-w-sm items-center gap-2">
 						<Label htmlFor="name">Name</Label>
 						<Input
