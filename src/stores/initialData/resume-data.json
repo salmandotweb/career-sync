@@ -64,6 +64,7 @@
 			"joiningDate": "2022-09-01",
 			"endDate": null,
 			"currentlyWorkHere": true,
+			"location": "Lahore, Pakistan",
 			"skills": [
 				{ "id": 340, "name": "Next.js" },
 				{ "id": 443, "name": "TypeScript" },
@@ -87,6 +88,7 @@
 			"joiningDate": "2021-05-01",
 			"endDate": "2022-09-01",
 			"currentlyWorkHere": false,
+			"location": "Remote",
 			"skills": [
 				{ "id": 17, "name": "React" },
 				{ "id": 443, "name": "TypeScript" },
@@ -110,6 +112,7 @@
 			"joiningDate": "2020-11-01",
 			"endDate": "2021-05-01",
 			"currentlyWorkHere": false,
+			"location": "Remote",
 			"skills": [
 				{ "id": 17, "name": "React" },
 				{ "id": 1, "name": "JavaScript" },

@@ -5,10 +5,12 @@ import MultiSelect from "@/components/MultiSelect";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { formatDate } from "@/lib/utils";
-import { useAppDispatch } from "@/stores/hooks";
+import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { updateExperience } from "@/stores/slices/experiences/experienceSlice";
 import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
+import { selectTemplate } from "@/stores/slices/templates/templateSlice";
 import { FC } from "react";
+import { TEMPLATES } from "@/enums/availableTemplates";
 
 interface indexProps {
 	experience: IExperienceItem;
@@ -16,6 +18,8 @@ interface indexProps {
 
 const Fields: FC<indexProps> = ({ experience }) => {
 	const dispatch = useAppDispatch();
+
+	const ActiveTemplate = useAppSelector(selectTemplate);
 
 	return (
 		<div className="grid w-full max-w-sm items-center gap-4">
@@ -108,6 +112,27 @@ const Fields: FC<indexProps> = ({ experience }) => {
 					}}
 				/>
 			</div>
+			{TEMPLATES.spectrum === ActiveTemplate.id && (
+				<FormInput label="Location" name="location">
+					<Input
+						type="text"
+						id="location"
+						placeholder="Enter the location of the company"
+						value={experience.location}
+						onChange={(e) => {
+							dispatch(
+								updateExperience({
+									index: Number(experience.id) - 1,
+									updatedInfo: {
+										...experience,
+										location: e.target.value,
+									},
+								})
+							);
+						}}
+					/>
+				</FormInput>
+			)}
 			<FormInput label="Skills" name="skills">
 				<MultiSelect
 					maxSkills={5}

@@ -7,6 +7,7 @@ export interface IExperienceItem {
     currentlyWorkHere: boolean
     skills: ISkillsItem[];
     responsibilities: Responsibility[];
+    location?: string;
 }
 
 export interface ISkillsItem {

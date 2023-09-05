@@ -7,13 +7,22 @@ import { AiOutlineLink } from "react-icons/ai";
 import { BiPhone, BiSolidMap } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
+import { selectExperience } from "@/stores/slices/experiences/experienceSlice";
+import { IExperienceItem } from "@/stores/slices/experiences/interfaces";
+import { formatDate } from "@/lib/utils";
 
 const Spectrum = () => {
 	const basicInfo = useAppSelector(selectBasicInfo);
+	const experiences = useAppSelector(selectExperience);
 
 	const filteredProfiles = basicInfo.profiles.filter(
 		(profile) => profile.network !== "Website"
 	);
+
+	const getWebsiteProfile = basicInfo.profiles.filter(
+		(profile) => profile.network === "Website"
+	);
+
 	return (
 		<div
 			className="bg-[#232339] h-[100%] w-[100%] text-white overflow-hidden"
@@ -31,55 +40,69 @@ const Spectrum = () => {
 					</div>
 					<Separator className="h-[.080px] bg-[#D9DFE8] opacity-[10%]" />
 					<div className="flex flex-col gap-5">
-						<Info
-							icon={<MdOutlineMailOutline className="text-[#D9DFE8]" />}
-							label="Email"
-							value={basicInfo.email}
-						/>
-						<Info
-							icon={<AiOutlineLink className="text-[#D9DFE8]" />}
-							label="Website"
-							value={basicInfo.url}
-						/>
-						<Info
-							icon={<BiPhone className="text-[#D9DFE8]" />}
-							label="Phone"
-							value={basicInfo.phone}
-						/>
-						<Info
-							icon={<BiSolidMap className="text-[#D9DFE8]" />}
-							label="Address"
-							value={basicInfo.location.city}
-						/>
+						{basicInfo.email && (
+							<Info
+								icon={<MdOutlineMailOutline className="text-[#D9DFE8]" />}
+								label="Email"
+								value={basicInfo.email}
+							/>
+						)}
+						{getWebsiteProfile[0]?.username && (
+							<Info
+								icon={<AiOutlineLink className="text-[#D9DFE8]" />}
+								label="Website"
+								value={basicInfo.url}
+							/>
+						)}
+						{basicInfo.phone && (
+							<Info
+								icon={<BiPhone className="text-[#D9DFE8]" />}
+								label="Phone"
+								value={basicInfo.phone}
+							/>
+						)}
+						{basicInfo.location.city && (
+							<Info
+								icon={<BiSolidMap className="text-[#D9DFE8]" />}
+								label="Address"
+								value={basicInfo.location.city}
+							/>
+						)}
 					</div>
 					<Separator className="h-[.080px] bg-[#D9DFE8] opacity-[10%]" />
 					<div className="flex flex-col gap-5">
 						{filteredProfiles.map((profile) => {
 							return (
-								<Info
-									key={profile.network}
-									image={`/images/icons/${profile.network}.svg`}
-									label={profile.network}
-									value={profile.url}
-									username={profile.username}
-									link={true}
-								/>
+								profile.username && (
+									<Info
+										key={profile.network}
+										image={`/images/icons/${profile.network}.svg`}
+										label={profile.network}
+										value={profile.url}
+										username={profile.username}
+										link={true}
+									/>
+								)
 							);
 						})}
 					</div>
 					<Separator className="h-[.080px] bg-[#D9DFE8] opacity-[10%]" />
-					<div className="flex flex-col gap-5">
-						{/* <Info />
-						<Info /> */}
-					</div>
 				</div>
 				<div className="w-[70%] h-[100%] bg-[#232339] py-6 px-4 flex flex-col items-start gap-6">
 					<div className="flex flex-col items-start gap-4">
 						<h1 className="font-semi-bold">Experience</h1>
 						<div className="flex flex-col items-start gap-4">
-							<SingleExperience />
-							<SingleExperience />
-							<SingleExperience />
+							{experiences?.map((experience) => {
+								return (
+									<>
+										<Experience {...experience} key={experience.id} />
+										{experience.id !==
+											experiences[experiences.length - 1].id && (
+											<Separator className="bg-[#334155]" />
+										)}
+									</>
+								);
+							})}
 						</div>
 					</div>
 					<div className="flex flex-col items-start gap-4 w-full">
@@ -182,7 +205,16 @@ const Skill = () => {
 	);
 };
 
-const SingleExperience = () => {
+const Experience = ({
+	name,
+	position,
+	joiningDate,
+	endDate,
+	currentlyWorkHere,
+	skills,
+	responsibilities,
+	location,
+}: IExperienceItem) => {
 	return (
 		<div className="flex items-start gap-2">
 			<div className="flex flex-col items-center gap-1 mt-[5px]">
@@ -191,10 +223,20 @@ const SingleExperience = () => {
 			</div>
 			<div className="flex flex-col items-start gap-2">
 				<div className="flex items-center gap-[5px]">
-					<h3 className="text-[8px] font-light">Sep 2022</h3>
-					<h3 className="text-[8px] font-light">Present</h3>
-					<FaLocationDot className="w-[5px] font-light" />
-					<h3 className="text-[8px] font-light">Lahore, Pakistan</h3>
+					<h3 className="text-[8px] font-light whitespace-nowrap">
+						{formatDate(new Date(joiningDate))} -{" "}
+						{currentlyWorkHere
+							? "Present"
+							: formatDate(new Date(endDate ?? new Date()))}
+					</h3>
+					{location && (
+						<>
+							<FaLocationDot className="w-[5px] font-light" />
+							<h3 className="text-[8px] font-light whitespace-nowrap">
+								{location}
+							</h3>
+						</>
+					)}
 				</div>
 				<div className="flex items-start gap-2">
 					<img

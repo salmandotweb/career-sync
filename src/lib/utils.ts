@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function formatDate(date: Date) {
   return date.toLocaleString("default", {
-    month: "long",
+    month: "short",
     year: "numeric",
   });
 }
