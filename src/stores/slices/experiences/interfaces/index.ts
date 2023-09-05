@@ -1,21 +1,21 @@
 export interface IExperienceItem {
-    id: string;
-    name: string;
-    position: string;
-    joiningDate: string;
-    endDate: string | null;
-    currentlyWorkHere: boolean
-    skills: ISkillsItem[];
-    responsibilities: Responsibility[];
-    location?: string;
+  id: string;
+  name: string;
+  position: string;
+  joiningDate: string;
+  endDate: string | null;
+  currentlyWorkHere: boolean;
+  skills: ISkillsItem[];
+  responsibilities: Responsibility[];
+  location?: string;
 }
 
 export interface ISkillsItem {
-    id: string | number;
-    name: string;
+  id: string | number;
+  name: string;
 }
 
 export interface Responsibility {
-    id: string;
-    responsibility: string;
+  id: string;
+  responsibility: string;
 }
