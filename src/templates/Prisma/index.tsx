@@ -85,7 +85,9 @@ const Prisma: FC<indexProps> = ({}) => {
 			<div className="flex flex-col items-start justify-start w-[90%] mx-auto py-[20px] gap-4">
 				{templateEducation?.map((education) => {
 					return (
-						<div className="grid grid-cols-[1fr,3.5fr,1fr] gap-2 items-start w-[100%]">
+						<div
+							className="grid grid-cols-[1fr,3.5fr,1fr] gap-2 items-start w-[100%]"
+							key={education.type}>
 							<h1 className="text-[#E2E8F0] text-[12px] font-medium">
 								Education
 							</h1>
