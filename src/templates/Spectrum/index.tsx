@@ -31,8 +31,8 @@ const Spectrum = () => {
 	const frontendSkills = skills[0]?.frontendRelated;
 	const backendSkills = skills[0]?.backendRelated;
 
-	const coderRelated = skills[2].coderRelated;
-	const designerRelated = skills[2].designerRelated;
+	const coderRelated = skills[1].coderRelated;
+	const designerRelated = skills[1].designerRelated;
 
 	return (
 		<div
@@ -264,7 +264,7 @@ const Skill = ({
 			<h3
 				className={`text-[10px] font-light text-[${
 					textColor ?? "#95AAFB"
-				}] text-center whitespace-nowrap`}>
+				}] text-center`}>
 				{skill}
 			</h3>
 		</div>

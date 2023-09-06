@@ -536,7 +536,7 @@ const skills = [
 	{ id: 532, name: "Amazon QLDB" },
 	{ id: 533, name: "TRPC" },
 	{ id: 535, name: "Bootstrap" },
-	{ id: 536, name: "Material UI" },
+	{ id: 536, name: "MUI" },
 	{ id: 537, name: "Bulma" },
 	{ id: 538, name: "Chakra UI" },
 	{ id: 539, name: "Ant Design" },

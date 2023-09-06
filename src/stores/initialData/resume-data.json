@@ -173,8 +173,15 @@
 
 	"skillsTools": [
 		{
-			"title": "Languages",
-			"templates": ["prisma", "spectrum"],
+			"title": "Technologies",
+			"templates": ["prisma"],
+			"uiRelated": [
+				{ "id": 503, "name": "Tailwind CSS" },
+				{ "id": 536, "name": "MUI" },
+				{ "id": 538, "name": "Chakra UI" },
+				{ "id": 535, "name": "Bootstrap" },
+				{ "id": 544, "name": "Shadcn UI" }
+			],
 			"frontendRelated": [
 				{ "id": 17, "name": "React Js" },
 				{ "id": 501, "name": "Material UI" },
@@ -193,30 +200,6 @@
 				{ "id": 28, "name": "REST API" },
 				{ "id": 574, "name": "T3 Stack" },
 				{ "id": 508, "name": "PostgreSQL" }
-			]
-		},
-		{
-			"title": "Technologies",
-			"templates": ["prisma"],
-			"uiRelated": [
-				{ "id": 503, "name": "Tailwind CSS" },
-				{ "id": 536, "name": "Material UI" },
-				{ "id": 538, "name": "Chakra UI" },
-				{ "id": 535, "name": "Bootstrap" },
-				{ "id": 544, "name": "Shadcn UI" }
-			],
-			"frontendRelated": [
-				{ "id": 17, "name": "React" },
-				{ "id": 340, "name": "Next.js" },
-				{ "id": 545, "name": "Framer Motion" },
-				{ "id": 546, "name": "Storybook" },
-				{ "id": 2, "name": "TypeScript" },
-				{ "id": 547, "name": "Redux" }
-			],
-			"backendRelated": [
-				{ "id": 27, "name": "Express.js" },
-				{ "id": 512, "name": "Redis" },
-				{ "id": 14, "name": "MongoDB" }
 			]
 		},
 		{
