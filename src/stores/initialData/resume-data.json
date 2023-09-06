@@ -174,7 +174,7 @@
 	"skillsTools": [
 		{
 			"title": "Technologies",
-			"templates": ["prisma"],
+			"templates": ["prisma", "spectrum"],
 			"uiRelated": [
 				{ "id": 503, "name": "Tailwind CSS" },
 				{ "id": 536, "name": "MUI" },

@@ -181,7 +181,7 @@ const Spectrum = () => {
 					</div>
 					<div className="flex flex-col items-start gap-4 w-full">
 						<h1 className="font-semi-bold">Tools</h1>
-						<div className="flex-1 flex flex-col gap-2">
+						<div className="flex-1 flex flex-col gap-2 w-full">
 							<div className={`grid grid-cols-4 gap-2`}>
 								{coderRelated?.map((skill) => {
 									return (
@@ -189,7 +189,7 @@ const Spectrum = () => {
 											key={skill.id}
 											skill={skill.name}
 											logo={skill.logo}
-											textColor="#fff"
+											font="9px"
 										/>
 									);
 								})}
@@ -201,7 +201,7 @@ const Spectrum = () => {
 											key={skill.id}
 											skill={skill.name}
 											logo={skill.logo}
-											textColor="#fff"
+											font="9px"
 										/>
 									);
 								})}
@@ -241,30 +241,18 @@ const Education = ({
 const Skill = ({
 	skill,
 	logo,
-	textColor,
+	font,
 }: {
 	skill: string;
 	logo?: string;
-	textColor?: string;
+	font?: string;
 }) => {
 	return (
-		<div className="p-5 flex items-center justify-center bg-[#2E2E48] rounded-md flex-wrap w-full flex-col gap-3">
-			{logo && (
-				<img
-					src={logo}
-					alt={skill}
-					height={35}
-					width={35}
-					style={{
-						borderRadius: "50%",
-						objectFit: "contain",
-					}}
-				/>
-			)}
+		<div className="p-3 flex items-center justify-center bg-[#2E2E48] rounded-md flex-wrap w-full flex-col gap-3">
 			<h3
-				className={`text-[10px] font-light text-[${
-					textColor ?? "#95AAFB"
-				}] text-center`}>
+				className={`text-[${
+					font ?? "10px"
+				}] font-light text-[#fff] text-center`}>
 				{skill}
 			</h3>
 		</div>

@@ -7,15 +7,18 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { TemplateSlider } from "@/components/SelectTemplate";
+import Link from "next/link";
 
 export function Menu() {
 	return (
 		<Menubar className="print:hidden rounded-none border-b border-none p-6 flex items-center justify-between w-full">
 			<div className="flex items-center gap-4">
-				<Avatar>
-					<AvatarImage src="https://media.licdn.com/dms/image/D4D0BAQGu_xdkbbVAZQ/company-logo_200_200/0/1692017114895?e=1700092800&v=beta&t=e-hm7eiN9p-iOmYFuIu_87XL2uhGXBJpijT8rKPoDdo" />
-					<AvatarFallback>SC</AvatarFallback>
-				</Avatar>
+				<Link href="/">
+					<Avatar>
+						<AvatarImage src="https://media.licdn.com/dms/image/D4D0BAQGu_xdkbbVAZQ/company-logo_200_200/0/1692017114895?e=1700092800&v=beta&t=e-hm7eiN9p-iOmYFuIu_87XL2uhGXBJpijT8rKPoDdo" />
+						<AvatarFallback>SC</AvatarFallback>
+					</Avatar>
+				</Link>
 				<Popover>
 					<PopoverTrigger className="text-[16px] font-medium flex items-center gap-2">
 						Templates

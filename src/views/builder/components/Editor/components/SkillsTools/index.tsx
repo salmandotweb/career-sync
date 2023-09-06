@@ -15,7 +15,7 @@ const SkillsTools = () => {
 
 	return (
 		<>
-			<Tabs defaultValue="Languages" className="w-[100%]">
+			<Tabs defaultValue="Technologies" className="w-[100%]">
 				<TabsList className={`w-full mb-5`}>
 					{skills?.map((skill) => {
 						return (
