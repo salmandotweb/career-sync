@@ -31,6 +31,9 @@ const Spectrum = () => {
 	const frontendSkills = skills[0]?.frontendRelated;
 	const backendSkills = skills[0]?.backendRelated;
 
+	const coderRelated = skills[2].coderRelated;
+	const designerRelated = skills[2].designerRelated;
+
 	return (
 		<div
 			className="bg-[#232339] h-[100%] w-[100%] text-white overflow-hidden"
@@ -150,7 +153,7 @@ const Spectrum = () => {
 										Frontend
 									</h3>
 								</div>
-								<div className={`grid grid-cols-2 gap-2`}>
+								<div className={`grid grid-cols-3 gap-2`}>
 									{frontendSkills?.map((skill) => {
 										return <Skill key={skill.id} skill={skill.name} />;
 									})}
@@ -168,7 +171,7 @@ const Spectrum = () => {
 										Backend
 									</h3>
 								</div>
-								<div className={`grid grid-cols-2 gap-2`}>
+								<div className={`grid grid-cols-3 gap-2`}>
 									{backendSkills?.map((skill) => {
 										return <Skill key={skill.id} skill={skill.name} />;
 									})}
@@ -178,6 +181,32 @@ const Spectrum = () => {
 					</div>
 					<div className="flex flex-col items-start gap-4 w-full">
 						<h1 className="font-semi-bold">Tools</h1>
+						<div className="flex-1 flex flex-col gap-2">
+							<div className={`grid grid-cols-4 gap-2`}>
+								{coderRelated?.map((skill) => {
+									return (
+										<Skill
+											key={skill.id}
+											skill={skill.name}
+											logo={skill.logo}
+											textColor="#fff"
+										/>
+									);
+								})}
+							</div>
+							<div className={`grid grid-cols-5 gap-2`}>
+								{designerRelated?.map((skill) => {
+									return (
+										<Skill
+											key={skill.id}
+											skill={skill.name}
+											logo={skill.logo}
+											textColor="#fff"
+										/>
+									);
+								})}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -209,10 +238,33 @@ const Education = ({
 	);
 };
 
-const Skill = ({ skill }: { skill: string }) => {
+const Skill = ({
+	skill,
+	logo,
+	textColor,
+}: {
+	skill: string;
+	logo?: string;
+	textColor?: string;
+}) => {
 	return (
-		<div className="p-5 flex items-center justify-center bg-[#2E2E48] rounded-md flex-wrap w-full">
-			<h3 className="text-[10px] font-light text-[#95AAFB] text-center">
+		<div className="p-5 flex items-center justify-center bg-[#2E2E48] rounded-md flex-wrap w-full flex-col gap-3">
+			{logo && (
+				<img
+					src={logo}
+					alt={skill}
+					height={35}
+					width={35}
+					style={{
+						borderRadius: "50%",
+						objectFit: "contain",
+					}}
+				/>
+			)}
+			<h3
+				className={`text-[10px] font-light text-[${
+					textColor ?? "#95AAFB"
+				}] text-center whitespace-nowrap`}>
 				{skill}
 			</h3>
 		</div>

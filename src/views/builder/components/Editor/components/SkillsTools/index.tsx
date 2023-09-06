@@ -2,7 +2,6 @@ import FormInput from "@/components/FormInput";
 import MultiSelect from "@/components/MultiSelect";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TEMPLATES } from "@/enums/availableTemplates";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { SkillsTools as Skills } from "@/stores/slices/skills/interfaces";
 import { selectSkills, updateSkills } from "@/stores/slices/skills/skillSlice";
@@ -17,23 +16,22 @@ const SkillsTools = () => {
 	return (
 		<>
 			<Tabs defaultValue="Languages" className="w-[100%]">
-				<TabsList
-					className={`w-full mb-5 ${
-						TEMPLATES.spectrum === ActiveTemplate.id ? "hidden" : "flex"
-					}`}>
+				<TabsList className={`w-full mb-5`}>
 					{skills?.map((skill) => {
 						return (
-							<TabsTrigger
-								key={skill.title}
-								value={skill.title.toString()}
-								className="w-full">
-								{skill.title}
-							</TabsTrigger>
+							skill.templates.includes(ActiveTemplate.id) && (
+								<TabsTrigger
+									key={skill.title}
+									value={skill.title.toString()}
+									className="w-full">
+									{skill.title}
+								</TabsTrigger>
+							)
 						);
 					})}
 				</TabsList>
 				<ScrollArea className="h-[67vh] w-full">
-					{skills?.map((skill: Skills) => (
+					{skills?.map((skill: Skills, index: number) => (
 						<TabsContent
 							key={skill.title}
 							value={skill.title.toString()}
@@ -47,7 +45,7 @@ const SkillsTools = () => {
 										setSelectSkills={(skills) => {
 											dispatch(
 												updateSkills({
-													index: 0,
+													index: index,
 													updatedInfo: {
 														...skill,
 														frontendRelated: skills,
@@ -68,7 +66,7 @@ const SkillsTools = () => {
 										setSelectSkills={(skills) => {
 											dispatch(
 												updateSkills({
-													index: 0,
+													index: index,
 													updatedInfo: {
 														...skill,
 														uiRelated: skills,
@@ -89,7 +87,7 @@ const SkillsTools = () => {
 										setSelectSkills={(skills) => {
 											dispatch(
 												updateSkills({
-													index: 0,
+													index: index,
 													updatedInfo: {
 														...skill,
 														backendRelated: skills,
@@ -110,7 +108,7 @@ const SkillsTools = () => {
 										setSelectSkills={(skills) => {
 											dispatch(
 												updateSkills({
-													index: 0,
+													index: index,
 													updatedInfo: {
 														...skill,
 														coderRelated: skills,
@@ -131,7 +129,7 @@ const SkillsTools = () => {
 										setSelectSkills={(skills) => {
 											dispatch(
 												updateSkills({
-													index: 0,
+													index: index,
 													updatedInfo: {
 														...skill,
 														designerRelated: skills,

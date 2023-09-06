@@ -110,7 +110,7 @@
 			"endDate": "2022-09-01",
 			"currentlyWorkHere": false,
 			"location": "Remote",
-			"companyLogo": "https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4",
+			"companyLogo": "https://media.licdn.com/dms/image/C4D0BAQFlYY6e9HrnAA/company-logo_200_200/0/1626180362429?e=1701907200&v=beta&t=pq_aLqvOrABhu2jz6fmEmf2fixTJguH1DXptVFxkSXE",
 			"skills": [
 				{ "id": 17, "name": "React" },
 				{ "id": 443, "name": "TypeScript" },
@@ -135,7 +135,7 @@
 			"endDate": "2021-05-01",
 			"currentlyWorkHere": false,
 			"location": "Remote",
-			"companyLogo": "https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4",
+			"companyLogo": "https://media.licdn.com/dms/image/C4D0BAQGV5E_n5dqG3w/company-logo_200_200/0/1644181037778?e=1701907200&v=beta&t=gYIWVZTDmgiiJU9-NPI6tCtvTOzXE3VHj7bG-YBDm5E",
 			"skills": [
 				{ "id": 17, "name": "React" },
 				{ "id": 1, "name": "JavaScript" },
@@ -174,20 +174,30 @@
 	"skillsTools": [
 		{
 			"title": "Languages",
+			"templates": ["prisma", "spectrum"],
 			"frontendRelated": [
-				{ "id": 1, "name": "JavaScript" },
-				{ "id": 17, "name": "React" },
+				{ "id": 17, "name": "React Js" },
+				{ "id": 501, "name": "Material UI" },
 				{ "id": 340, "name": "Next.js" },
-				{ "id": 2, "name": "TypeScript" }
+				{ "id": 567, "name": "Firebase" },
+				{ "id": 573, "name": "HTML/CSS" },
+				{ "id": 443, "name": "TypeScript" },
+				{ "id": 1, "name": "JavaScript" },
+				{ "id": 569, "name": "Git" },
+				{ "id": 570, "name": "GitHub" }
 			],
 			"backendRelated": [
 				{ "id": 16, "name": "Node.js" },
-				{ "id": 533, "name": "TRPC" },
+				{ "id": 27, "name": "Express.js" },
+				{ "id": 14, "name": "MongoDB" },
+				{ "id": 28, "name": "REST API" },
+				{ "id": 574, "name": "T3 Stack" },
 				{ "id": 508, "name": "PostgreSQL" }
 			]
 		},
 		{
 			"title": "Technologies",
+			"templates": ["prisma"],
 			"uiRelated": [
 				{ "id": 503, "name": "Tailwind CSS" },
 				{ "id": 536, "name": "Material UI" },
@@ -211,16 +221,55 @@
 		},
 		{
 			"title": "Tools & Softwares",
+			"templates": ["prisma", "spectrum"],
 			"coderRelated": [
-				{ "id": 548, "name": "Visual Studio Code" },
-				{ "id": 16, "name": "Node.js" },
-				{ "id": 34, "name": "Version Control (Git)" },
-				{ "id": 551, "name": "Postman" }
+				{
+					"id": 548,
+					"logo": "https://w7.pngwing.com/pngs/401/906/png-transparent-visual-studio-code-microsoft-visual-studio-source-code-editor-visual-studio-application-lifecycle-management-microsoft-blue-angle-studio-thumbnail.png",
+					"name": "Visual Studio Code"
+				},
+				{
+					"id": 567,
+					"logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaLQwQyJoEwCh3UHcBscpbePHy1B-3gIDlEQ&usqp=CAU",
+					"name": "Firebase"
+				},
+				{
+					"id": 570,
+					"logo": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+					"name": "Github"
+				},
+				{
+					"id": 553,
+					"logo": "https://www.pngmart.com/files/23/Figma-Logo-PNG-File.png",
+					"name": "Figma"
+				}
 			],
 			"designerRelated": [
-				{ "id": 504, "name": "Figma" },
-				{ "id": 552, "name": "Adobe XD" },
-				{ "id": 545, "name": "Framer Motion" }
+				{
+					"id": 545,
+					"logo": "https://storage.googleapis.com/zenn-user-upload/topics/08a231e332.png",
+					"name": "Framer Motion"
+				},
+				{
+					"id": 551,
+					"logo": "https://seeklogo.com/images/P/postman-logo-0087CA0D15-seeklogo.com.png",
+					"name": "Postman"
+				},
+				{
+					"id": 571,
+					"logo": "https://companieslogo.com/img/orig/GOOG-0ed88f7c.png?t=1633218227",
+					"name": "Google"
+				},
+				{
+					"id": 572,
+					"logo": "https://img.freepik.com/premium-vector/red-youtube-logo-social-media-logo_197792-1803.jpg?w=2000",
+					"name": "Youtube"
+				},
+				{
+					"id": 69,
+					"logo": "https://static-00.iconduck.com/assets.00/slack-icon-512x511-udpsz3x6.png",
+					"name": "Slack"
+				}
 			]
 		}
 	]

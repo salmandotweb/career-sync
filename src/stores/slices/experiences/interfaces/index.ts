@@ -13,6 +13,7 @@ export interface IExperienceItem {
 
 export interface ISkillsItem {
     id: string | number;
+    logo?: string;
     name: string;
 }
 
