@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Sidebar } from "./components/Sidebar";
 import { useAppSelector } from "@/stores/hooks";
 import { AVAILABLE_TEMPLATES } from "@/lib/availableTemplates";

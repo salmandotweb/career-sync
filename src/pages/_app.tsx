@@ -14,6 +14,7 @@ const syne = Syne({
 
 export default function App({ Component, pageProps }: AppProps) {
 	let persistor = persistStore(store);
+
 	return (
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
