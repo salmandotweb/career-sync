@@ -113,13 +113,15 @@ const Prisma: FC<indexProps> = ({}) => {
 					<h1 className="text-[#E2E8F0] text-[12px] font-medium">Experience</h1>
 					<div className="flex flex-col gap-2">
 						{experiences?.map((experience) => {
-							return (
+							return !experience.hide ? (
 								<>
 									<Experience {...experience} key={experience.id} />
 									{experience.id !== experiences[experiences.length - 1].id && (
 										<Separator className="bg-[#334155]" />
 									)}
 								</>
+							) : (
+								""
 							);
 						})}
 					</div>

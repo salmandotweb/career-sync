@@ -23,6 +23,24 @@ const Fields: FC<indexProps> = ({ experience }) => {
 
 	return (
 		<div className="grid w-full max-w-sm items-center gap-4">
+			<div className="flex items-center justify-end">
+				<CheckboxWithText
+					id="hideExperience"
+					label="Hide this experience"
+					value={experience.hide}
+					onChange={(value) => {
+						dispatch(
+							updateExperience({
+								index: Number(experience.id) - 1,
+								updatedInfo: {
+									...experience,
+									hide: value,
+								},
+							})
+						);
+					}}
+				/>
+			</div>
 			{TEMPLATES.spectrum === ActiveTemplate.id && (
 				<FormInput label="Company Logo" name="companyLogo">
 					<Input

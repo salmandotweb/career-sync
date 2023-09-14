@@ -118,7 +118,7 @@ const Spectrum = () => {
 						<h1 className="font-semi-bold">Experience</h1>
 						<div className="flex flex-col items-start gap-4">
 							{experiences?.map((experience) => {
-								return (
+								return !experience.hide ? (
 									<>
 										<Experience {...experience} key={experience.id} />
 										{experience.id !==
@@ -126,6 +126,8 @@ const Spectrum = () => {
 											<Separator className="bg-[#334155]" />
 										)}
 									</>
+								) : (
+									""
 								);
 							})}
 						</div>

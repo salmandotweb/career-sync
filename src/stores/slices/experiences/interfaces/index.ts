@@ -9,6 +9,7 @@ export interface IExperienceItem {
     skills: ISkillsItem[];
     responsibilities: Responsibility[];
     location?: string;
+    hide?: boolean;
 }
 
 export interface ISkillsItem {

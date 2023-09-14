@@ -85,6 +85,7 @@
 			"endDate": null,
 			"currentlyWorkHere": true,
 			"location": "Lahore, Pakistan",
+			"hide": false,
 			"companyLogo": "https://media.licdn.com/dms/image/C4E0BAQE5OLM7B98-MA/company-logo_200_200/0/1611817381050?e=1701907200&v=beta&t=cfABWsT5kfN2feQ397-3OoxzpZKNCSFj1PA_j8xQJs4",
 			"skills": [
 				{ "id": 340, "name": "Next.js" },
@@ -110,6 +111,7 @@
 			"endDate": "2022-09-01",
 			"currentlyWorkHere": false,
 			"location": "Remote",
+			"hide": false,
 			"companyLogo": "https://media.licdn.com/dms/image/C4D0BAQFlYY6e9HrnAA/company-logo_200_200/0/1626180362429?e=1701907200&v=beta&t=pq_aLqvOrABhu2jz6fmEmf2fixTJguH1DXptVFxkSXE",
 			"skills": [
 				{ "id": 17, "name": "React" },
@@ -135,6 +137,7 @@
 			"endDate": "2021-05-01",
 			"currentlyWorkHere": false,
 			"location": "Remote",
+			"hide": false,
 			"companyLogo": "https://media.licdn.com/dms/image/C4D0BAQGV5E_n5dqG3w/company-logo_200_200/0/1644181037778?e=1701907200&v=beta&t=gYIWVZTDmgiiJU9-NPI6tCtvTOzXE3VHj7bG-YBDm5E",
 			"skills": [
 				{ "id": 17, "name": "React" },
