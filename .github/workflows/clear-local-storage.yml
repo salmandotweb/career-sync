@@ -1,0 +1,25 @@
+name: Clear Local Storage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  clear-local-storage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v2
+
+      - name: Clear Local Storage
+        run: |
+          npm install -f
+          npm run build
+          npm run dev
+
+          echo 'window.localStorage.clear();' >> clear-local-storage.js
+          node clear-local-storage.js
+
+        working-directory: ./path/to/your/nextjs/app
