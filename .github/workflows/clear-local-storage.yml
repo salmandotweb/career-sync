@@ -1,4 +1,4 @@
-name: Clear localStorage and Deploy
+name: Clear Local Storage
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  clear-local-storage:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,17 +16,10 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: "14"
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install Dependencies
+        run: npm install -f
 
-      - name: Build Next.js app
-        run: npm run build
-
-      - name: Clear localStorage
+      - name: Clear Local Storage
         run: node clearLocalStorage.ts
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
