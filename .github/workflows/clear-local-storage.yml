@@ -22,4 +22,4 @@ jobs:
           echo 'window.localStorage.clear();' >> clear-local-storage.js
           node clear-local-storage.js
 
-        working-directory: https://github.com/salmandotweb/career-sync
+        working-directory: ./career-sync
