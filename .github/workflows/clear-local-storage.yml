@@ -19,7 +19,6 @@ jobs:
           npm run build
           npm run dev
 
-          echo 'window.localStorage.clear();' >> clear-local-storage.js
-          node clear-local-storage.js
+          localStorage.clear()
 
-        # working-directory: src/pages
+        working-directory: src/pages
