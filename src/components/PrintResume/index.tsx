@@ -12,6 +12,7 @@ const PrintResume = () => {
 			globalThis.document.title = "CareerSync";
 		});
 	}, []);
+
 	return (
 		<Button
 			onClick={globalThis?.print}
