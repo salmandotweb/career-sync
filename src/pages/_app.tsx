@@ -8,20 +8,20 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Syne } from "@next/font/google";
 
 const syne = Syne({
-	subsets: ["latin-ext"],
-	variable: "--font-syne",
+  subsets: ["latin-ext"],
+  variable: "--font-syne",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-	let persistor = persistStore(store);
+  let persistor = persistStore(store);
 
-	return (
-		<Provider store={store}>
-			<PersistGate loading={null} persistor={persistor}>
-				<main className={`${syne.variable} font-sans`}>
-					<Component {...pageProps} />
-				</main>
-			</PersistGate>
-		</Provider>
-	);
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <main className={`${syne.variable} font-sans`}>
+          <Component {...pageProps} />
+        </main>
+      </PersistGate>
+    </Provider>
+  );
 }
