@@ -22,4 +22,4 @@ jobs:
           echo 'window.localStorage.clear();' >> clear-local-storage.js
           node clear-local-storage.js
 
-        working-directory: ./career-sync
+        # working-directory: src/pages
