@@ -14,7 +14,7 @@ const Hero: FC<indexProps> = ({}) => {
 				</p>
 				<h1 className="text-center text-gray-800 font-bold my-3 text-5xl">
 					Your Dream Job Is Just A <span className="underline">Resume</span>{" "}
-					Away.
+					Away
 				</h1>
 				<p className="text-center text-gray-400 text-base font-normal">
 					For young starters, professionals, freelancers, and all levels of
