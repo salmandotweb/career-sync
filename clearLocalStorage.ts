@@ -1,3 +1,3 @@
 function clearLocalStorage() {
-    localStorage.removeItem("persist:root");
+  localStorage.removeItem("persist:root");
 }
