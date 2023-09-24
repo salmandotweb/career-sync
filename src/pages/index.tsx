@@ -1,4 +1,5 @@
 import Navbar from "@/components/Layout/Navbar";
+import Hero from "@/components/Sections/Hero";
 import Head from "next/head";
 
 export default function Home() {
@@ -9,8 +10,10 @@ export default function Home() {
 				<meta name="description" content="Single Page Resume Builder" />
 				<link rel="icon" type="image/png" href="favicon.png" />
 			</Head>
-
-			<Navbar />
+			<div className="px-24">
+				<Navbar />
+				<Hero />
+			</div>
 		</>
 	);
 }
