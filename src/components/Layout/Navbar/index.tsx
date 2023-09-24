@@ -39,7 +39,7 @@ const Navbar = () => {
 					title="Company"
 					className="inline-flex items-center">
 					<Image src="/logo/careersync.png" width={60} height={60} alt="logo" />
-					<span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+					<span className="ml-2 text-xl font-bold tracking-wide uppercase">
 						CareerSync.
 					</span>
 				</Link>
@@ -55,7 +55,7 @@ const Navbar = () => {
 									href={link.href}
 									aria-label={link.label}
 									title={link.label}
-									className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
+									className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400">
 									{link.label}
 								</Link>
 							</li>

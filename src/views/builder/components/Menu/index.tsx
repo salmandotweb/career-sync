@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/popover";
 import { TemplateSlider } from "@/components/SelectTemplate";
 import Link from "next/link";
+import { ModeToggle } from "@/components/ThemeToggle";
 
 export function Menu() {
 	return (
@@ -40,7 +41,10 @@ export function Menu() {
 					</PopoverContent>
 				</Popover>
 			</div>
-			<PrintResume />
+			<div className="flex items-center gap-4">
+				<ModeToggle />
+				<PrintResume />
+			</div>
 		</Menubar>
 	);
 }

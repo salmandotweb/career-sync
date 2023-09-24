@@ -23,7 +23,7 @@ const EditHeaders = ({
 							onClick={() => onLinkClick(link)}
 							key={title}
 							className="cursor-pointer">
-							<div className="flex items-center justify-start px-4 py-4 space-x-2 rounded-md hover:bg-gray-100">
+							<div className="flex items-center justify-start px-4 py-4 space-x-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-600">
 								<svg
 									width="15"
 									height="15"
