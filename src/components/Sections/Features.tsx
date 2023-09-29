@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 const Features = () => {
 	return (
@@ -16,7 +17,7 @@ const Features = () => {
 						<Button size="sm">Explore Resumes</Button>
 					</Link>
 				</div>
-				<div className="w-[60%] rounded-lg bg-slate-800 h-[500px] backdrop-blur-md bg-opacity-40 p-4 shadow-lg"></div>
+				<div className="w-[60%] rounded-lg bg-slate-800 h-[500px] backdrop-blur-md bg-opacity-40 p-4 shadow-lg relative"></div>
 			</div>
 			<div className="flex items-start w-full gap-10">
 				<div className="w-[50%] rounded-lg bg-slate-800 h-[500px] backdrop-blur-md bg-opacity-40 p-4 shadow-lg"></div>

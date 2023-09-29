@@ -5,7 +5,6 @@ import Image from "next/image";
 const Hero = () => {
 	return (
 		<div className="w-full min-h-[80vh] my-8 bg-gray-900 py-4 px-16 rounded-lg flex items-center justify-between relative overflow-hidden">
-			<div className="absolute top-0 left-0 w-full h-[100px] bg-gradient-to-b from-gray-800 to-transparent" />
 			<div className="flex flex-col items-start gap-4 w-[50%]">
 				<p className="font-thin text-slate-200">
 					Level Up Your Career in Tech with CareerSync: The Ultimate Resume
@@ -16,17 +15,22 @@ const Hero = () => {
 					professionals.
 				</h1>
 				<Link href="/builder">
-					<Button size="sm">Build My Resume Now</Button>
+					<Button
+						size="sm"
+						className="bg-white text-primary hover:bg-slate-300">
+						Build My Resume Now
+					</Button>
 				</Link>
 			</div>
 			<div className="flex items-center justify-end w-[50%]">
-				<div className="h-[650px] w-[600px] bg-gray-800 rounded-lg" />
-				{/* <Image
-					src="/images/featureTemplate.png"
-					width={500}
-					height={300}
-					alt="careersync"
-				/> */}
+				<div className="h-[700px] w-[595px] rounded-lg relative">
+					<Image
+						src="/images/Figmer.png"
+						layout="fill"
+						objectFit="contain"
+						alt="Figmer"
+					/>
+				</div>
 			</div>
 		</div>
 	);

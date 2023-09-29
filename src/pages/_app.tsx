@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			<PersistGate loading={null} persistor={persistor}>
 				<ThemeProvider
 					attribute="class"
-					defaultTheme="dark"
+					defaultTheme="light"
 					enableSystem
 					disableTransitionOnChange>
 					<main className={`${syne.variable} font-sans`}>
