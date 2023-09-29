@@ -46,7 +46,10 @@ const Navbar = () => {
 				<ul className="hidden items-center space-x-8 lg:flex">
 					{links.map((link) =>
 						link.button ? (
-							<Button variant="default" key={link.label}>
+							<Button
+								variant="default"
+								key={link.label}
+								className="rounded-full">
 								<Link href={link.href}>{link.label}</Link>
 							</Button>
 						) : (

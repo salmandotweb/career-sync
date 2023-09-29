@@ -1,35 +1,51 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { Badge } from "../ui/badge";
+
+const trendingSearches = [
+	{
+		name: "Remote Job",
+	},
+	{
+		name: "Frontend Developer",
+	},
+	{
+		name: "Backend Developer",
+	},
+	{
+		name: "Fullstack Developer",
+	},
+	{
+		name: "UI/UX Designer",
+	},
+];
 
 const Hero = () => {
 	return (
-		<div className="w-full min-h-[80vh] my-8 bg-gray-900 py-4 px-16 rounded-lg flex items-center justify-between relative overflow-hidden">
-			<div className="flex flex-col items-start gap-4 w-[50%]">
-				<p className="font-thin text-slate-200">
-					Level Up Your Career in Tech with CareerSync: The Ultimate Resume
-					Builder
-				</p>
-				<h1 className="text-5xl text-white">
-					Create a jaw-dropping resume effortlessly, customized for tech
-					professionals.
+		<div className="min-h-[70vh] text-center flex flex-col items-center justify-center">
+			<div className="flex flex-col gap-6 items-center justify-center">
+				<h1 className="text-[70px] font-bold leading-[80px]">
+					The home to get your <br />
+					dream job
 				</h1>
-				<Link href="/builder">
-					<Button
-						size="sm"
-						className="bg-white text-primary hover:bg-slate-300">
-						Build My Resume Now
-					</Button>
-				</Link>
+				<p className="font-[18px]">
+					You do not have the right to remain silent… let us know <br /> what it
+					takes to challenge you
+				</p>
+				<Button>
+					<Link href="/builder">Get Started</Link>
+				</Button>
 			</div>
-			<div className="flex items-center justify-end w-[50%]">
-				<div className="h-[700px] w-[595px] rounded-lg relative">
-					<Image
-						src="/images/Figmer.png"
-						layout="fill"
-						objectFit="contain"
-						alt="Figmer"
-					/>
+
+			<div className="flex flex-col items-center justify-center gap-6 mt-[100px]">
+				<h1 className="text-[20px] font-bold">Trending searches</h1>
+				<div className="flex flex-wrap items-center gap-6">
+					{trendingSearches.map((search, index) => (
+						<Badge variant="outline" className="rounded-full py-2 px-4">
+							<Link href="/builder">{search.name}</Link>
+						</Badge>
+					))}
 				</div>
 			</div>
 		</div>
