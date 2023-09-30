@@ -1,5 +1,6 @@
 import Navbar from "@/components/Layout/Navbar";
 import Hero from "@/components/Sections/Hero";
+import HowItWorks from "@/components/Sections/HowItWorks";
 import Head from "next/head";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
 			<main className="px-40">
 				<Navbar />
 				<Hero />
+				<HowItWorks />
 			</main>
 		</>
 	);
