@@ -1,4 +1,5 @@
 import Navbar from "@/components/Layout/Navbar";
+import Categories from "@/components/Sections/Categories";
 import Hero from "@/components/Sections/Hero";
 import HowItWorks from "@/components/Sections/HowItWorks";
 import Head from "next/head";
@@ -15,6 +16,7 @@ export default function Home() {
 				<Navbar />
 				<Hero />
 				<HowItWorks />
+				<Categories />
 			</main>
 		</>
 	);

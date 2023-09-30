@@ -3,36 +3,36 @@ import SectionWrapper from "../SectionWrapper";
 
 const data = [
 	{
-		title: "Search",
-		description:
-			"Search for a resume template that suits your needs and preferences best.",
-		icon: "/icons/search.svg",
+		title: "Design",
+		description: "3 Resume Templates",
+		icon: "/icons/design.svg",
 	},
 	{
-		title: "Edit",
-		description:
-			"Edit your resume and fill in your personal information and experiences.",
-		icon: "/icons/edit.svg",
+		title: "Business",
+		description: "6 Resume Templates",
+		icon: "/icons/business.svg",
 	},
 	{
-		title: "Download",
-		description:
-			"Download your resume and start applying for your dream job right away.",
-		icon: "/icons/download.svg",
+		title: "Development",
+		description: "11 Resume Templates",
+		icon: "/icons/development.svg",
+	},
+	{
+		title: "Communication",
+		description: "4 Resume Templates",
+		icon: "/icons/communication.svg",
 	},
 ];
 
-const HowItWorks: React.FC = () => {
+const Categories: React.FC = () => {
 	return (
-		<SectionWrapper>
+		<SectionWrapper className="min-h-[80vh]">
 			<div className="flex flex-col items-center justify-center gap-2">
-				<p className="uppercase text-[#0D8772] font-medium">How it works</p>
+				<p className="uppercase text-[#F57343] font-medium">9+ Jobs Category</p>
 				<h1 className="text-[50px] font-bold leading-[80px]">
-					Simple steps to get your <br />
-					<span className="fancy">dream job</span>
+					Choose by <span className="fancy">category</span>
 				</h1>
 			</div>
-
 			<div className="flex items-center justify-center gap-8 flex-wrap mt-12">
 				{data?.map((item, index) => (
 					<Card
@@ -47,7 +47,7 @@ const HowItWorks: React.FC = () => {
 	);
 };
 
-export default HowItWorks;
+export default Categories;
 
 const Card = ({
 	title,
@@ -59,7 +59,7 @@ const Card = ({
 	icon: string;
 }) => {
 	return (
-		<div className="flex flex-col items-center justify-center gap-2 w-[320px] shadow-[0_8px_30px_rgb(0,0,0,0.12)] px-6 py-10 rounded-md">
+		<div className="flex flex-col items-center justify-center gap-2 w-[250px] px-6 py-10 rounded-md border">
 			<div className="mb-6">
 				<Image src={icon} width={60} height={60} alt={title} />
 			</div>
