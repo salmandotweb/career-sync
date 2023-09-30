@@ -10,10 +10,10 @@ export default function Home() {
 				<meta name="description" content="Single Page Resume Builder" />
 				<link rel="icon" type="image/png" href="favicon.png" />
 			</Head>
-			<div className="px-40">
+			<main className="px-40">
 				<Navbar />
 				<Hero />
-			</div>
+			</main>
 		</>
 	);
 }
