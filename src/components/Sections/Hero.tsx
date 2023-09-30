@@ -63,7 +63,10 @@ const Hero = () => {
 				<h1 className="text-[20px] font-bold">Trending searches</h1>
 				<div className="flex flex-wrap items-center gap-6">
 					{trendingSearches.map((search, index) => (
-						<Badge variant="outline" className="rounded-full py-2 px-4">
+						<Badge
+							variant="outline"
+							className="rounded-full py-2 px-4"
+							key={index}>
 							<Link href="/builder">{search.name}</Link>
 						</Badge>
 					))}
