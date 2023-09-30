@@ -4,18 +4,18 @@ import HowItWorks from "@/components/Sections/HowItWorks";
 import Head from "next/head";
 
 export default function Home() {
-	return (
-		<>
-			<Head>
-				<title>Career Sync</title>
-				<meta name="description" content="Single Page Resume Builder" />
-				<link rel="icon" type="image/png" href="favicon.png" />
-			</Head>
-			<main className="px-40">
-				<Navbar />
-				<Hero />
-				<HowItWorks />
-			</main>
-		</>
-	);
+  return (
+    <>
+      <Head>
+        <title>Career Sync</title>
+        <meta name="description" content="Single Page Resume Builder" />
+        <link rel="icon" type="image/png" href="favicon.png" />
+      </Head>
+      <main className="px-40">
+        <Navbar />
+        <Hero />
+        <HowItWorks />
+      </main>
+    </>
+  );
 }
