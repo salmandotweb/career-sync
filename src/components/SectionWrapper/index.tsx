@@ -10,7 +10,7 @@ const SectionWrapper: FC<indexProps> = (props) => {
 	return (
 		<div
 			className={cn(
-				"flex flex-col items-center justify-center gap-4 text-center min-h-[50vh]",
+				"flex flex-col items-center justify-start gap-4 text-center",
 				props.className
 			)}>
 			{props.children}

@@ -1,5 +1,5 @@
 type FancyTextProps = {
-	text: string;
+	text?: string;
 	underlineText: string;
 };
 

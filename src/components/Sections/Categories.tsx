@@ -26,7 +26,7 @@ const data = [
 
 const Categories: React.FC = () => {
 	return (
-		<SectionWrapper className="min-h-[80vh]">
+		<SectionWrapper>
 			<div className="flex flex-col items-center justify-center gap-2">
 				<p className="uppercase text-[#F57343] font-medium">9+ Jobs Category</p>
 				<h1 className="text-[50px] font-bold leading-[80px]">

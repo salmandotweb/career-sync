@@ -25,7 +25,7 @@ const trendingSearches = [
 
 const Hero = () => {
 	return (
-		<div className="min-h-[92vh] text-center flex flex-col items-center justify-center relative">
+		<div className="min-h-[92vh] text-center flex flex-col items-center justify-center relative pb-[120px]">
 			<div className="flex flex-col gap-6 items-center justify-center">
 				<h1 className="text-[70px] font-bold leading-[80px]">
 					The home to get your <br />
