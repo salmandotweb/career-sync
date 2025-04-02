@@ -1,6 +1,6 @@
 # <p align="center">Career Sync</p>
 
-Welcome to Career Sync – where simplicity meets success. We believe in the power of your story, and we're here to help you tell it. With modern templates that captivate, a hassle-free experience that empowers, and the freedom to craft without constraints, we're revolutionizing the way you build your resume. No sign-ups, no barriers – just seamless, innovative tools that sync with your ambition. Unleash your potential with Career Sync and step confidently toward a brighter, bolder future.
+Welcome to Career Sync – where simplicity meets success. We believe in the power of your story, and we're here to help you tell it. With modern templates that captivate, a hassle-free experience that empowers, and the freedom to craft without constraints, we're revolutionizing the way you build your resume. No sign-ups, no barriers – just seamless, innovative tools that sync with your ambition. Unleash your potential with Career Sync and step confidently toward a brighter, bolder future!
 
 ![Image](https://scontent.flhe5-1.fna.fbcdn.net/v/t39.30808-6/367444195_122098109354016123_6483869506860750574_n.png?_nc_cat=111&ccb=1-7&_nc_sid=300f58&_nc_eui2=AeHIgfeuIJnIPqu35czlVzV5axSiq2NcAKFrFKKrY1wAoRhw_3oXAm88EqTruSM5B320rC5KIIyJEN3cKWj2dQ9z&_nc_ohc=f9iD2VWtNmoAX-qjvEx&_nc_ht=scontent.flhe5-1.fna&oh=00_AfAdFxc_3gFCmr_F6mkNPJt2F5JiCJhSl0l8qzPvfdt6NA&oe=64DFCEDE)
 
